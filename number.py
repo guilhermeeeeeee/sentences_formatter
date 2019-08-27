@@ -36,6 +36,8 @@ def written_number(number):
     number_translate = get_string_number()
     if not number:
         return 'zero'
+    if number > 0 and number < 10:
+        return number_translate.get(number)[0]
     if number == 100 :
         return 'cem'
     if number > 10 and number < 20  :

@@ -1,0 +1,19 @@
+em ciência da computação, um algoritmo é uma sequência finita de ações executáveis que visam obter uma solução para um determinado tipo de problema.[um][dois] segundo dasgupta, papadimitriou e vazirani, "algoritmos são procedimentos precisos, não ambíguos, mecânicos, eficientes e corretos".[tres]
+
+o conceito de algoritmo existe há séculos
+e o uso do conceito pode ser atribuído a matemáticos gregos, por exemplo a peneira de eratóstenes e o algoritmo de euclides.
+
+o conceito de algoritmo é frequentemente ilustrado pelo exemplo de uma receita culinária, embora muitos algoritmos sejam mais complexos
+eles podem repetir passos fazer iterações ou necessitar de decisões tais como comparações ou lógica até que a tarefa seja completada
+um algoritmo corretamente executado não irá resolver um problema se estiver implementado incorretamente ou se não for apropriado ao problema
+jean luc chabert
+
+um algoritmo não representa, necessariamente, um programa de computador,[quatro] e sim os passos necessários para realizar uma tarefa
+sua implementação pode ser feita por um computador, por outro tipo de autômato ou mesmo por um ser humano
+diferentes algoritmos podem realizar a mesma tarefa usando um conjunto diferenciado de instruções em mais ou menos tempo, espaço ou esforço do que outros
+tal diferença pode ser reflexo da complexidade computacional aplicada, que depende de estruturas de dados adequadas ao algoritmo
+por exemplo, um algoritmo para se vestir pode especificar que você vista primeiro as meias e os sapatos antes de vestir a calça enquanto outro algoritmo especifica que você deve primeiro vestir a calça e depois as meias e os sapatos
+fica claro que o primeiro algoritmo é mais difícil de executar que o segundo apesar de ambos levarem ao mesmo resultado
+algorithmics
+
+o conceito de um algoritmo foi formalizado em um9tres6 pela máquina de turing de alan turing e pelo cálculo lambda de alonzo church, que formaram as primeiras fundações da ciência da computação.
