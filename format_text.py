@@ -1,8 +1,10 @@
 import re
+from number import written_number
 
 def get_text_formatted(text):
     text = text.strip().lower()
+    numbers = re.findall(r'\d+', text)
+    text = re.sub(r'[.$%&!?@|/()*]', '', text)
+    for number in numbers:
+        text = text.replace(number, written_number(int(number)))
     return text.split('. ')
-
-text = r'RegExr was created by gskinner.com, and is proudly hosted by Media Temple. 1Edit the Expression & Text to see matches. Roll over matches or the expression for details. PCRE & Javascript flavors of RegEx are supported. 11T1he side bar includes a Cheatsheet, full Reference, and Help. You can also Save & Share with the Community, and view patterns you create or favorite in My Patterns. 13Explore results with the Tools below. Replace & List output custom results. Details lists capture groups. Explain describes your expression in plain English.'
-
