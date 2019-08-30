@@ -43,8 +43,8 @@ def written_number(number):
     if number > 10 and number < 20  :
         return number_translate.get(number)
     decimals = separate_decimals(number)
-    numbers = []
+    writed_numbers = []
     for index, number in enumerate(decimals):
         decimal_translate = number_translate.get(number)[index]
-        numbers.append(decimal_translate)
-    return ' e '.join(reversed(numbers))
+        writed_numbers.append(decimal_translate)
+    return ' e '.join(reversed(writed_numbers))
