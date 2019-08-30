@@ -1,0 +1,395 @@
+Em ciência da computação, um algoritmo é uma sequência finita de ações executáveis que visam obter uma solução para um determinado tipo de problema.[1][2] Segundo Dasgupta, Papadimitriou e Vazirani, "algoritmos são procedimentos precisos, não ambíguos, mecânicos, eficientes e corretos".[3]
+
+O conceito de algoritmo existe há séculos e o uso do conceito pode ser atribuído a matemáticos gregos, por exemplo a Peneira de Eratóstenes e o algoritmo de Euclides.
+
+O conceito de algoritmo é frequentemente ilustrado pelo exemplo de uma receita culinária, embora muitos algoritmos sejam mais complexos. Eles podem repetir passos (fazer iterações) ou necessitar de decisões (tais como comparações ou lógica) até que a tarefa seja completada. Um algoritmo corretamente executado não irá resolver um problema se estiver implementado incorretamente ou se não for apropriado ao problema. Jean Luc Chabert
+
+Um algoritmo não representa, necessariamente, um programa de computador,[4] e sim os passos necessários para realizar uma tarefa. Sua implementação pode ser feita por um computador, por outro tipo de autômato ou mesmo por um ser humano. Diferentes algoritmos podem realizar a mesma tarefa usando um conjunto diferenciado de instruções em mais ou menos tempo, espaço ou esforço do que outros. Tal diferença pode ser reflexo da complexidade computacional aplicada, que depende de estruturas de dados adequadas ao algoritmo. Por exemplo, um algoritmo para se vestir pode especificar que você vista primeiro as meias e os sapatos antes de vestir a calça enquanto outro algoritmo especifica que você deve primeiro vestir a calça e depois as meias e os sapatos. Fica claro que o primeiro algoritmo é mais difícil de executar que o segundo apesar de ambos levarem ao mesmo resultado. Algorithmics
+
+O conceito de um algoritmo foi formalizado em 1936 pela Máquina de Turing de Alan Turing e pelo cálculo lambda de Alonzo Church, que formaram as primeiras fundações da Ciência da computação.
+Os historiadores da palavra algoritmo encontraram a origem no sobrenome, Al-Khwarizmi, do matemático persa do século IX Mohamed ben Musa,[5] cujas obras foram traduzidas no ocidente cristão no século XII, tendo uma delas recebido o nome Algorithmi de numero indorum, sobre os algoritmos usando o sistema de numeração decimal (indiano). Outros autores, entretanto, defendem a origem da palavra em Al-goreten (raiz - conceito que se pode aplicar aos cálculos).[6] "Álgebra" e "algorismo" também formam formas corrompidas da palavra, pois as pessoas esqueciam as derivações originais. O dicionário "Vollständiges Mathematisches Lexicon" (Leipzig, 1747) refere a palavra "Algorithmus"; nesta designação estão combinadas as noções de quatro cálculos aritméticos, nomeadamente a adição, multiplicação, subtração e divisão. A frase "algorithmus infinitesimalis" foi na altura utilizada para significar; "maneiras de calcular com quantidades infinitésimas" (pequenas), uma invenção de Leibnitz. Também é conhecido no meio financeiro, como "algos".
+Um programa de computador é essencialmente um algoritmo que diz ao computador os passos específicos e em que ordem eles devem ser executados, como por exemplo, os passos a serem tomados para calcular as notas que serão impressas nos boletins dos alunos de uma escola. Logo, o algoritmo pode ser considerado uma sequência de operações que podem ser simuladas por uma máquina de Turing completa.
+
+Quando os procedimentos de um algoritmo envolvem o processamento de dados, a informação é lida de uma fonte de entrada, processada e retornada sob novo valor após processamento, o que geralmente é realizado com o auxílio de uma ou mais estrutura de dados.
+
+Para qualquer processo computacional, o algoritmo precisa estar rigorosamente definido, especificando a maneira que ele se comportará em todas as circunstâncias. A corretividade do algoritmo pode ser provada matematicamente, bem como a quantidade assintótica de tempo e espaço (complexidade) necessários para a sua execução. Estes aspectos dos algoritmos são alvo da análise de algoritmos.
+
+A maneira mais simples de se pensar um algoritmo é por uma lista de procedimentos bem definida, na qual as instruções são executadas passo a passo a partir do começo da lista, uma ideia que pode ser facilmente visualizada através de um fluxograma. Tal formalização adota as premissas da programação imperativa, que é uma forma mecânica para visualizar e desenvolver um algoritmo. Concepções alternativas para algoritmos variam em programação funcional e programação lógica.
+Alguns autores restringem a definição de algoritmo para procedimentos que eventualmente terminam. Marvin Minsky constatou que se o tamanho de um procedimento não é conhecido de antemão, tentar descobri-lo é um problema indecidível, já que o procedimento pode ser executado infinitamente, de forma que nunca se terá a resposta. Alan Turing provou em 1936 que não existe máquina de Turing para realizar tal análise para todos os casos, logo não há algoritmo para realizar tal tarefa para todos os casos. Tal condição é conhecida atualmente como problema da parada.
+
+Para algoritmos intermináveis o sucesso não pode ser determinado pela interpretação da resposta e sim por condições impostas pelo próprio desenvolvedor do algoritmo durante sua execução.
+Um clássico problema que trabalha o desenvolvimento da lógica e do raciocínio matemático é a torre de Hanói, inventado pelo matemático francês Édouard Lucas em 1883.[8] O quebra-cabeça é composto por três hastes e vários discos de tamanhos diferentes, que podem deslizar para qualquer haste. O quebra-cabeça começa com os discos em uma pilha organizada em ordem crescente de tamanho em uma haste, a menor no topo, fazendo assim uma forma cônica.
+
+Neste exemplo, toma-se o seguinte problema: tem-se três hastes. Umas das hastes serve de suporte para três discos. Deseja-se mover todos os discos para outra haste, porém deve-se movimentar um disco de cada vez e um disco maior nunca pode ser colocado sobre um disco de menor tamanho.
+A análise de algoritmos é um ramo da ciência da computação que estuda as técnicas de projeto de algoritmos e os algoritmos de forma abstrata, sem estarem implementados em uma linguagem de programação em particular ou implementadas de algum outro modo. Ela preocupa-se com os recursos necessários para a execução do algoritmo tais como o tempo de execução e o espaço de armazenamento de dados. Deve-se perceber que para um dado algoritmo pode-se ter diferentes quantidades de recursos alocados de acordo com os parâmetros passados na entrada. Por exemplo, se definirmos que o fatorial de um número natural é igual ao fatorial de seu antecessor multiplicado pelo próprio número, fica claro que a execução de fatorial(10) consome mais tempo que a execução de fatorial(5).
+
+Um meio de exibir um algoritmo a fim de analisá-lo é através da implementação por pseudocódigo em português estruturado, também conhecido no Brasil como Portugol. Este código pode ser digitado dentro de algum editor de textos como o Bloco de Notas, anotado num caderno ou ainda poder digitado diretamente dentro de um programa interpretador de algoritmos, como é caso do Visualg, que é um editor, interpretador e executor dos algoritmos.
+Recursivo ou iterativo - um algoritmo recursivo possui a característica de invocar a si mesmo repetidamente até que certa condição seja satisfeita e ele é terminado, que é um método comum em programação funcional. Algoritmos iterativos usam estruturas de repetição tais como laços, ou ainda estruturas de dados adicionais tais como pilhas, para resolver problemas. Cada algoritmo recursivo possui um algoritmo iterativo equivalente e vice-versa, mas que pode ter mais ou menos complexidade em sua construção.
+Lógico - um algoritmo pode ser visto como uma dedução lógica controlada. O componente lógico expressa os axiomas usados na computação e o componente de controle determina a maneira como a dedução é aplicada aos axiomas. Tal conceito é base para a programação lógica.
+Serial ou paralelo - algoritmos são geralmente assumidos por serem executados instrução a instrução individualmente, como uma lista de execução, o que constitui um algoritmo serial. Tal conceito é base para a programação imperativa. Por outro lado existem algoritmos executados paralelamente, que levam em conta as arquiteturas de computadores com mais de um processador para executar mais de uma instrução ao mesmo tempo. Tais algoritmos dividem os problemas em subproblemas e o delegam a quantos processadores estiverem disponíveis, agrupando no final o resultado dos subproblemas em um resultado final ao algoritmo. Tal conceito é base para a programação paralela. De forma geral, algoritmos iterativos são paralelizáveis; por outro lado existem algoritmos que não são paralelizáveis, chamados então problemas inerentemente seriais.
+Determinístico ou não-determinístico - algoritmos determinísticos resolvem o problema com uma decisão exata a cada passo enquanto algoritmos não-determinísticos resolvem o problema ao deduzir os melhores passos através de estimativas sob forma de heurísticas.
+Exato ou aproximado - enquanto alguns algoritmos encontram uma resposta exata, algoritmos de aproximação procuram uma resposta próxima a verdadeira solução, seja através de estratégia determinística ou aleatória. Possuem aplicações práticas sobretudo para problemas muito complexos, do qual uma resposta correta é inviável devido à sua complexidade computacional.
+Divisão e conquista - algoritmos de divisão e conquista reduzem repetidamente o problema em sub-problemas, geralmente de forma recursiva, até que o sub-problema é pequeno o suficiente para ser resolvido. Um exemplo prático é o algoritmo de ordenação merge sort. Uma variante dessa metodologia é o decremento e conquista, que resolve um sub-problema e utiliza a solução para resolver um problema maior. Um exemplo prático é o algoritmo para pesquisa binária.
+Programação dinâmica - pode-se utilizar a programação dinâmica para evitar o re-cálculo de soluções já resolvidas anteriormente.
+Algoritmo ganancioso - um algoritmo ganancioso é similar à programação dinâmica, mas difere na medida em que as soluções dos sub-problemas não precisam ser conhecidas a cada passo, uma escolha gananciosa pode ser feita a cada momento com o que até então parece ser mais adequado.
+Programação linear - A resolução de um problema através de programação linear envolve a maximização / minimização das entradas de um conjunto de desigualdades lineares.
+Redução - a redução resolve o problema ao transformá-lo em outro problema. É chamado também transformação e conquista.
+Busca e enumeração - vários problemas podem ser modelados através de grafos. Um algoritmo de exploração de grafo pode ser usado para caminhar pela estrutura e retornam informações úteis para a resolução do problema. Esta categoria inclui algoritmos de busca e backtracking.
+Paradigma heurístico e probabilístico - algoritmos probabilísticos realizam escolhas aleatoriamente. Algoritmos genéticos tentam encontrar a solução através de ciclos de mutações evolucionárias entre gerações de passos, tendendo para a solução exata do problema. Algoritmos heurísticos encontram uma solução aproximada para o problema.
+Cada campo da ciência possui seus próprios problemas e respectivos algoritmos adequados para resolvê-los. Exemplos clássicos são algoritmos de busca, de ordenação, de análise numérica, de teoria de grafos, de manipulação de cadeias de texto, de geometria computacional, de análise combinatória, de aprendizagem de máquina, de criptografia, de compressão de dados e de interpretação de texto.
+Alguns algoritmos são executados em tempo linear, de acordo com a entrada, enquanto outros são executados em tempo exponencial ou até mesmo nunca terminam de serem executados. Alguns ditos problemas tem múltiplos algoritmos enquanto outros não possuem algoritmos para resolução
+Algoritmos podem ser implementados em circuitos elétricos ou até mesmo em dispositivos mecânicos (autômatos).Mania dos inventores do século XIX, os autômatos eram máquinas totalmente mecânicas, construídas com a capacidade de serem programadas para realizar um conjunto de atividades autônomas. Em 2011, o filme A Invenção de Hugo Cabret(tradução brasileira) do cineasta Martin Scorsese traz a história do ilusionista Georges Méliès precursor do cinema e um colecionador de autômatos, sendo uma de suas máquinas o fio condutor desta história. O autômato específico era capaz de desenhar a cena emblemática do seu filme "Viagem à Lua".
+
+Entretanto, a maioria dos algoritmos são desenvolvidos para programas de computador, para isto, existe uma grande variedade de linguagens de programação, cada uma com características específicas que podem facilitar a implementação de determinados algoritmos ou atender a propósitos mais gerais.
+Ada Lovelace escreveu o primeiro algoritmo para ser processado por uma máquina, a máquina analítica de Charles Babbage. Um programa de computador é essencialmente um algoritmo que diz ao computador os passos específicos e em que ordem eles devem ser executados.Usando  o Pseudocódigo (uma linguagem simples, nativa a quem o escreve, de forma a ser entendida por qualquer pessoa) que é uma forma genérica de escrever o algoritmo, sem necessidade de conhecer a sintaxe de nenhuma linguagem de programação. Um exemplo de pseudocódigo é o Portugol, que utiliza o compilador VisuALG[9]. O VisuAlg é um programa que edita, interpreta e executa algoritmos com uma linguagem próxima do português estruturado como um programa normal de computador. É um programa de livre uso e distribuição, empregado no ensino de programação em várias escolas e universidades no Brasil e no exterior. Quando os procedimentos de um algoritmo envolvem o processamento de dados, a informação é lida de uma fonte de entrada, processada e retornada sob novo valor após processamento, o que geralmente é realizado com o auxílio de um conjunto de instruções e estrutura de dados.Um  exemplo, ​para ser feito nas escolas é fazer os passos a serem tomados para calcular as notas que serão impressas nos boletins dos alunos de uma escola, informando se o aluno foi aprovado ou reprovado.
+Ao receber uma bicicleta no natal Carlinhos precisa ler o manual de instruções e seguir passo a passo as tarefas descritas no documento para poder se divertir com seu presente. Podemos dizer que Carlinhos é um interpretador dos comandos fornecidos pelo manual de instruções. Entretanto seu pai encontrou uma promoção na internet e comprou um produto fabricado na França e o menino ao se deparar com o manual percebeu que o mesmo não poderia ser “interpretado” já que não sabia ler em francês. Para resolver o problema seu pai contratou um tradutor de francês para português, assim, este novo manual pôde ser “interpretado” por Carlinhos e enfim sua bicicleta seria montada.
+
+No computador, o problema de Carlinhos se repete diariamente, havendo a necessidade de softwares básicos para traduzir e interpretar os diversos programas dos usuários escritos em diversas linguagens existentes. Os softwares que convertem um programa de usuário escrito em uma linguagem para outra linguagem são chamados de tradutores. A linguagem na qual o programa original está expresso é chamada de linguagem fonte e a linguagem para a qual ela será convertida é conhecida como linguagem alvo. Tanto a linguagem fonte quanto a linguagem alvo definem níveis de abstração específicos.
+
+Se existir um processador que possa executar diretamente programas escritos na linguagem fonte, não há necessidade de se traduzir o programa fonte para uma linguagem alvo.
+
+O método de tradução é empregado quando há um processador (seja ele implementado em hardware ou por interpretação) disponível para executar programas expressos na linguagem alvo mas não na linguagem fonte. Se a tradução tiver sido feita corretamente, a execução do programa traduzido vai obter exatamente os mesmos resultados que a execução do programa fonte obteria se houvesse um processador que o executasse diretamente.
+
+É importante observar a diferença entre tradução e interpretação. Na tradução, o programa original, expresso na linguagem fonte, não é executado diretamente. Em vez da execução direta, esse programa precisa ser convertido para um programa equivalente, conhecido como programa objeto ou programa binário executável, que será executado após o término do processo de tradução.
+Os tradutores podem ser divididos em dois grupos, dependendo da relação existente entre a linguagem fonte e a linguagem alvo. Quando a linguagem fonte for essencialmente uma representação simbólica para uma linguagem de máquina numérica, o tradutor é chamado de montador e a linguagem fonte é chamada de linguagem de montagem. Quando a linguagem fonte for uma linguagem de alto nível, como é o caso do Pascal ou do C, e a linguagem alvo for uma linguagem de máquina numérica ou uma representação simbólica desta linguagem (linguagem de montagem), o tradutor é chamado de compilador.
+Diferente do processo de montagem de um programa em linguagem de montagem para um programa em linguagem de máquina, que é bastante simples, pois existe um mapeamento direto de um para um entre os comandos em linguagem de montagem e os equivalentes em código binário, o processo de compilação de linguagens é muito mais complexo.
+O processo de traduzir um programa em linguagem de montagem para programa em linguagem de máquina é chamado de processo de montagem. Este processo é muito simples, uma vez que existe um mapeamento um para um de comandos em linguagem de montagem para seus correspondentes em linguagem de máquina. Isto é o contrário da compilação, onde um comando em linguagem de alto nível pode ser traduzido em vários comandos em linguagem de máquina.
+Programar em uma linguagem de montagem não é fácil. Além da dificuldade, o desenvolvimento de um programa na linguagem de montagem consome mais tempo do que seu desenvolvimento em uma linguagem de alto nível. A depuração e manutenção dos programas em linguagem de montagem são mais complicados.
+
+Nessas condições, por que alguém escolheria programar em uma linguagem de montagem?
+
+Existem duas razões que justificam esta opção: performance e acesso aos recursos da máquina. Um expert na linguagem de montagem pode produzir um código menor e muito mais eficiente do que o gerado por um programador usando linguagem de alto nível.
+
+Em segundo lugar, certos procedimentos precisam ter acesso total ao hardware. Por exemplo, se a máquina alvo tiver um bit para expressar o overflow de operações aritméticas, um programa em linguagem de montagem pode testar diretamente este bit, coisa que um programa em Java não pode fazer. Além disso, um programa em linguagem de montagem pode executar qualquer uma das instruções do conjunto de instruções da máquina alvo.
+A maioria dos montadores leem textos do programa em linguagem de montagem duas vezes, e são chamados de “montadores de dois passos”. O primeiro passo serve para determinar o endereço de todos os itens de dados e instruções de máquina, e selecionar quais instruções devem ser geradas para cada instrução em linguagem de montagem (mais ainda não gerá-las).
+
+Os endereços dos itens de dados e instruções são determinados por meio do uso de um contador de programa para a montagem, chamado contador de localização. O contador de localização gerencia o endereço da instrução executada e dos itens de dados durante a montagem, que geralmente é inicializada com 0 (zero). No início do primeiro passo, é incrementado de acordo com o tamanho de cada instrução.
+
+Durante este passo, o montador também efetua quaisquer operações aritméticas em tempo de montagem, e insere as definições de todos os rótulos de funções e variáveis e as constantes, em uma tabela chamada Tabela de Símbolos.
+
+A razão principal para exigir uma segunda passagem é permitir que símbolos sejam usados no programa antes de serem definidos. Após a primeira passagem, o montador terá identificado todos os símbolos e os colocado na Tabela de Símbolos, já durante a segunda passagem, gerará código de máquina, inserindo os identificadores dos símbolos que agora são conhecidos.
+ A maioria dos programas é composto de mais de um procedimento. Os compiladores e os montadores geralmente traduzem um procedimento de cada vez, colocando a saída da tradução em disco. Antes que o programa possa rodar, todos os seus procedimentos precisam ser localizados e ligados uns aos outros de maneira a formarem um único código.
+A função do ligador é coletar procedimentos traduzidos separadamente e ligá-los uns aos outros para que eles possam executar como uma unidade chamada programa binário executável.
+
+Se o compilador ou o montador lesse um conjunto de procedimentos fonte e produzisse diretamente um programa em linguagem de máquina pronto para ser executado, bastaria que um único comando fonte fosse alterado para que todos os procedimentos fonte tivessem que ser novamente traduzidos.
+
+Usando a técnica do módulo objeto separado, o único procedimento a ser novamente traduzido seria aquele modificado. Havendo a necessidade de realizar apenas a etapa de ligação dos módulos separados novamente, sendo esta tarefa mais rápida que a tradução.
+O carregador é um programa que coloca um módulo de carregamento na memória principal. Conceitualmente, a tarefa do carregador não é difícil. Ele deve carregar os vários segmentos de memória com seus valores corretos e inicializar certos registradores, tais como o apontador para pilha do sistema, responsável pelo escopo das rotinas que estarão em execução e o contador de instruções contido no processador, com seus valores iniciais, indicando assim onde o programa deve ser iniciado.
+
+Em Sistemas Operacionais modernos, vários programas estão residentes na memória a todo instante, e não há como o montador ou o ligador saber em quais endereços os módulos de um programa irão residir. O carregador deve relocar estes módulos durante o carregamento adicionando um deslocamento a todos os endereços, permitindo desta forma acessar cada módulo individualmente na memória.
+
+Esse tipo de carregamento é chamado de carregamento com relocação. O carregador simplesmente modifica endereços relocáveis dentro de um único módulo de carregamento para que vários programas passem a residir na memória simultaneamente.
+O software interpretador é um programa de computador que executa instruções escritas em uma linguagem de programação. Por exemplo, as linguagens Basic, Prolog, Python e Java, são frequentemente interpretados. Um interpretador geralmente usa uma das seguintes estratégias para a execução do programa: executar o código fonte diretamente ou traduzir o código fonte em alguma eficiente representação intermediária e depois executar este código.
+
+Para isso, certos tipos de tradutores transformam uma linguagem fonte em uma linguagem simplificada, chamada de código intermediário, que pode ser diretamente “executado” por um programa chamado interpretador. Nós podemos imaginar o código intermediário como uma linguagem de máquina de um computador abstrato projetado para executar o código fonte.
+
+Interpretadores são, em geral, menores que compiladores e facilitam a implementação de construções complexas em linguagens de programação. Entretanto, o tempo de execução de um programa interpretado é geralmente maior que o tempo de execução deste mesmo programa compilado, pois o interpretador deve analisar cada declaração no programa a cada vez que é executado e depois executar a ação desejada, enquanto que o código compilado apenas executa a ação dentro de um contexto fixo, anteriormente determinado pela compilação. Este tempo no processo de análise é conhecido como "overhead interpretativa".
+Os dispositivos de entrada e saída de dados (E/S) são de suma importância pois qualquer informação que deva entrar ou sair do computador será feita através deles. Dentre os dispositivos de entrada podemos citar: teclado, mouse, câmera, digitalizador. Os
+dispositivos de saída podem ser: monitor2
+, impressora, saída de som, por exemplo.
+Os dispositivos de E/S se comunicam com o computador através de portas específicas de comunicação, como porta paralela, porta serial, porta USB, porta SCSI, porta
+Firewire, porta PS/2, e assim por diante. Cada porta compreende um tipo de conector
+específico, porém mais do que isso um protocolo de comunicação entre dispositivos.
+O dispositivo de entrada padrão é o teclado, enquanto que a saída padrão é o monitor. Isto significa que sempre que não for explicitamente especificado, um programa
+tentará ler do teclado e escrever para o monitor.
+Um algoritmo pode ser definido como uma sequência finita de passos (instruções)
+para resolver um determinado problema. Sempre que desenvolvemos um algoritmo
+estamos estabelecendo um padrão de comportamento que deverá ser seguido (uma
+norma de execução de ações) para alcançar o resultado de um problema.
+Para o desenvolvimento de um algoritmo eficiente é necessário obedecermos algumas premissas básicas no momento de sua construção
+Os fluxogramas são uma apresentação do algoritmo em formato gráfico. Cada ação ou
+situação é representada por uma caixa. Tomadas de decisões são indicadas por caixas
+especiais, possibilitando ao fluxo de ações tomar caminhos distintos.
+Qualquer tipo de informação que deva ser transferida, processada ou armazenada
+deve estar na forma de uma linguagem. A linguagem é imprescindível para o processo de comunicação. Duas pessoas que se falam o fazem através de uma linguagem
+em comum, a linguagem natural. Da mesma forma, duas máquinas trocam informação por uma linguagem, que neste caso mais técnico e restrito, se chama protocolo. Do
+mesmo modo, um computador armazena suas instruções em código de máquina. Estas diferentes linguagens não podem ser traduzidas diretamente entre sí, pois além de
+serem representadas de modos diferentes, também referem-se a coisas muito distintas. Para que um ser humano possa programar, armazenar e buscar informações num
+computador, é necessário que saiba instruí-lo na sua linguagem de máquina ou numa
+linguagem intermediária (uma linguagem de programação) que possa ser facilmente
+traduzida para o computador.
+A linguagem natural é a maneira como expressamos nosso raciocínio e trocamos informação. Como é a expressão da cultura de uma sociedade, desenvolvida através das
+gerações e em diferentes situações, raramente constitui um sistema de regras rígidas
+que possa ser implementada numa máquina ou que possa ser transcrita logicamente.
+Além da linguagem falada, fazem parte da nossa comunicação gestos e posturas, que
+não podem ser diretamente adaptados para compreensão de uma máquina. Por fim,
+toda a comunicação eficiente pressupõe um conhecimento prévio comum entre os interlocutores, por exemplo a mesma língua, a mesma bagagem cultural e assim por
+diante.
+Ao contrário dos seres humanos, as máquinas (dentre elas os computadores) são projetados para executar tarefas bem determinadas a partir de determinadas instruções. Um computador não é por si só uma máquina inteligente no sentido que não
+pode aprender com a própria experiência para melhorar seu comportamente futuro1
+.
+Ao contrário, um computador é somente capaz de realizar estritamente as tarefas que
+lhe forem delegadas e que façam parte do conjunto daquelas ações que ele pode executar. Neste sentido, é necessário compreender que tipo de instruções podem ser executadas pelos computadores para que possamos programá-los — instruí-los com a
+sequência de ações necessárias para resolver um determinado problema — de modo
+que realizem a tarefa do modo desejado.
+Além do fato de o computador necessitar que lhe instruam com ações bem específicas,
+estas ações devem ser passadas para o computador numa linguagem que ele possa
+entendê-las, chamada linguagem de máquina. Esta linguagem é composta somente
+por números, representados de forma binária, que, sob o ponto de vista do computador, representam as operações e os operandos que serão usados no processamento do
+programa. Para um ser humano, a linguagem de máquina é dificílima de se compreender. Assim, existe uma linguagem representada por comandos mas que reproduz
+as tarefas que serão executadas dentro do computador, a linguagem de montagem (assembly). Entretando, mesmo a linguagem de montagem é difícil de programar e os
+programas feitos para um determinado processador, por conterem instruções específicas deste, não funcionarão em um processador de outro tipo
+Para facilitar a tarefa de programar um computador, foram criadas várias linguagens
+de programação. Estas linguagens são um maneira de tentar escrever as tarefas que
+o computador vai realizar de maneira mais parecida com a linguagem natural. Embora ainda seja muitas vezes complexo em comparação com a linguagem natural, um
+programa escrito em uma linguagem de programação é muito mais fácil de ser implementado, compreendido e modificado.
+As linguagens de programação são um meio termo entre a linguagem de máquina
+e a linguagem natural. Deste modo são classificadas de acordo com o nível entre a
+linguagem natural ou de máquina que ocupam. As linguagens muito parecidas com
+linguagem de máquina são chamadas de linguagens de baixo nível e suas instruções
+parecem-se muito com aquelas que serão executadas pelo processador. As linguagens
+de alto-nível são as que guardam mais semelhanças com a linguagem natural. Exemplo de linguagens de baixo nível é a linguagem de montagem (assembly). Exemplos de
+linguagens de alto-nível são: Pascal, C, Fortran, Java, Perl, Python, Lisp, PHP, entre
+outras.
+Como o processador não pode executar o código numa linguagem de programação, esta deve ser traduzida em código de máquina antes de ser executada. Este processo é chamado de textbfcompilação (representado na Figura 2.3) e é responsável por
+converter os comandos da lingugem de programação nas instruções em código de
+máquina que o processador poderá utilizar
+Um programa escrito em linguagem de máquina, como contém instruções específicas de um processador, só poderá ser utilizado naquele processador ou em similares.
+Em contrapartida, uma linguagem de programação, como contém somente instruções
+abstratas do que fazer, pode ser compilado para qualquer código de máquina. Em
+resumo, ao invés de escrever um programa em código de máquina para cada família
+de processdores, escreve-se o mesmo código numa linguagem de programação e está
+é compilada por um compilador específico daquela arquitetura.
+O pseudocódigo é uma maneira intermediária entre a linguagem natural e uma linguagem de programação de representar um algoritmo. Ela utiliza um conjunto restrito de
+palavras-chave, em geral na língua nativa do programador, que tem equivalentes nas
+linguagens de programação. Além disso, o pseudocódigo não requer todo a rigidez
+sintática necessária numa linguagem de programação, permitindo que o aprendiz se
+detenha na lógica do algoritmos e não no formalismo da sua representação. Na medida em que se obtém mais familiaridade com os algoritmos, então o pseudocódigo
+pode ser traduzido para uma linguagem de programação.
+Para que seja possível armazenar e manipular dados no computador é necessário
+representá-los internamente de alguma forma. Nós seres humanos, representamos
+nossos números usando um sistema que chamamos de sistema decimal (ou sistema
+na base 10). Esse sistema, que se originou do fato de utilizarmos os 10 dedos das
+mãos para realizarmos nossas contas, possui 10 diferentes dígitos para representar as
+infinitas quantidades e valores que desejamos.
+Nos caso dos computadores digitais, a notação que é utilizada possui apenas 2 algarismos ou dígitos para representar uma quantidade desejada, o 0 e o 1. Esse sistema
+de representação é chamado de sistema binário (ou sistema na base 2) e utiliza a noção
+de ligado/desligado, ou verdadeiro/falso, ou finalmente 0/1
+1
+.
+Pelo fato de um número precisar de muitos algarismos para ser expresso no sistema
+binário, outras formas de representação auxiliares também são utilizadas nos computadores, como por exemplo a representação pelo sistema hexadecimal (ou sistema na
+base 16) que utiliza 16 dígitos , e a representação no
+sistema octal (ou sistema na base 8) que utiliza 8 dígitos.
+A quantidade de algarismos necessária para representar um determinado número
+varia de acordo com o sistema de representação utilizado. Se o sistema é decimal,
+o maior número que pode ser representado utilizando N algarismos será 10N.
+Os dados em um computador devem ser armazenados de acordo com o tipo de informação que se deseja representar e com o tipo de operação que será realizada com
+eles. A representação correta e adequada de uma informação permite otimizar os recursos computacionais disponíveis, além de acelerar o processamento. A seguir são
+definidos os tipos de dados mais comuns encontrados na maioria das linguagens de
+programação e que constituem a base de como qualquer informação será armazenada
+no mesmo.
+Inteiro São os números pertencentes ao conjunto dos Inteiros, isto é, que não possuem parte fracionária. Podem ser positivos, nulos ou negativos. 
+Real São os números pertencentes ao conjunto dos Reais, isto é, que podem possuir parte fracionária. Também são chamados de ponto flutuante devido à maneira
+como o computador os armazena. 
+Caractere São os valores pertencentes ao conjunto de todos os caracteres numéricos
+, alfabéticos  e especiais . Esse conjunto também
+é conhecido como conjunto de caracteres alfanuméricos. Os caracteres alfanuméricos são armazenados internamente no computador na forma numérica (binária) utilizando o padrão ASCII.
+Lógico O tipo lógico é utilizado para representar informações que só podem assumir
+dois valores, o valor verdadeiro (V) ou o valor falso (F). Estes valores também podem
+ser entendidos como: ligado/desligado, 1/0, alto/baixo, fechado/aberto, etc.
+Dentro de um algoritmo podemos encontrar basicamente duas classes diferentes de
+dados, os dados constantes e os variáveis. Um dado é uma constante quando seu
+valor não se altera ao longo do tempo em que o algoritmo é executado, ou seja, permanece o mesmo desde o início até o final da execução. Já um dado que pode ter seu
+valor alterado durante a execução do programa é tido como uma variável.
+Para que os dados sejam manipulados no computador, é necessário que estes estejam
+associados a um nome, um identificador. O conteúdo deste identificador será o dado
+em si e o seu nome será usado para acessar o dado e realizar operações com o mesmo.
+Uma analogia útil para entender o conceito e a necessidade de utilização do identificador seria pensar no mesmo como uma placa de sinalização que indica (delimita)
+uma determinada região ou espaço na memória do computador onde o dado (informação) desejado está localizado. Sendo assim, toda vez que se deseja acessar uma
+determinada informação utilizamos o nome dessa placa de sinalização e recuperamos
+o conteúdo que está localizado dentro do espao¸ delimitado pela mesma.
+Como dito anteriormente, ao longo do programa o dado será manipulado através do
+nome do seu identificador, sendo assim, o primeiro passo para utilizarmos os dados
+é a nomeação do seu idenficador e a definição do seu tipo (no caso de identificadores
+variáveis), ou do seu valor (no caso de identificadores constantes). A definição dos
+dados em algoritmos também é conhecida como declaração.
+Um identificador (sendo ele variável ou constante) declarado com um determinado
+tipo de dados ficará restrito a armazenar valores daquele tipo específico (inteiro, real,
+caractere, lógico). Na maioria dos casos, se houver uma tentativa de atribuir a um
+identificador um tipo diferente daquele para o qual ele foi definido irão ocorrer erros
+de compilação, de execução ou até mesmo perda de dados
+Após realizada a declaração de um identificador, é possível iniciar a manipulação
+dos dados que esse identificador irá representar a partir da atribuição de valores ao
+mesmo. Esse processo de atribuir ou alterar o valor dos dados de um identificador
+é chamado de atribuição e é representado pelo símbolo ← quando estivermos trabalhando com identificadores variáveis, e pelo símbolo = quando estivermos trabalhando com identificadores constantes.
+Uma varíavel pode armazenar apenas um único valor por vez, sendo que sempre
+que um novo valor é atribuído a variável o valor anterior que estava armazenado na
+mesma é perdido.
+As expressões aritméticas são aquelas em que os operadores são aritméticos e os operandos são valores do tipo numérico (inteiro ou real). Esses valores numéricos podem
+ser acessados por meio de identificadores constantes ou por meio de variáveis.
+As operações aritméticas fundamentais são: adição, subtração, multiplicação, divisão, potenciação, divisão inteira e o resto (módulo)
+Quando uma expressão aritmética precisa ser avaliada num algoritmo, o analisador
+processa a expressão dando prioridade para certos operadores. As sub-expressões
+que contém estes operadores serão avaliadas primeiro e seu valor substituído pela
+sub-expressão inteira. A seguir a próxima sub-expressão na ordem é avaliada e assim por diante até que toda a expressão corresponda a um só valor.
+Cada operação aritmética em um algoritmo deve ser escrita em apenas uma única
+linha. Sendo assim, quando uma expressão matemática usual é escrita precismamos
+utilizar parênteses para garantir que todas as operações sejam executadas na ordem
+adequada. 
+Ao desenvolvermos um algoritmo é bastante comum deixarmos parênteses não
+pareados nas expressões aritméticas, o que é um erro difícil de se localizar posteriormente. Um teste prático para evitarmos esse tipo de contratempo consiste em contar
+na expressão quantos parênteses esquerdos e direitos existem, e conferir se eles estão
+em mesmo número.
+Para a maioria das expressões aritméticas executadas em um algoritmo é possível associar um valor definido, ou seja, o resultado da expressão proprimamente dito. Por
+exemplo, a expressão 2 + 3, depois de avaliada, tem um valor definido igual a 5, e a
+expressão 2 ∗ ∗10 tem um valor definido de 1024. Entretanto, nem todas as expressões
+aritméticas possuem um valor definido matematicamente, é o caso de divisões de números pelo valor 0 (zero) ou de raízes quadradas de números negativos. A avaliação desse tipo de expressão deve ser sempre evitada a partir da verificação dos valores
+que farão parte das mesmas, ou seja, se um denominador é nulo ou se o número cuja
+raiz será extraída é negativo, a operação não deve ser realizada.
+É importante ressaltar que expressões as aritméticas podem ser simplificadas, ou escritas de maneira diferente se observarmos as igualdades existentes entre as operações.
+As expressões lógicas são aquelas cujo valor só pode ser verdadeiro ou falso. São compostas por operadores relacionais, operadores lógicos, e por identificadores variáveis
+ou constantes do tipo lógico.As expressões lógicas também podem ser compostas por
+resultados de expressões aritméticas.
+Os operadores relacionais são aqueles que comparam dois valores do mesmo tipo. O
+retorno da expressão relacional indica se o resultado da comparação foi verdadeiro
+ou falso. Por exemplo, a expressão 2 < 3 é uma expressão lógica válida cujo valor
+é verdadeiro. Em contrapartida, a expressão 2 = 8 é uma expressão lógica também válida, mas cujo valor é falso.
+Os operadores lógicos são usados para representar situações lógicas que não podem
+ser representadas por operadores aritméticos. Também são chamados conectivos lógicos por unirem duas expressões simples numa composta. Podem ser operadores
+binários, que operam em duas sentenças ou expressões, ou unário que opera numa
+sentença só.
+O primeiro deles é o operador binário de conjunção ou e lógico, representado por
+∧ ou AND. Quando duas expressões são unidas por este operador, a expressão resultante só é verdadeira se ambas expressões constituintes também são. Por exemplo
+“chove e venta” só é verdadeiro se as duas coisas forem verdadeiras, “chove” e também “venta”. Se uma das sentenças não ocorrer, a sentença como um todo é falsa.
+O segundo operador é o operador binário de disjunção ou ou lógico, representado
+por ∨ ou OR. Neste caso, se qualquer uma das expressões constituintes for verdadeira,
+a expressão completa também será. Por exemplo, “vou à praia ou vou ao campo” é
+um sentença verdadeira caso qualquer uma das duas ações acontecer, ou ambas. É
+verdadeira, se eu for a praia e não ao campo, se eu for ao campo e não a praia e se eu
+for a ambos.
+Para o caso em que deve-se garantir que somente uma das sentenças aconteça,
+define-se o operador ou-exclusivo, cujo símbolo é ⊕ ou XOR. Como o nome diz, é
+semelhante ao operador ou com exclusividade na veracidade dos operandos, isto é,
+somente um dos operandos pode ser verdadeiro. No exemplo anterior, se o concectivo
+fosse o ou-exclusivo, a sentença composta só seria verdadeira se fosse à praia ou ao
+campo, mas não ambos.
+O último dos operadores é o operador unário não lógico, representado por ¬. Sua
+função é simplesmente inverter valor lógico da expressão a qual se aplica.Para imprimirmos algum tipo de informação na tela do computador utilizamos o comando escreva seguido da informação que será escrita. Dessa forma, se quisermos
+imprimir uma mensagem como por exemplo “Ola mundo!”, isto seria feito com a instrução
+escreva (Olá Mundo)
+As aspas servem para delimitar uma sequência de caracteres, uma constante, mas
+não fazem parte do conteúdo a ser impresso. Para imprimir o valor de uma variável,
+basta colocar o seu identificador diretamente.
+escreva (ttt)
+imprime 123 na saída. Como a sequência ttt não tem aspas, durante a execução o
+algoritmo considera ttt como sendo o identificador de uma variável e o substitui pelo
+seu conteúdo, neste caso 123. Se por outro lado, colocássemos
+ttt ← 123
+seria impresso “ttt” na saída. ttt é essencialmente diferente de ttt. O primeiro
+indica o identificador de uma variável. O segundo, com aspas, simplesmente uma
+sequência de letras. Em resumo, as aspas previnem que o algoritmo interprete o conteúdo da cadeia de caracteres.
+É possível escrever valores de qualquer tipo existente, como valores reais, valores lógicos, valores inteiros, do tipo sequência de caracteres, resultados de expressões
+aritméticas, resultados de expressões lógicas, resultados de expressões relacionais. 
+Da mesma maneira que necessitamos enviar informações de dentro do algoritmo para
+a saida padrão (em geral a tela), também necessitamos receber informações de fora do
+algoritmo, a partir da entrada padrão (em geral o teclado). Considere por exemplo
+um sistema de locadora, sempre que alugamos um filme, o sistema irá necessitar de
+algumas informações como, por exemplo: o nosso código de cliente (ou o nome) e o
+nome da fita que estamos locando. Essas informações são fornecidas pelo sistema a
+partir de comandos de entrada de dados.
+Para realizarmos a entrada de dados utilizaremos o comando leia. Ao utilizar o
+comando leia o programador deve saber de antemão qual a variável que irá armazenar
+o valor que será fornecido pelo usuário. No caso do exemplo anterior, os valores que
+seriam fornecidos pelo usuário são referentes ao código do cliente e ao nome da fita
+que o mesmo está locando. Sendo assim, é necessário declarar variáveis que possam
+armazenar valores que sejam compatíveis com as informações solicitadas ao usuário.
+Por exemplo, a informação do código do cliente pode ser um valor do tipo inteiro,
+então é necessário que declaremos no algoritmo uma variável desse tipo, seguindo
+esse mesmo raciocínio, a informação do nome da fita pode ser uma informação do tipo
+caractere, sendo também necessário que declaremos no algoritmo uma outra variável
+para receber essa informação.
+Após declaradas as variáveis que receberão os valores fornecidos pelo usuário podemos utilizar o comando leia para receber esses valores. Para isso devemos escrever
+leia seguido da variável que receberá os valores entre parênteses. 
+Num processo geral de execução de um algoritmo implementado em uma linguagem
+de programação, a execução começa na primeira linha e vai avançando sequencialmente executando o código linha após linha até chegar no final. Entretanto, frequentemente surge a necessidade de colocar instruções dentro de um programa que só serão
+executadas caso alguma condição específica aconteça. Para esta finalidade a maioria
+das linguagens possui estruturas de condição para realizar esta tarefa. Neste capítulo
+examinaremos o seu funcionamento e suas peculiaridades.
+Nos capítulos anteriores foram apresentados alguns conceitos básicos sobre as estruturas e comandos que são utilizados para construir um algoritmo simples. Como
+visto, podemos solicitar valores de entrada aos usuários do sistema utilizando o comando leia(), e podemos ainda enviar valores de saída do sistema por meio do comando escreva(). Entretanto, as possibilidades de construção de algoritmos que temos
+até o presente momento são bastante limitadas, pois ainda não estamos aptos a tomar decisões durante o tempo de execução do algoritmo, ou até mesmo de classificar
+determinados valores de variáveis.
+Por exemplo, considere que precisamos desenvolver um algoritmo que classifique
+uma determinada pessoa entre maior de idade ou menor de idade. Para esse problema sabemos que precisamos avaliar a idade da pessoa, e que se essa idade for maior
+(ou igual) que 18 anos a pessoa é considerada maior de idade. Neste caso, para um
+intervalo de valores da idade o algoritmos executa um conjunto de ações e para outro
+intervalo executa um outro conjunto de ações. Neste tipo de situação, onde um determinado valor é avaliado para a partir do resultado dessa avaliação executar alguma
+ação, utilizamos as estruturas de condição.
+Dentro de uma estrutura se-então-senão é perfeitamente possível utilizarmos mais de
+uma linha de comando, ou até mesmo outras estruturas se-então-senão. Existem situações em que os caminhos para a tomada de uma decisão acabam formando uma
+espécie de árvore com diversas ramificações, onde cada caminho é um conjunto de
+ações.
+Uma outra alternativa para trabalhar com comandos condicionados a um determinado
+valor é a estrutura caso seja. Nessa estrutura o valor de uma determinada variável é
+avaliado e caso esse valor coincida com determinado valor pré-estabelecido um determinado comando é executado. 
+Uma das principais características que consolidaram o sucesso na utilização dos computadores para a resolução de problemas foi a sua capacidade de repetir o processamento de um conjunto de operações para grandes quantidades de dados. Exemplos de
+conjuntos de tarefas que repetimos diversas vezes dentro de uma situação específica
+podem ser observados largamente no nosso dia a dia.
+As estruturas de repetição provém uma maneira de repetir um conjunto de procedimentos até que determinado objetivo seja atingido, quando a repetição se encerra.
+Todas as estruturas de repetição têm em comum o fato de haver uma condição de
+controle, expressa através de uma expressão lógica, que é testada em cada ciclo para
+determinar se a repetição prossegue ou não.
+Por exemplo, consideremos que uma determinada loja de calçados efetue uma
+venda no crediário para um cliente que ainda não está registrado em seu sistema. Para
+realizar essa venda, é necessário cadastrar o cliente, solicitando informações básicas
+como: nome, endereço, CPF, RG, etc. Essas etapas para realizar o cadastro seguirão
+sempre a mesma ordem para cada novo cliente que aparecer na loja. Caso precisássemos desenvolver um sistema para efetuar os cadastros de clientes de uma loja, não
+haveria lógica que programássemos novamente essas etapas para cada cliente novo,
+bastaria que desenvolvêssemos uma única vez a seqüência de etapas e que a cada novo
+cliente usássemos a seqüência previamente definida.
+As estruturas de repetição são basicamente três: enquanto-faça, faça-enquanto e parafaça. A diferença básica é que enquanto-faça primeiro testa a condição para depois
+realizar o bloco de comando, ao contrário de faça-enquanto que primeiro executa o
+bloco para depois realizar o teste. A estrutura para-faça tem embutida um mecanismo
+de controle para determinar quando o laço deverá ser terminado.
+De maneira geral, o mecanismo que altera o valor da expressão lógica que controla
+o laço está embutido dentro do bloco de comandos ou depende de alguma variável
+externa que será fornecida em tempo de execução.
+A estrutura enquanto-faça é usada principalmente quando não se sabe com antecedência a quantidade de repetições que precisam serrealizadas. Por exemplo, suponha
+que estamos oferecendo ao usuário 3 opções de menu sendo que uma dessas opções
+seria a de sair do programa. Caso desejemos que o usuário possa executar várias vezes
+as opções dispostas no menu, não temos como adivinhar quando o usuário irá optar
+por sair do algoritmo, sendo assim, não podemos limitar a repetição à um determinado número de vezes.
+Considere um problema mais específico onde necessitamos fazer a leitura de vários
+nomes de pessoas e a cada nome que é lido devemos escrever na tela a frase "O nome
+digitado foi nome", onde nome é a variável. A princípio isso deve ser feito inúmeras
+vezes e quando o usuário digitar um nome igual a “fim” o algoritmo deve parar. Da
+mesma maneira que no exemplo anterior não podemos definir quando o usuário irá
+digitar “fim”, e não temos como precisar a quantidade de vezes que o algoritmo deverá
+repetir esse conjunto de ações.
+A estrutura faça-enquanto difere da estrutura enquanto-faça somente por executar o
+bloco de comando antes de testar se a condição é verdadeira, ou seja, o teste da condição é realizado apenas ao final da estrutura. Assim, utilizando o faça-enquanto o bloco de comandos será sempre executado pelo menos uma vez, mesmo que a expressão de
+controle seja falsa.
+Em situações onde é necessário realizarmos contagens de ocorrências, ou somatórios
+e produtórios de valores dentro de um conjunto de dados, devemos utilizar variáveis
+específicas para fazer o armazenamento dos resultados. Chamamos de contadores
+para as variáveis que realizam a contagem de ocorrências de um determinado valor (ou situação) e de acumuladores para as variáveis responsáveis por armazenar os resultados de somatórios e produtórios de valores
+Um algoritmo para calcular a média das idades das pessoas do sexo feminino com
+18 anos ou mais, pode ser facilmente desenvolvido utilizando um contador para armazenar a quantidade de pessoas que pertencem a esse conjunto e um acumulador
+para armazenar a soma das idades dessas pessoas.
+No caso de utilizarmos acumuladores para armazenar produtórios é necessário a
+inicialização do mesmo com o valor neutro da multiplicação (o número 1). A cada iteração o acumulador é então multiplicado por um outro termo qualquer, dependendo
+do problema em questão.
+Vetores são varíaveis compostas que podem armazenar um conjunto de valores. Todos
+estes valores são referenciados através do nome do vetor (o mesmo para todo o conjunto de valores) e de um índice (distinto para cada valor.) As variáveis vetoriais são
+análogas aos vetores usados na matemática e na física, em que um vetor.
+As valores armazenados numa variável vetorial são todos do mesmo tipo, por isso
+os vetores são chamados de variáveis compostas homogêneas.
+Os vetores são imprescindíveis quando se quer armazenar diversos valores de um
+mesmo tipo e referenciá-los com o mesmo nome. Por exemplo, para armazenar as
+idades de vários alunos de uma turma, poderia-se criar um vetor idade com 8 posições;
+cada índice de 0 a 7 corresponderia a um funcionário. A Figura 8.1 ilustra a variável
+idade, os respectivos valores armazenados e os
+índices de cada elemento.
+Os vetores são declarados anexando-se ao nome da variável um colchete com o
+número de posições que o vetor porerá conter.
+
+
+
+
+
+
+
+
+
+

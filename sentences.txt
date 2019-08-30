@@ -1,0 +1,1243 @@
+variável é um objeto normalmente localizado na memória utilizado para representar valores, quando declaramos uma variável estamos associando seu nome  identificador  ao local da memória onde está armazenado sua informação, as variáveis em java podem ser do tipo primitivo ou objeto variáveis primitivas: podem ser do tipo byte, short, int, long, float, double, char ou boolean
+variáveis de referência: usada para referenciar um objeto
+ quando usamos uma variável de referência definimos qual o tipo do objeto ou um subtipo do tipo do objeto  veremos isso mais para frente 
+quando declaramos uma variável primitiva, estamos associando está a um espaço na memória que vai guardar o seu valor
+ no caso da variável de referência, podemos tê-la apontando para algum lugar vazio  null  ou para algum espaço da memória que guarda os dados de um objeto
+as variáveis primitivas e de referência são guardadas em locais diferentes da memória
+ variáveis primitivas ficam em um local chamado stack e as variáveis de referência ficam em um local chamado heap
+a linguagem java possui diversos tipos primitivos
+a linguagem java não é totalmente orientada a objetos, e isto se deve principalmente aos atributos do tipo primitivo, pois são tipos de dados que não representam classes, mas sim valores básicos
+os tipos primitivos, assim como em várias outras linguagens tais como o c, existem para representar os tipos mais simples de dados, sendo eles dados numérico, booleano e caractere
+ os tipos primitivos da linguagem java são: byte, short, int, long, float, double, char, boolean
+como tipos primitivos entendemos aqueles tipos de informação mais usuais e básicos
+ são os habituais de outras linguagens de programação
+ descreveremos algum dado para ter em conta em cada tipo
+boolean: não é um valor numérico, só admite os valores true ou false
+char: usa o código unicode e ocupa cada caractere dezesseis bits
+inteiros: diferem nas precisões e podem ser positivos ou negativos
+byte: oito byte
+short: dois bytes
+int: quatro bytes
+long: oito bytes
+reais em ponto flutuante: igual que os inteiros também diferem nas precisões e podem ser positivos ou negativos
+float: quatro bytes
+double: oito bytes
+agora que temos as peças necessárias   identificadores e tipos   podemos definir variáveis em java
+ uma variável referenciará sempre a um tipo primitivo de java ou a qualquer outro objeto criado em nosso programa
+ uma vez tenhamos um pouco de idéia de como declarar variáveis em java, temos que ter em conta desde que sites de nosso programa podemos acessa-las, é o que chamamos de âmbito das variáveis
+basicamente a norma é que a variável tenha validade dentro do bloco fechado entre chaves onde foi declarada, já seja dentro de uma função ou de, por exemplo, uma sentença 'if'
+ vejamos um exemplo com um pequeno programa em java
+se tentarmos executar este código o compilador nos dará um erro dizendo que a variável não está definida visto que a declaramos em um bloco diferente de onde pretendíamos utiliza-la
+existem mais normas de âmbito com respeito às variáveis membros de uma classe
+ para acessa-las depende se na classe está declarada como 'public' ou como 'private'
+ as variáveis declaradas em uma classe como 'public' se acessam diretamente através de 'nomeclase.nomevariavel'
+ no caso de uma variável 'private' só podemos utiliza-la mediante os métodos dessa classe
+por outro lado através da declaração de qualquer função própria de uma classe podemos acessar às variáveis internas dessa classe diretamente
+já incluiremos mais normas de âmbito quando vejamos o conceito de herança nos seguintes capítulos da programação em java
+ este tutorial acaba com o seguinte ponto no qual vemos os operadores
+explicando os tipos de métodos existentes na programação oo
+quando definimos um objeto num programa orientado a objetos, implementamos todo o comportamento desse objeto em um ou mais métodos
+um método em java é equivalente a uma função, subrotina ou procedimento em outras linguagens de programação
+não existe em java o conceito de métodos globais
+ todos os métodos devem sempre ser definidos dentro de uma classe
+a sintaxe para construção de um método é pouco complexa
+java controla o acesso a atributos e métodos através do uso dos modificadores de acesso
+ public : é o menos restritivo de todos,  atributos e métodos declarados como public em uma classe podem ser acessados pelos métodos da própria classe, por classes derivadas desta e por qualquer outra classe em qualquer outro pacote  veremos mais sobre pacotes e classes derivadas posteriormente 
+protected : atributos e métodos definidos como protected são acessíveis pelos métodos da própria classe e pelas classes derivadas
+private : é o mais restritivo, atributos e métodos declarados como private só podem ser acessados pelos métodos da própria classe
+quando nenhum modificador é definido  acesso do tipo “package” , os atributos e métodos podem ser acessados pelos métodos da própria classe, pelas classes derivadas e por qualquer outra classe dentro do mesmo pacote
+é importante destacar que esse controle não se aplica às variáveis locais aos métodos
+o nome de um método deve começar com uma letra  a-z a-z , um underscore  _ , ou um sinal de dólar      
+os caracteres subsequentes podem incluir os dígitos de zero a nove
+convenção : use verbos para nome de métodos, faça a primeira letra do nome minúscula com cada letra inicial interna maiúscula; por exemplo : getusername  , getmaxprice  
+um método pode ter zero ou mais argumentos  ou parâmetros 
+caso não tenha argumentos, é necessário informar os parênteses vazios tanto na definição como na chamada do método
+o nome do método acrescido de seus parâmetros é denominado assinatura do método
+cada argumento deve ser declarado como define-se uma variável, especificando seu tipo e nome
+caso seja mais de um argumento, cada declaração deve estar separada por vírgula
+retornando valor a partir de um método é possível associar um valor de retorno a um método
+ para isso, é preciso definir, na frente do nome do método, o tipo do valor a ser retornado
+ o tipo pode ser um primitivo ou então uma classe ou interface
+ caso o método não retorne valor algum, é obrigatória a utilização do tipo void na assinatura do método
+o comando return é utilizado para passar o valor requerido de volta para quem chamou o método e é obrigatório quando o tipo de retorno não é void
+ ele deve receber um único valor ou uma expressão que deve ser compatível com o tipo de retorno especificado para o método
+ quando o comando é encontrado, o método termina sua execução imediatamente, ignorando todas as instruções subsequentes
+um comando return sem valor de retorno retorna o tipo void, mas não é obrigatória sua utilização nestes casos
+você pode passar parâmetros para um método
+passando um primitivo : quando um valor primitivo é passado na chamada de um método, uma cópia deste valor é criada e atribuída para o argumento do método responsável por recebê-la
+ se o método mudar este valor, apenas o valor do argumento local ao método é afetado
+ quando o método terminar sua execução, o valor original da variável utilizada para passar o valor primitivo na chamada do método permanecerá inalterado
+passando a referência de um objeto : quando o tipo passado para o método não for um primitivo mas sim um objeto, esse comportamento muda
+quando passamos um objeto, uma referência ao objeto original é passada ao invés de uma cópia do objeto
+a referência contém o endereço de memória onde está contido o objeto original e qualquer modificação feita pelo método no argumento que recebeu esta referência afetará também o objeto original.
+em ciência da computação, um algoritmo é uma sequência finita de ações executáveis que visam obter uma solução para um determinado tipo de problema.[um][dois] segundo dasgupta, papadimitriou e vazirani, "algoritmos são procedimentos precisos, não ambíguos, mecânicos, eficientes e corretos".[tres]  o conceito de algoritmo existe há séculos e o uso do conceito pode ser atribuído a matemáticos gregos, por exemplo a peneira de eratóstenes e o algoritmo de euclides
+ o conceito de algoritmo é frequentemente ilustrado pelo exemplo de uma receita culinária, embora muitos algoritmos sejam mais complexos
+eles podem repetir passos  fazer iterações  ou necessitar de decisões  tais como comparações ou lógica  até que a tarefa seja completada
+um algoritmo corretamente executado não irá resolver um problema se estiver implementado incorretamente ou se não for apropriado ao problema
+jean luc chabert  um algoritmo não representa, necessariamente, um programa de computador,[quatro] e sim os passos necessários para realizar uma tarefa
+sua implementação pode ser feita por um computador, por outro tipo de autômato ou mesmo por um ser humano
+diferentes algoritmos podem realizar a mesma tarefa usando um conjunto diferenciado de instruções em mais ou menos tempo, espaço ou esforço do que outros
+tal diferença pode ser reflexo da complexidade computacional aplicada, que depende de estruturas de dados adequadas ao algoritmo
+por exemplo, um algoritmo para se vestir pode especificar que você vista primeiro as meias e os sapatos antes de vestir a calça enquanto outro algoritmo especifica que você deve primeiro vestir a calça e depois as meias e os sapatos
+fica claro que o primeiro algoritmo é mais difícil de executar que o segundo apesar de ambos levarem ao mesmo resultado
+algorithmics  o conceito de um algoritmo foi formalizado em umnovetresseis pela máquina de turing de alan turing e pelo cálculo lambda de alonzo church, que formaram as primeiras fundações da ciência da computação
+os historiadores da palavra algoritmo encontraram a origem no sobrenome, al-khwarizmi, do matemático persa do século ix mohamed ben musa,[cinco] cujas obras foram traduzidas no ocidente cristão no século xii, tendo uma delas recebido o nome algorithmi de numero indorum, sobre os algoritmos usando o sistema de numeração decimal  indiano 
+outros autores, entretanto, defendem a origem da palavra em al-goreten  raiz - conceito que se pode aplicar aos cálculos .[seis] "álgebra" e "algorismo" também formam formas corrompidas da palavra, pois as pessoas esqueciam as derivações originais
+o dicionário "vollständiges mathematisches lexicon"  leipzig, umsetequatrosete  refere a palavra "algorithmus"; nesta designação estão combinadas as noções de quatro cálculos aritméticos, nomeadamente a adição, multiplicação, subtração e divisão
+a frase "algorithmus infinitesimalis" foi na altura utilizada para significar; "maneiras de calcular com quantidades infinitésimas"  pequenas , uma invenção de leibnitz
+também é conhecido no meio financeiro, como "algos"
+um programa de computador é essencialmente um algoritmo que diz ao computador os passos específicos e em que ordem eles devem ser executados, como por exemplo, os passos a serem tomados para calcular as notas que serão impressas nos boletins dos alunos de uma escola
+logo, o algoritmo pode ser considerado uma sequência de operações que podem ser simuladas por uma máquina de turing completa
+ quando os procedimentos de um algoritmo envolvem o processamento de dados, a informação é lida de uma fonte de entrada, processada e retornada sob novo valor após processamento, o que geralmente é realizado com o auxílio de uma ou mais estrutura de dados
+ para qualquer processo computacional, o algoritmo precisa estar rigorosamente definido, especificando a maneira que ele se comportará em todas as circunstâncias
+a corretividade do algoritmo pode ser provada matematicamente, bem como a quantidade assintótica de tempo e espaço  complexidade  necessários para a sua execução
+estes aspectos dos algoritmos são alvo da análise de algoritmos
+ a maneira mais simples de se pensar um algoritmo é por uma lista de procedimentos bem definida, na qual as instruções são executadas passo a passo a partir do começo da lista, uma ideia que pode ser facilmente visualizada através de um fluxograma
+tal formalização adota as premissas da programação imperativa, que é uma forma mecânica para visualizar e desenvolver um algoritmo
+concepções alternativas para algoritmos variam em programação funcional e programação lógica
+alguns autores restringem a definição de algoritmo para procedimentos que eventualmente terminam
+marvin minsky constatou que se o tamanho de um procedimento não é conhecido de antemão, tentar descobri-lo é um problema indecidível, já que o procedimento pode ser executado infinitamente, de forma que nunca se terá a resposta
+alan turing provou em umnovetresseis que não existe máquina de turing para realizar tal análise para todos os casos, logo não há algoritmo para realizar tal tarefa para todos os casos
+tal condição é conhecida atualmente como problema da parada
+ para algoritmos intermináveis o sucesso não pode ser determinado pela interpretação da resposta e sim por condições impostas pelo próprio desenvolvedor do algoritmo durante sua execução
+um clássico problema que trabalha o desenvolvimento da lógica e do raciocínio matemático é a torre de hanói, inventado pelo matemático francês édouard lucas em umoitooitotres.[oito] o quebra-cabeça é composto por três hastes e vários discos de tamanhos diferentes, que podem deslizar para qualquer haste
+o quebra-cabeça começa com os discos em uma pilha organizada em ordem crescente de tamanho em uma haste, a menor no topo, fazendo assim uma forma cônica
+ neste exemplo, toma-se o seguinte problema: tem-se três hastes
+umas das hastes serve de suporte para três discos
+deseja-se mover todos os discos para outra haste, porém deve-se movimentar um disco de cada vez e um disco maior nunca pode ser colocado sobre um disco de menor tamanho
+a análise de algoritmos é um ramo da ciência da computação que estuda as técnicas de projeto de algoritmos e os algoritmos de forma abstrata, sem estarem implementados em uma linguagem de programação em particular ou implementadas de algum outro modo
+ela preocupa-se com os recursos necessários para a execução do algoritmo tais como o tempo de execução e o espaço de armazenamento de dados
+deve-se perceber que para um dado algoritmo pode-se ter diferentes quantidades de recursos alocados de acordo com os parâmetros passados na entrada
+por exemplo, se definirmos que o fatorial de um número natural é igual ao fatorial de seu antecessor multiplicado pelo próprio número, fica claro que a execução de fatorial umzero  consome mais tempo que a execução de fatorial cinco 
+ um meio de exibir um algoritmo a fim de analisá-lo é através da implementação por pseudocódigo em português estruturado, também conhecido no brasil como portugol
+este código pode ser digitado dentro de algum editor de textos como o bloco de notas, anotado num caderno ou ainda poder digitado diretamente dentro de um programa interpretador de algoritmos, como é caso do visualg, que é um editor, interpretador e executor dos algoritmos
+recursivo ou iterativo - um algoritmo recursivo possui a característica de invocar a si mesmo repetidamente até que certa condição seja satisfeita e ele é terminado, que é um método comum em programação funcional
+algoritmos iterativos usam estruturas de repetição tais como laços, ou ainda estruturas de dados adicionais tais como pilhas, para resolver problemas
+cada algoritmo recursivo possui um algoritmo iterativo equivalente e vice-versa, mas que pode ter mais ou menos complexidade em sua construção
+lógico - um algoritmo pode ser visto como uma dedução lógica controlada
+o componente lógico expressa os axiomas usados na computação e o componente de controle determina a maneira como a dedução é aplicada aos axiomas
+tal conceito é base para a programação lógica
+serial ou paralelo - algoritmos são geralmente assumidos por serem executados instrução a instrução individualmente, como uma lista de execução, o que constitui um algoritmo serial
+tal conceito é base para a programação imperativa
+por outro lado existem algoritmos executados paralelamente, que levam em conta as arquiteturas de computadores com mais de um processador para executar mais de uma instrução ao mesmo tempo
+tais algoritmos dividem os problemas em subproblemas e o delegam a quantos processadores estiverem disponíveis, agrupando no final o resultado dos subproblemas em um resultado final ao algoritmo
+tal conceito é base para a programação paralela
+de forma geral, algoritmos iterativos são paralelizáveis; por outro lado existem algoritmos que não são paralelizáveis, chamados então problemas inerentemente seriais
+determinístico ou não-determinístico - algoritmos determinísticos resolvem o problema com uma decisão exata a cada passo enquanto algoritmos não-determinísticos resolvem o problema ao deduzir os melhores passos através de estimativas sob forma de heurísticas
+exato ou aproximado - enquanto alguns algoritmos encontram uma resposta exata, algoritmos de aproximação procuram uma resposta próxima a verdadeira solução, seja através de estratégia determinística ou aleatória
+possuem aplicações práticas sobretudo para problemas muito complexos, do qual uma resposta correta é inviável devido à sua complexidade computacional
+divisão e conquista - algoritmos de divisão e conquista reduzem repetidamente o problema em sub-problemas, geralmente de forma recursiva, até que o sub-problema é pequeno o suficiente para ser resolvido
+um exemplo prático é o algoritmo de ordenação merge sort
+uma variante dessa metodologia é o decremento e conquista, que resolve um sub-problema e utiliza a solução para resolver um problema maior
+um exemplo prático é o algoritmo para pesquisa binária
+programação dinâmica - pode-se utilizar a programação dinâmica para evitar o re-cálculo de soluções já resolvidas anteriormente
+algoritmo ganancioso - um algoritmo ganancioso é similar à programação dinâmica, mas difere na medida em que as soluções dos sub-problemas não precisam ser conhecidas a cada passo, uma escolha gananciosa pode ser feita a cada momento com o que até então parece ser mais adequado
+programação linear - a resolução de um problema através de programação linear envolve a maximização   minimização das entradas de um conjunto de desigualdades lineares
+redução - a redução resolve o problema ao transformá-lo em outro problema
+é chamado também transformação e conquista
+busca e enumeração - vários problemas podem ser modelados através de grafos
+um algoritmo de exploração de grafo pode ser usado para caminhar pela estrutura e retornam informações úteis para a resolução do problema
+esta categoria inclui algoritmos de busca e backtracking
+paradigma heurístico e probabilístico - algoritmos probabilísticos realizam escolhas aleatoriamente
+algoritmos genéticos tentam encontrar a solução através de ciclos de mutações evolucionárias entre gerações de passos, tendendo para a solução exata do problema
+algoritmos heurísticos encontram uma solução aproximada para o problema
+cada campo da ciência possui seus próprios problemas e respectivos algoritmos adequados para resolvê-los
+exemplos clássicos são algoritmos de busca, de ordenação, de análise numérica, de teoria de grafos, de manipulação de cadeias de texto, de geometria computacional, de análise combinatória, de aprendizagem de máquina, de criptografia, de compressão de dados e de interpretação de texto
+alguns algoritmos são executados em tempo linear, de acordo com a entrada, enquanto outros são executados em tempo exponencial ou até mesmo nunca terminam de serem executados
+alguns ditos problemas tem múltiplos algoritmos enquanto outros não possuem algoritmos para resolução algoritmos podem ser implementados em circuitos elétricos ou até mesmo em dispositivos mecânicos  autômatos .mania dos inventores do século xix, os autômatos eram máquinas totalmente mecânicas, construídas com a capacidade de serem programadas para realizar um conjunto de atividades autônomas
+em doiszeroumum, o filme a invenção de hugo cabret tradução brasileira  do cineasta martin scorsese traz a história do ilusionista georges méliès precursor do cinema e um colecionador de autômatos, sendo uma de suas máquinas o fio condutor desta história
+o autômato específico era capaz de desenhar a cena emblemática do seu filme "viagem à lua"
+ entretanto, a maioria dos algoritmos são desenvolvidos para programas de computador, para isto, existe uma grande variedade de linguagens de programação, cada uma com características específicas que podem facilitar a implementação de determinados algoritmos ou atender a propósitos mais gerais
+ada lovelace escreveu o primeiro algoritmo para ser processado por uma máquina, a máquina analítica de charles babbage
+um programa de computador é essencialmente um algoritmo que diz ao computador os passos específicos e em que ordem eles devem ser executados.usando  o pseudocódigo  uma linguagem simples, nativa a quem o escreve, de forma a ser entendida por qualquer pessoa  que é uma forma genérica de escrever o algoritmo, sem necessidade de conhecer a sintaxe de nenhuma linguagem de programação
+um exemplo de pseudocódigo é o portugol, que utiliza o compilador visualg[nove]
+o visualg é um programa que edita, interpreta e executa algoritmos com uma linguagem próxima do português estruturado como um programa normal de computador
+é um programa de livre uso e distribuição, empregado no ensino de programação em várias escolas e universidades no brasil e no exterior
+quando os procedimentos de um algoritmo envolvem o processamento de dados, a informação é lida de uma fonte de entrada, processada e retornada sob novo valor após processamento, o que geralmente é realizado com o auxílio de um conjunto de instruções e estrutura de dados.um  exemplo, ​para ser feito nas escolas é fazer os passos a serem tomados para calcular as notas que serão impressas nos boletins dos alunos de uma escola, informando se o aluno foi aprovado ou reprovado
+ao receber uma bicicleta no natal carlinhos precisa ler o manual de instruções e seguir passo a passo as tarefas descritas no documento para poder se divertir com seu presente
+podemos dizer que carlinhos é um interpretador dos comandos fornecidos pelo manual de instruções
+entretanto seu pai encontrou uma promoção na internet e comprou um produto fabricado na frança e o menino ao se deparar com o manual percebeu que o mesmo não poderia ser “interpretado” já que não sabia ler em francês
+para resolver o problema seu pai contratou um tradutor de francês para português, assim, este novo manual pôde ser “interpretado” por carlinhos e enfim sua bicicleta seria montada
+ no computador, o problema de carlinhos se repete diariamente, havendo a necessidade de softwares básicos para traduzir e interpretar os diversos programas dos usuários escritos em diversas linguagens existentes
+os softwares que convertem um programa de usuário escrito em uma linguagem para outra linguagem são chamados de tradutores
+a linguagem na qual o programa original está expresso é chamada de linguagem fonte e a linguagem para a qual ela será convertida é conhecida como linguagem alvo
+tanto a linguagem fonte quanto a linguagem alvo definem níveis de abstração específicos
+ se existir um processador que possa executar diretamente programas escritos na linguagem fonte, não há necessidade de se traduzir o programa fonte para uma linguagem alvo
+ o método de tradução é empregado quando há um processador  seja ele implementado em hardware ou por interpretação  disponível para executar programas expressos na linguagem alvo mas não na linguagem fonte
+se a tradução tiver sido feita corretamente, a execução do programa traduzido vai obter exatamente os mesmos resultados que a execução do programa fonte obteria se houvesse um processador que o executasse diretamente
+ é importante observar a diferença entre tradução e interpretação
+na tradução, o programa original, expresso na linguagem fonte, não é executado diretamente
+em vez da execução direta, esse programa precisa ser convertido para um programa equivalente, conhecido como programa objeto ou programa binário executável, que será executado após o término do processo de tradução
+os tradutores podem ser divididos em dois grupos, dependendo da relação existente entre a linguagem fonte e a linguagem alvo
+quando a linguagem fonte for essencialmente uma representação simbólica para uma linguagem de máquina numérica, o tradutor é chamado de montador e a linguagem fonte é chamada de linguagem de montagem
+quando a linguagem fonte for uma linguagem de alto nível, como é o caso do pascal ou do c, e a linguagem alvo for uma linguagem de máquina numérica ou uma representação simbólica desta linguagem  linguagem de montagem , o tradutor é chamado de compilador
+diferente do processo de montagem de um programa em linguagem de montagem para um programa em linguagem de máquina, que é bastante simples, pois existe um mapeamento direto de um para um entre os comandos em linguagem de montagem e os equivalentes em código binário, o processo de compilação de linguagens é muito mais complexo
+o processo de traduzir um programa em linguagem de montagem para programa em linguagem de máquina é chamado de processo de montagem
+este processo é muito simples, uma vez que existe um mapeamento um para um de comandos em linguagem de montagem para seus correspondentes em linguagem de máquina
+isto é o contrário da compilação, onde um comando em linguagem de alto nível pode ser traduzido em vários comandos em linguagem de máquina
+programar em uma linguagem de montagem não é fácil
+além da dificuldade, o desenvolvimento de um programa na linguagem de montagem consome mais tempo do que seu desenvolvimento em uma linguagem de alto nível
+a depuração e manutenção dos programas em linguagem de montagem são mais complicados
+ nessas condições, por que alguém escolheria programar em uma linguagem de montagem
+ existem duas razões que justificam esta opção: performance e acesso aos recursos da máquina
+um expert na linguagem de montagem pode produzir um código menor e muito mais eficiente do que o gerado por um programador usando linguagem de alto nível
+ em segundo lugar, certos procedimentos precisam ter acesso total ao hardware
+por exemplo, se a máquina alvo tiver um bit para expressar o overflow de operações aritméticas, um programa em linguagem de montagem pode testar diretamente este bit, coisa que um programa em java não pode fazer
+além disso, um programa em linguagem de montagem pode executar qualquer uma das instruções do conjunto de instruções da máquina alvo
+a maioria dos montadores leem textos do programa em linguagem de montagem duas vezes, e são chamados de “montadores de dois passos”
+o primeiro passo serve para determinar o endereço de todos os itens de dados e instruções de máquina, e selecionar quais instruções devem ser geradas para cada instrução em linguagem de montagem  mais ainda não gerá-las 
+ os endereços dos itens de dados e instruções são determinados por meio do uso de um contador de programa para a montagem, chamado contador de localização
+o contador de localização gerencia o endereço da instrução executada e dos itens de dados durante a montagem, que geralmente é inicializada com zero  zero 
+no início do primeiro passo, é incrementado de acordo com o tamanho de cada instrução
+ durante este passo, o montador também efetua quaisquer operações aritméticas em tempo de montagem, e insere as definições de todos os rótulos de funções e variáveis e as constantes, em uma tabela chamada tabela de símbolos
+ a razão principal para exigir uma segunda passagem é permitir que símbolos sejam usados no programa antes de serem definidos
+após a primeira passagem, o montador terá identificado todos os símbolos e os colocado na tabela de símbolos, já durante a segunda passagem, gerará código de máquina, inserindo os identificadores dos símbolos que agora são conhecidos
+ a maioria dos programas é composto de mais de um procedimento
+os compiladores e os montadores geralmente traduzem um procedimento de cada vez, colocando a saída da tradução em disco
+antes que o programa possa rodar, todos os seus procedimentos precisam ser localizados e ligados uns aos outros de maneira a formarem um único código
+a função do ligador é coletar procedimentos traduzidos separadamente e ligá-los uns aos outros para que eles possam executar como uma unidade chamada programa binário executável
+ se o compilador ou o montador lesse um conjunto de procedimentos fonte e produzisse diretamente um programa em linguagem de máquina pronto para ser executado, bastaria que um único comando fonte fosse alterado para que todos os procedimentos fonte tivessem que ser novamente traduzidos
+ usando a técnica do módulo objeto separado, o único procedimento a ser novamente traduzido seria aquele modificado
+havendo a necessidade de realizar apenas a etapa de ligação dos módulos separados novamente, sendo esta tarefa mais rápida que a tradução
+o carregador é um programa que coloca um módulo de carregamento na memória principal
+conceitualmente, a tarefa do carregador não é difícil
+ele deve carregar os vários segmentos de memória com seus valores corretos e inicializar certos registradores, tais como o apontador para pilha do sistema, responsável pelo escopo das rotinas que estarão em execução e o contador de instruções contido no processador, com seus valores iniciais, indicando assim onde o programa deve ser iniciado
+ em sistemas operacionais modernos, vários programas estão residentes na memória a todo instante, e não há como o montador ou o ligador saber em quais endereços os módulos de um programa irão residir
+o carregador deve relocar estes módulos durante o carregamento adicionando um deslocamento a todos os endereços, permitindo desta forma acessar cada módulo individualmente na memória
+ esse tipo de carregamento é chamado de carregamento com relocação
+o carregador simplesmente modifica endereços relocáveis dentro de um único módulo de carregamento para que vários programas passem a residir na memória simultaneamente
+o software interpretador é um programa de computador que executa instruções escritas em uma linguagem de programação
+por exemplo, as linguagens basic, prolog, python e java, são frequentemente interpretados
+um interpretador geralmente usa uma das seguintes estratégias para a execução do programa: executar o código fonte diretamente ou traduzir o código fonte em alguma eficiente representação intermediária e depois executar este código
+ para isso, certos tipos de tradutores transformam uma linguagem fonte em uma linguagem simplificada, chamada de código intermediário, que pode ser diretamente “executado” por um programa chamado interpretador
+nós podemos imaginar o código intermediário como uma linguagem de máquina de um computador abstrato projetado para executar o código fonte
+ interpretadores são, em geral, menores que compiladores e facilitam a implementação de construções complexas em linguagens de programação
+entretanto, o tempo de execução de um programa interpretado é geralmente maior que o tempo de execução deste mesmo programa compilado, pois o interpretador deve analisar cada declaração no programa a cada vez que é executado e depois executar a ação desejada, enquanto que o código compilado apenas executa a ação dentro de um contexto fixo, anteriormente determinado pela compilação
+este tempo no processo de análise é conhecido como "overhead interpretativa"
+os dispositivos de entrada e saída de dados  e s  são de suma importância pois qualquer informação que deva entrar ou sair do computador será feita através deles
+dentre os dispositivos de entrada podemos citar: teclado, mouse, câmera, digitalizador
+os dispositivos de saída podem ser: monitordois , impressora, saída de som, por exemplo
+os dispositivos de e s se comunicam com o computador através de portas específicas de comunicação, como porta paralela, porta serial, porta usb, porta scsi, porta firewire, porta ps dois, e assim por diante
+cada porta compreende um tipo de conector específico, porém mais do que isso um protocolo de comunicação entre dispositivos
+o dispositivo de entrada padrão é o teclado, enquanto que a saída padrão é o monitor
+isto significa que sempre que não for explicitamente especificado, um programa tentará ler do teclado e escrever para o monitor
+um algoritmo pode ser definido como uma sequência finita de passos  instruções  para resolver um determinado problema
+sempre que desenvolvemos um algoritmo estamos estabelecendo um padrão de comportamento que deverá ser seguido  uma norma de execução de ações  para alcançar o resultado de um problema
+para o desenvolvimento de um algoritmo eficiente é necessário obedecermos algumas premissas básicas no momento de sua construção os fluxogramas são uma apresentação do algoritmo em formato gráfico
+cada ação ou situação é representada por uma caixa
+tomadas de decisões são indicadas por caixas especiais, possibilitando ao fluxo de ações tomar caminhos distintos
+qualquer tipo de informação que deva ser transferida, processada ou armazenada deve estar na forma de uma linguagem
+a linguagem é imprescindível para o processo de comunicação
+duas pessoas que se falam o fazem através de uma linguagem em comum, a linguagem natural
+da mesma forma, duas máquinas trocam informação por uma linguagem, que neste caso mais técnico e restrito, se chama protocolo
+do mesmo modo, um computador armazena suas instruções em código de máquina
+estas diferentes linguagens não podem ser traduzidas diretamente entre sí, pois além de serem representadas de modos diferentes, também referem-se a coisas muito distintas
+para que um ser humano possa programar, armazenar e buscar informações num computador, é necessário que saiba instruí-lo na sua linguagem de máquina ou numa linguagem intermediária  uma linguagem de programação  que possa ser facilmente traduzida para o computador
+a linguagem natural é a maneira como expressamos nosso raciocínio e trocamos informação
+como é a expressão da cultura de uma sociedade, desenvolvida através das gerações e em diferentes situações, raramente constitui um sistema de regras rígidas que possa ser implementada numa máquina ou que possa ser transcrita logicamente
+além da linguagem falada, fazem parte da nossa comunicação gestos e posturas, que não podem ser diretamente adaptados para compreensão de uma máquina
+por fim, toda a comunicação eficiente pressupõe um conhecimento prévio comum entre os interlocutores, por exemplo a mesma língua, a mesma bagagem cultural e assim por diante
+ao contrário dos seres humanos, as máquinas  dentre elas os computadores  são projetados para executar tarefas bem determinadas a partir de determinadas instruções
+um computador não é por si só uma máquina inteligente no sentido que não pode aprender com a própria experiência para melhorar seu comportamente futuroum 
+ao contrário, um computador é somente capaz de realizar estritamente as tarefas que lhe forem delegadas e que façam parte do conjunto daquelas ações que ele pode executar
+neste sentido, é necessário compreender que tipo de instruções podem ser executadas pelos computadores para que possamos programá-los — instruí-los com a sequência de ações necessárias para resolver um determinado problema — de modo que realizem a tarefa do modo desejado
+além do fato de o computador necessitar que lhe instruam com ações bem específicas, estas ações devem ser passadas para o computador numa linguagem que ele possa entendê-las, chamada linguagem de máquina
+esta linguagem é composta somente por números, representados de forma binária, que, sob o ponto de vista do computador, representam as operações e os operandos que serão usados no processamento do programa
+para um ser humano, a linguagem de máquina é dificílima de se compreender
+assim, existe uma linguagem representada por comandos mas que reproduz as tarefas que serão executadas dentro do computador, a linguagem de montagem  assembly 
+entretando, mesmo a linguagem de montagem é difícil de programar e os programas feitos para um determinado processador, por conterem instruções específicas deste, não funcionarão em um processador de outro tipo para facilitar a tarefa de programar um computador, foram criadas várias linguagens de programação
+estas linguagens são um maneira de tentar escrever as tarefas que o computador vai realizar de maneira mais parecida com a linguagem natural
+embora ainda seja muitas vezes complexo em comparação com a linguagem natural, um programa escrito em uma linguagem de programação é muito mais fácil de ser implementado, compreendido e modificado
+as linguagens de programação são um meio termo entre a linguagem de máquina e a linguagem natural
+deste modo são classificadas de acordo com o nível entre a linguagem natural ou de máquina que ocupam
+as linguagens muito parecidas com linguagem de máquina são chamadas de linguagens de baixo nível e suas instruções parecem-se muito com aquelas que serão executadas pelo processador
+as linguagens de alto-nível são as que guardam mais semelhanças com a linguagem natural
+exemplo de linguagens de baixo nível é a linguagem de montagem  assembly 
+exemplos de linguagens de alto-nível são: pascal, c, fortran, java, perl, python, lisp, php, entre outras
+como o processador não pode executar o código numa linguagem de programação, esta deve ser traduzida em código de máquina antes de ser executada
+este processo é chamado de textbfcompilação  representado na figura dois.tres  e é responsável por converter os comandos da lingugem de programação nas instruções em código de máquina que o processador poderá utilizar um programa escrito em linguagem de máquina, como contém instruções específicas de um processador, só poderá ser utilizado naquele processador ou em similares
+em contrapartida, uma linguagem de programação, como contém somente instruções abstratas do que fazer, pode ser compilado para qualquer código de máquina
+em resumo, ao invés de escrever um programa em código de máquina para cada família de processdores, escreve-se o mesmo código numa linguagem de programação e está é compilada por um compilador específico daquela arquitetura
+o pseudocódigo é uma maneira intermediária entre a linguagem natural e uma linguagem de programação de representar um algoritmo
+ela utiliza um conjunto restrito de palavras-chave, em geral na língua nativa do programador, que tem equivalentes nas linguagens de programação
+além disso, o pseudocódigo não requer todo a rigidez sintática necessária numa linguagem de programação, permitindo que o aprendiz se detenha na lógica do algoritmos e não no formalismo da sua representação
+na medida em que se obtém mais familiaridade com os algoritmos, então o pseudocódigo pode ser traduzido para uma linguagem de programação
+para que seja possível armazenar e manipular dados no computador é necessário representá-los internamente de alguma forma
+nós seres humanos, representamos nossos números usando um sistema que chamamos de sistema decimal  ou sistema na base umzero 
+esse sistema, que se originou do fato de utilizarmos os umzero dedos das mãos para realizarmos nossas contas, possui umzero diferentes dígitos para representar as infinitas quantidades e valores que desejamos
+nos caso dos computadores digitais, a notação que é utilizada possui apenas dois algarismos ou dígitos para representar uma quantidade desejada, o zero e o um
+esse sistema de representação é chamado de sistema binário  ou sistema na base dois  e utiliza a noção de ligado desligado, ou verdadeiro falso, ou finalmente zero um um 
+pelo fato de um número precisar de muitos algarismos para ser expresso no sistema binário, outras formas de representação auxiliares também são utilizadas nos computadores, como por exemplo a representação pelo sistema hexadecimal  ou sistema na base umseis  que utiliza umseis dígitos , e a representação no sistema octal  ou sistema na base oito  que utiliza oito dígitos
+a quantidade de algarismos necessária para representar um determinado número varia de acordo com o sistema de representação utilizado
+se o sistema é decimal, o maior número que pode ser representado utilizando n algarismos será umzeron
+os dados em um computador devem ser armazenados de acordo com o tipo de informação que se deseja representar e com o tipo de operação que será realizada com eles
+a representação correta e adequada de uma informação permite otimizar os recursos computacionais disponíveis, além de acelerar o processamento
+a seguir são definidos os tipos de dados mais comuns encontrados na maioria das linguagens de programação e que constituem a base de como qualquer informação será armazenada no mesmo
+inteiro são os números pertencentes ao conjunto dos inteiros, isto é, que não possuem parte fracionária
+podem ser positivos, nulos ou negativos
+ real são os números pertencentes ao conjunto dos reais, isto é, que podem possuir parte fracionária
+também são chamados de ponto flutuante devido à maneira como o computador os armazena
+ caractere são os valores pertencentes ao conjunto de todos os caracteres numéricos , alfabéticos  e especiais 
+esse conjunto também é conhecido como conjunto de caracteres alfanuméricos
+os caracteres alfanuméricos são armazenados internamente no computador na forma numérica  binária  utilizando o padrão ascii
+lógico o tipo lógico é utilizado para representar informações que só podem assumir dois valores, o valor verdadeiro  v  ou o valor falso  f 
+estes valores também podem ser entendidos como: ligado desligado, um zero, alto baixo, fechado aberto, etc
+dentro de um algoritmo podemos encontrar basicamente duas classes diferentes de dados, os dados constantes e os variáveis
+um dado é uma constante quando seu valor não se altera ao longo do tempo em que o algoritmo é executado, ou seja, permanece o mesmo desde o início até o final da execução
+já um dado que pode ter seu valor alterado durante a execução do programa é tido como uma variável
+para que os dados sejam manipulados no computador, é necessário que estes estejam associados a um nome, um identificador
+o conteúdo deste identificador será o dado em si e o seu nome será usado para acessar o dado e realizar operações com o mesmo
+uma analogia útil para entender o conceito e a necessidade de utilização do identificador seria pensar no mesmo como uma placa de sinalização que indica  delimita  uma determinada região ou espaço na memória do computador onde o dado  informação  desejado está localizado
+sendo assim, toda vez que se deseja acessar uma determinada informação utilizamos o nome dessa placa de sinalização e recuperamos o conteúdo que está localizado dentro do espao¸ delimitado pela mesma
+como dito anteriormente, ao longo do programa o dado será manipulado através do nome do seu identificador, sendo assim, o primeiro passo para utilizarmos os dados é a nomeação do seu idenficador e a definição do seu tipo  no caso de identificadores variáveis , ou do seu valor  no caso de identificadores constantes 
+a definição dos dados em algoritmos também é conhecida como declaração
+um identificador  sendo ele variável ou constante  declarado com um determinado tipo de dados ficará restrito a armazenar valores daquele tipo específico  inteiro, real, caractere, lógico 
+na maioria dos casos, se houver uma tentativa de atribuir a um identificador um tipo diferente daquele para o qual ele foi definido irão ocorrer erros de compilação, de execução ou até mesmo perda de dados após realizada a declaração de um identificador, é possível iniciar a manipulação dos dados que esse identificador irá representar a partir da atribuição de valores ao mesmo
+esse processo de atribuir ou alterar o valor dos dados de um identificador é chamado de atribuição e é representado pelo símbolo ← quando estivermos trabalhando com identificadores variáveis, e pelo símbolo = quando estivermos trabalhando com identificadores constantes
+uma varíavel pode armazenar apenas um único valor por vez, sendo que sempre que um novo valor é atribuído a variável o valor anterior que estava armazenado na mesma é perdido
+as expressões aritméticas são aquelas em que os operadores são aritméticos e os operandos são valores do tipo numérico  inteiro ou real 
+esses valores numéricos podem ser acessados por meio de identificadores constantes ou por meio de variáveis
+as operações aritméticas fundamentais são: adição, subtração, multiplicação, divisão, potenciação, divisão inteira e o resto  módulo  quando uma expressão aritmética precisa ser avaliada num algoritmo, o analisador processa a expressão dando prioridade para certos operadores
+as sub-expressões que contém estes operadores serão avaliadas primeiro e seu valor substituído pela sub-expressão inteira
+a seguir a próxima sub-expressão na ordem é avaliada e assim por diante até que toda a expressão corresponda a um só valor
+cada operação aritmética em um algoritmo deve ser escrita em apenas uma única linha
+sendo assim, quando uma expressão matemática usual é escrita precismamos utilizar parênteses para garantir que todas as operações sejam executadas na ordem adequada
+ ao desenvolvermos um algoritmo é bastante comum deixarmos parênteses não pareados nas expressões aritméticas, o que é um erro difícil de se localizar posteriormente
+um teste prático para evitarmos esse tipo de contratempo consiste em contar na expressão quantos parênteses esquerdos e direitos existem, e conferir se eles estão em mesmo número
+para a maioria das expressões aritméticas executadas em um algoritmo é possível associar um valor definido, ou seja, o resultado da expressão proprimamente dito
+por exemplo, a expressão dois + tres, depois de avaliada, tem um valor definido igual a cinco, e a expressão dois ∗ ∗umzero tem um valor definido de umzerodoisquatro
+entretanto, nem todas as expressões aritméticas possuem um valor definido matematicamente, é o caso de divisões de números pelo valor zero  zero  ou de raízes quadradas de números negativos
+a avaliação desse tipo de expressão deve ser sempre evitada a partir da verificação dos valores que farão parte das mesmas, ou seja, se um denominador é nulo ou se o número cuja raiz será extraída é negativo, a operação não deve ser realizada
+é importante ressaltar que expressões as aritméticas podem ser simplificadas, ou escritas de maneira diferente se observarmos as igualdades existentes entre as operações
+as expressões lógicas são aquelas cujo valor só pode ser verdadeiro ou falso
+são compostas por operadores relacionais, operadores lógicos, e por identificadores variáveis ou constantes do tipo lógico.as expressões lógicas também podem ser compostas por resultados de expressões aritméticas
+os operadores relacionais são aqueles que comparam dois valores do mesmo tipo
+o retorno da expressão relacional indica se o resultado da comparação foi verdadeiro ou falso
+por exemplo, a expressão dois < tres é uma expressão lógica válida cujo valor é verdadeiro
+em contrapartida, a expressão dois = oito é uma expressão lógica também válida, mas cujo valor é falso
+os operadores lógicos são usados para representar situações lógicas que não podem ser representadas por operadores aritméticos
+também são chamados conectivos lógicos por unirem duas expressões simples numa composta
+podem ser operadores binários, que operam em duas sentenças ou expressões, ou unário que opera numa sentença só
+o primeiro deles é o operador binário de conjunção ou e lógico, representado por ∧ ou and
+quando duas expressões são unidas por este operador, a expressão resultante só é verdadeira se ambas expressões constituintes também são
+por exemplo “chove e venta” só é verdadeiro se as duas coisas forem verdadeiras, “chove” e também “venta”
+se uma das sentenças não ocorrer, a sentença como um todo é falsa
+o segundo operador é o operador binário de disjunção ou ou lógico, representado por ∨ ou or
+neste caso, se qualquer uma das expressões constituintes for verdadeira, a expressão completa também será
+por exemplo, “vou à praia ou vou ao campo” é um sentença verdadeira caso qualquer uma das duas ações acontecer, ou ambas
+é verdadeira, se eu for a praia e não ao campo, se eu for ao campo e não a praia e se eu for a ambos
+para o caso em que deve-se garantir que somente uma das sentenças aconteça, define-se o operador ou-exclusivo, cujo símbolo é ⊕ ou xor
+como o nome diz, é semelhante ao operador ou com exclusividade na veracidade dos operandos, isto é, somente um dos operandos pode ser verdadeiro
+no exemplo anterior, se o concectivo fosse o ou-exclusivo, a sentença composta só seria verdadeira se fosse à praia ou ao campo, mas não ambos
+o último dos operadores é o operador unário não lógico, representado por ¬
+sua função é simplesmente inverter valor lógico da expressão a qual se aplica.para imprimirmos algum tipo de informação na tela do computador utilizamos o comando escreva seguido da informação que será escrita
+dessa forma, se quisermos imprimir uma mensagem como por exemplo “ola mundo.”, isto seria feito com a instrução escreva  olá mundo  as aspas servem para delimitar uma sequência de caracteres, uma constante, mas não fazem parte do conteúdo a ser impresso
+para imprimir o valor de uma variável, basta colocar o seu identificador diretamente
+escreva  ttt  imprime umdoistres na saída
+como a sequência ttt não tem aspas, durante a execução o algoritmo considera ttt como sendo o identificador de uma variável e o substitui pelo seu conteúdo, neste caso umdoistres
+se por outro lado, colocássemos ttt ← umdoistres seria impresso “ttt” na saída
+ttt é essencialmente diferente de ttt
+o primeiro indica o identificador de uma variável
+o segundo, com aspas, simplesmente uma sequência de letras
+em resumo, as aspas previnem que o algoritmo interprete o conteúdo da cadeia de caracteres
+é possível escrever valores de qualquer tipo existente, como valores reais, valores lógicos, valores inteiros, do tipo sequência de caracteres, resultados de expressões aritméticas, resultados de expressões lógicas, resultados de expressões relacionais
+ da mesma maneira que necessitamos enviar informações de dentro do algoritmo para a saida padrão  em geral a tela , também necessitamos receber informações de fora do algoritmo, a partir da entrada padrão  em geral o teclado 
+considere por exemplo um sistema de locadora, sempre que alugamos um filme, o sistema irá necessitar de algumas informações como, por exemplo: o nosso código de cliente  ou o nome  e o nome da fita que estamos locando
+essas informações são fornecidas pelo sistema a partir de comandos de entrada de dados
+para realizarmos a entrada de dados utilizaremos o comando leia
+ao utilizar o comando leia o programador deve saber de antemão qual a variável que irá armazenar o valor que será fornecido pelo usuário
+no caso do exemplo anterior, os valores que seriam fornecidos pelo usuário são referentes ao código do cliente e ao nome da fita que o mesmo está locando
+sendo assim, é necessário declarar variáveis que possam armazenar valores que sejam compatíveis com as informações solicitadas ao usuário
+por exemplo, a informação do código do cliente pode ser um valor do tipo inteiro, então é necessário que declaremos no algoritmo uma variável desse tipo, seguindo esse mesmo raciocínio, a informação do nome da fita pode ser uma informação do tipo caractere, sendo também necessário que declaremos no algoritmo uma outra variável para receber essa informação
+após declaradas as variáveis que receberão os valores fornecidos pelo usuário podemos utilizar o comando leia para receber esses valores
+para isso devemos escrever leia seguido da variável que receberá os valores entre parênteses
+ num processo geral de execução de um algoritmo implementado em uma linguagem de programação, a execução começa na primeira linha e vai avançando sequencialmente executando o código linha após linha até chegar no final
+entretanto, frequentemente surge a necessidade de colocar instruções dentro de um programa que só serão executadas caso alguma condição específica aconteça
+para esta finalidade a maioria das linguagens possui estruturas de condição para realizar esta tarefa
+neste capítulo examinaremos o seu funcionamento e suas peculiaridades
+nos capítulos anteriores foram apresentados alguns conceitos básicos sobre as estruturas e comandos que são utilizados para construir um algoritmo simples
+como visto, podemos solicitar valores de entrada aos usuários do sistema utilizando o comando leia  , e podemos ainda enviar valores de saída do sistema por meio do comando escreva  
+entretanto, as possibilidades de construção de algoritmos que temos até o presente momento são bastante limitadas, pois ainda não estamos aptos a tomar decisões durante o tempo de execução do algoritmo, ou até mesmo de classificar determinados valores de variáveis
+por exemplo, considere que precisamos desenvolver um algoritmo que classifique uma determinada pessoa entre maior de idade ou menor de idade
+para esse problema sabemos que precisamos avaliar a idade da pessoa, e que se essa idade for maior  ou igual  que umoito anos a pessoa é considerada maior de idade
+neste caso, para um intervalo de valores da idade o algoritmos executa um conjunto de ações e para outro intervalo executa um outro conjunto de ações
+neste tipo de situação, onde um determinado valor é avaliado para a partir do resultado dessa avaliação executar alguma ação, utilizamos as estruturas de condição
+dentro de uma estrutura se-então-senão é perfeitamente possível utilizarmos mais de uma linha de comando, ou até mesmo outras estruturas se-então-senão
+existem situações em que os caminhos para a tomada de uma decisão acabam formando uma espécie de árvore com diversas ramificações, onde cada caminho é um conjunto de ações
+uma outra alternativa para trabalhar com comandos condicionados a um determinado valor é a estrutura caso seja
+nessa estrutura o valor de uma determinada variável é avaliado e caso esse valor coincida com determinado valor pré-estabelecido um determinado comando é executado
+ uma das principais características que consolidaram o sucesso na utilização dos computadores para a resolução de problemas foi a sua capacidade de repetir o processamento de um conjunto de operações para grandes quantidades de dados
+exemplos de conjuntos de tarefas que repetimos diversas vezes dentro de uma situação específica podem ser observados largamente no nosso dia a dia
+as estruturas de repetição provém uma maneira de repetir um conjunto de procedimentos até que determinado objetivo seja atingido, quando a repetição se encerra
+todas as estruturas de repetição têm em comum o fato de haver uma condição de controle, expressa através de uma expressão lógica, que é testada em cada ciclo para determinar se a repetição prossegue ou não
+por exemplo, consideremos que uma determinada loja de calçados efetue uma venda no crediário para um cliente que ainda não está registrado em seu sistema
+para realizar essa venda, é necessário cadastrar o cliente, solicitando informações básicas como: nome, endereço, cpf, rg, etc
+essas etapas para realizar o cadastro seguirão sempre a mesma ordem para cada novo cliente que aparecer na loja
+caso precisássemos desenvolver um sistema para efetuar os cadastros de clientes de uma loja, não haveria lógica que programássemos novamente essas etapas para cada cliente novo, bastaria que desenvolvêssemos uma única vez a seqüência de etapas e que a cada novo cliente usássemos a seqüência previamente definida
+as estruturas de repetição são basicamente três: enquanto-faça, faça-enquanto e parafaça
+a diferença básica é que enquanto-faça primeiro testa a condição para depois realizar o bloco de comando, ao contrário de faça-enquanto que primeiro executa o bloco para depois realizar o teste
+a estrutura para-faça tem embutida um mecanismo de controle para determinar quando o laço deverá ser terminado
+de maneira geral, o mecanismo que altera o valor da expressão lógica que controla o laço está embutido dentro do bloco de comandos ou depende de alguma variável externa que será fornecida em tempo de execução
+a estrutura enquanto-faça é usada principalmente quando não se sabe com antecedência a quantidade de repetições que precisam serrealizadas
+por exemplo, suponha que estamos oferecendo ao usuário tres opções de menu sendo que uma dessas opções seria a de sair do programa
+caso desejemos que o usuário possa executar várias vezes as opções dispostas no menu, não temos como adivinhar quando o usuário irá optar por sair do algoritmo, sendo assim, não podemos limitar a repetição à um determinado número de vezes
+considere um problema mais específico onde necessitamos fazer a leitura de vários nomes de pessoas e a cada nome que é lido devemos escrever na tela a frase "o nome digitado foi nome", onde nome é a variável
+a princípio isso deve ser feito inúmeras vezes e quando o usuário digitar um nome igual a “fim” o algoritmo deve parar
+da mesma maneira que no exemplo anterior não podemos definir quando o usuário irá digitar “fim”, e não temos como precisar a quantidade de vezes que o algoritmo deverá repetir esse conjunto de ações
+a estrutura faça-enquanto difere da estrutura enquanto-faça somente por executar o bloco de comando antes de testar se a condição é verdadeira, ou seja, o teste da condição é realizado apenas ao final da estrutura
+assim, utilizando o faça-enquanto o bloco de comandos será sempre executado pelo menos uma vez, mesmo que a expressão de controle seja falsa
+em situações onde é necessário realizarmos contagens de ocorrências, ou somatórios e produtórios de valores dentro de um conjunto de dados, devemos utilizar variáveis específicas para fazer o armazenamento dos resultados
+chamamos de contadores para as variáveis que realizam a contagem de ocorrências de um determinado valor  ou situação  e de acumuladores para as variáveis responsáveis por armazenar os resultados de somatórios e produtórios de valores um algoritmo para calcular a média das idades das pessoas do sexo feminino com umoito anos ou mais, pode ser facilmente desenvolvido utilizando um contador para armazenar a quantidade de pessoas que pertencem a esse conjunto e um acumulador para armazenar a soma das idades dessas pessoas
+no caso de utilizarmos acumuladores para armazenar produtórios é necessário a inicialização do mesmo com o valor neutro da multiplicação  o número um 
+a cada iteração o acumulador é então multiplicado por um outro termo qualquer, dependendo do problema em questão
+vetores são varíaveis compostas que podem armazenar um conjunto de valores
+todos estes valores são referenciados através do nome do vetor  o mesmo para todo o conjunto de valores  e de um índice  distinto para cada valor
+ as variáveis vetoriais são análogas aos vetores usados na matemática e na física, em que um vetor
+as valores armazenados numa variável vetorial são todos do mesmo tipo, por isso os vetores são chamados de variáveis compostas homogêneas
+os vetores são imprescindíveis quando se quer armazenar diversos valores de um mesmo tipo e referenciá-los com o mesmo nome
+por exemplo, para armazenar as idades de vários alunos de uma turma, poderia-se criar um vetor idade com oito posições; cada índice de zero a sete corresponderia a um funcionário
+a figura oito.um ilustra a variável idade, os respectivos valores armazenados e os índices de cada elemento
+os vetores são declarados anexando-se ao nome da variável um colchete com o número de posições que o vetor porerá conter.
+quando pesquisamos no google por algoritmo, aparecem mais de quatro milhões de resultados
+muita coisa, né
+mas você sabe o que eles são e como usá-los
+todos os dias milhares de desenvolvedores conseguem criar uma carreira e resolver problemas dos mais variados níveis, utilizando algoritmos e a lógica de programação
+ pensando nisso, no artigo de hoje, irei explicar o que são algoritmos, como eles funcionam e darei exemplos práticos de sua utilização
+além disso, você verá como é possível aprender mais sobre algoritmos sem sair de casa, apenas pelo seu computador e celular
+preparado para ter uma aula básica de algoritmos e lógica de programação
+então, vamos lá.
+antes de partirmos para o conteúdo completo deste artigo, preciso que você assista ao vídeo a seguir
+trata-se de uma das aulas do curso completo de lógica de programação e algoritmos
+essa aula vai servir para introduzir o assunto, te dar um norte e, além disso, vai te ajudar a compreender melhor o mundo dos algoritmos
+como você pôde ver no vídeo, todo programa é uma série de algoritmos organizados
+isso significa que enquanto você entrava nesse texto, algoritmos se encarregavam de entender o que você queria, buscar no banco de dados e preparar a tela que você está vendo agora
+ uma das vantagens dos algoritmos é que eles possuem uma lógica em comum
+ou seja, se você aprende a lógica por trás dos algoritmos computacionais, você poderá programar em praticamente qualquer linguagem de programação
+o que vai mudar de uma linguagem para a outra, geralmente, são as palavras reservadas, sintaxes e a forma como cada uma irá se estruturar
+ no dicionário, o termo que encontramos para algoritmo é o de:  “uma sequência de raciocínios ou operações que oferece a solução de certos problemas.”  isso significa que os algoritmos são uma série de passos necessários para resolver um determinado problema
+ “ok, mas como aplicamos isso na hora de programar e desenvolver sites e softwares.”
+quando entramos na área de desenvolvimento de software, as coisas podem parecer muito difíceis
+contudo, você precisa entender que programar significa aplicar lógica e algoritmos para solucionar problemas reais do nosso dia-a-dia
+ em outras palavras, qualquer solução de problema exige um pouco de nós, certo
+pois é, na área de programação isso não é diferente
+contudo, uma vez que você vence o obstáculo inicial, que seria criar seus primeiros algoritmos e aprender a programar em uma primeira linguagem, as coisas começam a ficar mais fáceis
+ bom, vamos esclarecer as coisas com um exemplo prático, vamos lá.
+imagine que você quer criar um aplicativo que receba uma frase do usuário e conte quantas letras e palavras existem ali  essa funcionalidade está presente no microsoft word 
+diante disso, de que forma o seu algoritmo deveria funcionar
+vamos pensar primeiramente no passo-a-passo dessa aplicação:
+a primeira parte de um algoritmo é saber com que tipo de dados que o algoritmo está lidando
+dessa forma, você saberá com o que precisa se preocupar no segundo passo, que é o processamento dos dados
+nesse exemplo, você estará lidando com letras e palavras, correto
+sendo assim, nossas entradas serão especificadas como texto
+tendo recebido as letras e palavras do usuário, de que forma elas podem ser contadas.
+uma forma de construir esse algoritmo seria tendo um contador que inicie em zero e vá aumentando a cada letra que for adicionada
+além disso, quando o usuário fosse inserir “um espaço”, poderia haver um outro contador que aumente separadamente, visando contar as palavras e não as letras
+no total, seriam dois contadores
+uma outra ideia que pode ser aplicada no processamento deste exemplo seria contar todas as letras e palavras apenas após todas elas terem sido inseridas
+resumindo, existem duas formas diferentes de resolver o mesmo problema, e ambas funcionam.
+ao final, teremos como resultado um número que representa as letras deste exemplo e outro que contou as palavras
+independente da forma como os cálculos forem feitos, poderemos ter essas duas saídas em qualquer um dos casos acima
+isso mostra que algoritmos podem funcionar de diferentes formas, dependendo de quem está desenvolvendo a solução
+muita gente acredita que não pode ser programador, pois não domina a matemática
+bom, temos uma resposta para você: isso não é verdade
+sim, é possível aprender algoritmos e lógica de programação mesmo sem ser um craque nas exatas
+ claro que que, se você tem dificuldade com essas áreas do conhecimento, talvez sua curva de aprendizado seja um pouco maior do que outras pessoas
+em outras palavras, você terá mais dificuldades para aprender
+contudo, isso não quer dizer que você não pode ser um ótimo desenvolvedor no futuro
+por isso, procure aprender e acreditar em si próprio
+e, obviamente, estude muito
+ uma boa forma de entender melhor o que é lógica de programação e de saber exemplos de como ela se aplica em nosso dia-a-dia, é através deste artigo
+nele você tem exemplos claros e simples de como é a lógica de programação e algoritmos para iniciantes
+quando falamos de lógica de programação e algoritmos, existem alguns padrões que são necessários para se ter uma melhor compreensão do assunto
+vamos citar alguns deles aqui:  tipos de variáveis assim como o exemplo que demos acima, as entradas de um algoritmo são muito importantes porque elas agem de diferentes formas
+trabalhar com números é uma coisa, com letras é outra e, com palavras, algo completamente diferente
+por isso é interessante saber que tipo de entradas existem
+ atualmente as mais comuns são: texto inteiro lógico real para ficar mais claro, vamos dar uma aplicação para cada um deles
+imagine que você quer desenvolver um formulário onde as pessoas coloquem seu nome, idade, sexo, se está trabalhando no momento e qual salário recebe
+para que sua aplicação funcione, na hora de processar os dados você terá que fazer a seguinte relação:  nome: texto idade: inteiro trabalha: lógico salário: real apenas texto pode ser aceito no campo de nome, como letras e palavras
+inteiros são aqueles números sem vírgula, ou seja, a idade do sujeito é um exemplo perfeito
+sobre o trabalho da pessoa, ela pode responder apenas sim ou não, sendo assim, trata-se de uma variável que armazena “verdadeiro” ou “falso”  também conhecida como booleana 
+e no caso do salário, o valor real é aquele que permite números com vírgula
+lembra que no nosso exemplo da contagem de palavras a gente citou que seria possível contar cada letra no momento que ela entrasse
+então, para fazer isso utilizamos um recurso chamado estruturas de repetição
+elas funcionam em função do que está vindo como entrada
+ a estrutura básica delas é mais ou menos assim:  enquanto essa condição estiver acontecendo  fazer determinada coisa se a condição parar de acontecer  fazer outra coisa na hora de executar o código, ele vai ler linha por linha assim como nós lemos, uma após a outra
+no nosso exemplo de contar as palavras, esse algoritmo funcionaria assim:  enquanto o usuário estiver escrevendo novas letras  contar a letra e somar com o número de letras já contadas se o usuário parar de inserir letras  parar de contar e exibir o número de letras recebidas dessa forma, o programa contabilizará cada uma das letras que foi colocada, exibindo um valor final apenas quando não houverem mais letras
+com isso, ele irá parar quando a última letra entrar porque dissemos pra ele rodar apenas enquanto houverem letras
+ claro que esse algoritmo é muito simples e não prevê diversas situações que provavelmente iriam acontecer
+contudo, ele serve muito bem para ilustrar a lógica das estruturas de repetição que existem por trás de praticamente todos os algoritmos
+ em outras palavras, isso também mostra como os algoritmos e a lógica de programação é mais simples do que parece
+não concorda
+ geralmente quando o pessoal escuta a palavra algoritmo, esse mesmo pessoal fica assustado e já imaginando algo complexo e difícil
+o algoritmo nada mais é do que uma receita, uma sequência de passos e instruções para executar ações, visando solucionar um problema
+achou mais simples do que parecia.
+ que tal descobrir mais sobre o que é um algoritmo e aprender tudo sobre o assunto
+veja como fazer tudo isso a seguir
+como mencionei várias vezes neste texto, aprender algoritmos e lógica de programação não é um bicho de sete cabeças
+talvez você possa ter receios de entrar nessa área, mas confie em nós: aprender algoritmos é possível sim
+afinal de contas, é o primeiro passo que você precisa dar para ser um programador ou desenvolvedor de software
+ o primeiro passo não pode ser difícil, não é.
+ claro, à medida que você vai evoluindo na carreira, as coisas vão ficando cada vez mais complexas, mas isso são outros quinhentos
+quando você chegar nesse estágio da carreira, você terá uma base muito melhor de conhecimentos e habilidades para solucionar o problema em questão, usando as mais diversas tecnologias para programadores
+ dito isso, para te incentivar a dar esse pontapé inicial, que tal um desconto exclusivo em nosso curso completo de lógica de programação e algoritmos
+basta clicar aqui e aproveitar o desconto para leitores do blog
+se você ainda não está disposto a investir nisso, que tal mais alguns posts gratuitos sobre o tema
+se sim, dê uma olhada em nosso kit para programadores iniciantes
+tenho certeza que você irá gostar
+ espero que você tenha gostado do post e tenha se tranquilizado um pouco em relação ao conceito de algoritmos e, claro, ao seu aprendizado
+dito isso, não esqueça de deixar o seu comentário aqui embaixo
+abraços e até a próxima.
+algoritmos estão em toda a parte
+eles operam no mercado de ações, decidem se você pode contratar um financiamento imobiliário e um dia poderão dirigir o seu carro
+eles fazem buscas na internet, mostram anúncios cuidadosamente escolhidos nos sites que você visita e decidem quais os preços mostrar em lojas on-line
+eles podem ser objeto de argumentos legais, causam preocupações regulatórias  no início deste mês, um grupo de especialistas pediu a proibição de algoritmos em robôs de guerra projetados para matar pessoas 
+alguns algoritmos, como o que alimenta os resultados de pesquisa do google, fez com que seus inventores ficassem muito ricos
+os algoritmos podem até afetar a forma como os cidadãos votam, alterando o resultado de uma eleição
+mas o que exatamente são algoritmos e o que os torna tão poderosos
+foi o que este post da revista the economist  explicou
+  saiba mais vulcões podem abastecer os carros elétricos do futuro aceleradora fundada por irmão de elon musk quer ajudar a construir fazendas urbanas está sobrando emprego no canadá quer produzir sua energia elétrica
+veja por que este é um ótimo momento um algoritmo é, essencialmente, uma forma sem cérebro de fazer coisas inteligentes
+é um conjunto de etapas precisas que não precisam de grande esforço mental para serem seguidas, mas que, se obedecidas exatamente e mecanicamente, levarão ao resultado desejado
+o método de adição por colunas  em que você separa as unidades das dezenas das centenas  é um exemplos com o qual todos estão familiarizados - se você seguir o procedimento corretamente, chegará à resposta correta
+assim como a estratégia, redescoberta milhares de vezes por estudantes entediados, para ganhar sempre o jogo da velha
+a chave é: cada passo deve ser o mais simples possível, sem deixar espaço para ambiguidades ou dúvidas
+cozinhar e dirigir, por exemplo, são tipos de algoritmos
+mas as instruções como "cozinhas a carne até que fique macia" ou "siga em frente por alguns quilômetros" são muito vagas para serem seguidas sem, pelo menos, alguma interpretação
+algoritmo não é o bicho papão dos contos infantis
+se realmente pararmos para ver, ele é bastante simples, já que está frequentemente presente em nossas vidas
+ao começarmos a fazer algoritmos, fica muito mais fácil desenvolvê-los com segurança quando realizamos analogias com coisas simples do dia a dia
+é isso que vamos ver a seguir
+algoritmo é a base da ciência da computação e da programação
+quando falamos em programar, falamos, basicamente, em construir um algoritmo
+todo programa de um computador é montado por algoritmos que resolvem problemas matemáticos lógicos com objetivos específicos
+ mesmo pessoas que usam uma linguagem de programação para fazer seus programas de computadores estão, na realidade, elaborando algoritmos computacionais em suas mentes
+um algoritmo não passa de passos sequenciais e lógicos que são organizados de forma a realizar a conclusão de certo problema
+mas precisamos entender que existem dois tipos de algoritmos – os não estruturados e os estruturados
+ programadores usam algoritmos estruturados, pois se adequam a determinado objetivo ou certo fim
+ mas não são apenas os programadores que usam algoritmos
+em nosso cotidiano, os algoritmos não estruturados são trabalhados em nossas mentes sem nem mesmo percebermos
+vamos aprender mais sobre eles
+ algoritmos não estruturados em nossa rotina, executamos algoritmos sem perceber
+quando você levanta pela manhã, quando você sai de casa, quando almoça
+você está sempre executando tarefas enquanto realiza análises de decisões, análises de possibilidades, valida argumentos e diversos outros processos
+ há muitos exemplos de algoritmos
+um deles são os manuais de instruções
+manuais de instruções sempre contêm informações detalhadas sobre o que fazer em cada situação e nos previnem de maiores problemas
+imagine a seguinte situação:  situação: dirigir até uma lanchonete e almoçar
+o que é preciso fazer para realizá-la
+ umº passo: saia de casa
+doisº passo: entre no carro
+tres º passo: se a garagem estiver aberta, saia
+senão, abra-a e saia
+quatro º passo: dirija até o local desejado
+cincoº passo: se chegou, estacione o carro
+senão, continue até chegar e estacionar
+seis º passo: se estacionou, retire a chave da ignição e saia do carro
+sete º passo: tranque o carro e dirija-se à lanchonete
+oito º passo: se a lanchonete estiver aberta, entre e dirija-se ao caixa
+senão, volte para o carro
+procure outra lanchonete aberta, entre e dirija-se ao caixa
+noveº passo: faça o pedido e efetue o pagamento
+umzeroº passo: aguarde
+umumº passo: se o número de seu pedido for chamado, dirija-se ao caixa e pegue sua refeição
+senão, aguarde ser chamado e pegue-a
+umdois º passo: procure um lugar para sentar e coma
+umtres º passo: se estiver satisfeito, jogue o resto na lixeira
+senão, faça outro pedido e coma
+umquatroº passo: saia da lanchonete e dirija-se ao carro
+umcinco º passo: entre, ponha o sinto de segurança e vá para casa
+você conseguiu almoçar
+ viu como você usa algoritmos na sua vida
+agora pense desde quando você acorda até quando você volta a dormir
+quantas tarefas necessitam de suas decisões
+com certeza muitas
+lógico que não paramos para ver a vida detalhadamente, mas quando percebemos que o que fazemos faz parte de um grande algoritmo de decisões, escolhas, entendemos como funciona um algoritmo computacional
+ abaixo estão listados alguns passos importantes para a escrita de um algoritmo computacional:  preste atenção à ordem lógica da execução das tarefas; lembre-se de que ele deve ter um início e fim; ele deve ser completo; deve ter um alto nível de detalhes; cada tarefa é uma instrução, assim, defina-a bem
+algoritmos estruturados são aqueles que buscam resolver problemas através do uso de um computador
+são criados com base em uma linguagem de programação e podem ser escritos de diversas formas
+ um algoritmo pode ser representado pelo chamado português estruturado, que é uma ferramenta que usa combinações de sequências, seleções e repetições
+são evitados advérbios e adjetivos, formas verbais diferentes da imperativa, muita pontuação e descrição esparsa
+ observe esse exemplo bem simples de algoritmo estruturado na linguagem de programação java
+ listagem um: exemplo de algoritmo estruturado em java  public class filmes extends conexao {        private string nome;     public string getnome   {            return  nome ;      }     public void setnome string nome  {     this.nome = nome;      } } nesse exemplo, vemos uma classe chamada filmes, que é uma extensão de outra classe chamada conexão
+logo após, é declarada uma variável e são implementados os métodos get set
+ para que um algoritmo em português estruturado seja conciso, ele deve seguir alguns pontos:  evitar comandos longos; evitar adjetivos e advérbios; ter comandos legíveis; ter os comandos bem alinhados; possuir comentários para o esclarecimento de comandos; evitar ninhos de se  muitas possibilidades desnecessárias para uma única situação
+ex.: se chover, eu pego o guarda-chuva; se não chover, eu não pego o guarda-chuva ou se eu pegar o vermelho, ele combinará com a roupa; se eu usar o roxo, não combinará 
+com essas noções de algoritmos podemos agora começar a programar sem medo
+afinal, todos nós temos um programador dentro de nós que realiza algoritmos diariamente e com toda a segurança
+um algoritmo nada mais é que a descrição de um passo a passo para a realização de uma tarefa, como o modo de preparo de uma receita simples de bolo
+veja:  um - bata as claras em neve  dois - misture as gemas com o açúcar e a margarina  tres - acrescente leite e farinha de trigo aos poucos  quatro - adicione o fermento e as claras em neve  cinco - despeja a massa em uma forma  seis - coloque no forno a umoitozero°c por cerca de cincozero min  em outros exemplos no dia a dia, o próprio ato de ir para a escola pode ser um algoritmo, como:  um - sair de casa  dois - entrar no ônibus  tres - sair do ônibus  quatro - entrar na escola  algoritmo na computação quando se trata de computadores, a definição de algoritmo é quase a mesma, como uma série de passos para que um programa realize uma ação
+para que isso ocorra corretamente, há algumas regras básicas
+a primeira é que a ação precisa ter início e fim
+além disso, todos os passos e comandos devem estar descritos de maneira clara e objetiva para não dar abertura a ambiguidade
+o computador não “pensa” sobre a ação
+ele somente segue os passos
+ o fluxograma é uma representação bem prática para entendermos o conceito de algoritmo na computação
+para tal, vamos utilizar o exemplo de uma simples ação para abrir um link no navegador web
+a entrada é a posição inicial do mouse na página, que constrói o contexto para que os comandos sejam dados
+a variável diz respeito à opção do usuário de clicar ou não no hyperlink
+a saída é a ação final, ou seja, a abertura ou não da nova página
+veja:   os símbolos utilizados na figura acima respondem a um padrão, o que facilita bastante a representação dos algoritmos dessa maneira
+ lógica de programação entender a lógica dos algoritmos é fundamental para quem começa a programar, já que a construção de programas para computadores se baseia totalmente na definição do passo a passo para ações
+enquanto a lista da receita de bolo dá uma visão narrativa às ações, o fluxograma representa isso de maneira mais visual, pois as linguagens de programação são responsáveis por transmitir a sequência de afazeres com um “idioma” que o computador entende
+ portanto, ao passo que você aprende as linguagens mais básicas de escritas de códigos, é possível continuar estudando para avançar para as mais complicadas
+isso porque a lógica dos algoritmos sempre estará ali presente; o que muda é o formato com que os comandos são descritos, trazendo as particularidades de cada linguagem
+ usos dos algoritmos além de ações simples, como fazer um bolo ou abrir uma página no navegador, os algoritmos são muito utilizados no mercado da tecnologia
+atualmente possuímos máquinas que alimentam outras com informações e dados, conceito próximo do machine learning
+com isso, são construídos algoritmos capazes de reter informações e transformá-las em algo entendido pelos computadores para daí formar outro algoritmo
+veja alguns exemplos disso:  algoritmos do facebook diariamente, o facebook reúne inúmeras informações dos usuários, coletando dados sobre a quantidade de mensagens trocadas, os conteúdos mais visualizados, likes, posts ocultados e todas as outras funções contidas nessa rede social
+tudo isso alimenta um banco de dados
+ essas informações comportamentais  likes, comentários, etc
+ são transformadas em comandos para outros algoritmos
+utilizando uma série de variáveis, essa máquina consegue criar sistemas capazes de modificar o que o usuário vê no site de acordo com as suas preferências
+o objetivo é utilizar os dados de preferências para dar à pessoa exatamente o que ela gosta, a fim de convencê-la a passar mais tempo na página e dar mais informações que serão novamente coletadas fazendo a máquina do facebook girar
+ algoritmo do google as máquinas do google são responsáveis por varrer a internet para indexar - armazenar as informações no banco de dados da google - os bilhões de páginas encontradas na rede
+essas páginas, por sua vez, fornecem ao buscador uma série de dados, como textos, imagens e vídeos
+ seguindo mais de doiszerozero critérios, o google é capaz de categorizar essas páginas através de um sistema bem conhecido da empresa: o pagerank
+utilizando-se de algoritmos definidos por inteligência artificial, as máquinas ranqueiam os conteúdos de acordo com a relevância, mostrando-os na ordem do mais para o menos relevante nas páginas com os resultados da sua busca
+ aprenda mais sobre outros termos tão falados na tecnologia, como:  o que é big data
+ as tecnologias por trás dos assistentes pessoais  inovações que vêm por aí: a internet das coisas algoritmo do instagram: um termo que pode deixar social medias e pessoas que trabalham com a rede social puxando os cabelos
+o mistério que ronda essa tecnologia pouco tem a ver com o quanto ela é secreta ou pública, mas sim com o que o algoritmo pode fazer com alguns perfis, baixando o alcance e o engajamento
+ nesse texto, vamos desconstruir
+aqui a gente te explica exatamente como funciona o algoritmo do instagram em doiszeroumnove, quais critérios utiliza pra ranquear os conteúdos e também como você pode se aproveitar dele pra se dar bem na rede
+continua lendo
+ como o algoritmo do instagram funciona a primeira coisa que você precisa saber sobre o instagram é: assim como qualquer empresa, a plataforma quer tirar o máximo de lucro possível com os anunciantes
+ou seja, quanto mais pessoas virem um anúncio, melhor pro anunciante
+sendo melhor anunciante, ele vai dar ainda mais dinheiro pro instagram
+ para conseguir mais anúncios, o instagram precisa que a gente gaste o maior tempo possível na rede
+dessa forma, em vez de passar cinco minutos no instagram e ser impactados por três anúncios, por exemplo, gastamos três horas do nosso dia e vemos mais de cincozero anúncios
+melhor pros anunciantes
+ algumas pessoas podem pensar “o instagram vai virar um novo facebook.”  bom, a gente espera que não
+e a plataforma realmente caminha para o sentido oposto disso, fazendo com que os anúncios rendam bons resultados e lançando novos recursos a cada mês, o que acaba injetando a dose de “modernidade” que toda rede social precisa pra sobreviver nos dias atuais
+ dito isso, vamos aos principais critérios de rankeamento do instagram:  um
+interesses o algoritmo do instagram entende o quanto você gosta de um assunto pela forma como você se comporta dentro da ferramenta
+se você curte muitos posts de maquiagem e comenta em vídeos de cachorros, por exemplo, o algoritmo entende que deve dar prioridade a esses temas no seu feed
+ para isso eles usam uma tecnologia que consegue reconhecer o conteúdo das imagens em posts
+ou seja, se você sente falta de ver mais publicações de algum perfil específico, a dica é curtir e comentar em posts dessa conta para deixar bem claro pro instagram que aquele conteúdo te interessa e que você quer ver mais dele
+ mas não esqueça: te mostrando conteúdos do seu interesse, o instagram consegue te manter mais tempo na plataforma e, de quebra, te mostrar mais anúncios
+ dois
+cronologia ainda que o feed cronológico tenha dado lugar ao feed de relevância desde doiszeroumseis, o algoritmo mais atualizado do instagram voltou a levar em consideração o tempo de cada post
+ quem aí lembra de abrir o instagram e ver uma publicação de três dias atrás
+pois é
+hoje em dia isso só acontece se você passar muito tempo sem entrar no app porque, atualmente, o instagram quer mostrar a você os conteúdos de seu interesse que estejam atualizados também
+ tres
+relacionamento outro critério importantíssimo que o instagram olha é o seu relacionamento
+o algoritmo consegue descobrir com que pessoas você mais se relaciona a partir da suas interações
+envio de dms, quem você marca nas suas fotos, quais stories você mais responde… tudo isso indica pro instagram quais são seus perfis preferidos
+ fazer com que você veja com prioridade os posts dos seus amigos, da sua família e dos seus artistas preferidos é um dos objetivos da plataforma – pra te manter lá dentro viciado, claro
+ é bom lembrar também que, por ter o mesmo dono que o facebook, o instagram não deixaria escapar tão facilmente todas as informações que já possui de você na outra rede social
+eles estão sempre utilizando os dados do facebook pra otimizar o algoritmo também
+esses são os três principais critérios que o  algoritmo do instagram utiliza pra rankear os posts no seu feed e na aba explorar
+mas há ainda outras questões que também influenciam ele:  quatro
+usabilidade a frequência com que você usa o instagram também influencia em como o seu feed vai aparecer
+quem usa muito a plataforma vai receber conteúdos sempre bem atualizados
+ já quem entra uma vez no dia ou até mesmo poucas vezes na semana, recebe conteúdos mais antigos, mas que sejam de maior interesse
+ cinco
+quem você segue o algoritmo também leva em consideração a quantidade de perfis que você segue
+se o usuário segue pouquíssimas pessoas, é provável que ele receba uma boa parte do conteúdo de todos esses perfis
+ ao mesmo tempo, quanto mais gente você seguir, mais difícil vai ser para o instagram te mostrar tudo, já que você vai ter que gastar horas e horas rolando a tela pra conseguir olhar a totalidade dos posts
+ como usar o algoritmo do instagram ao seu favor se o algoritmo do instagram usa critérios para priorizar alguns conteúdos e despriorizar outros, significa que a gente pode trabalhar na rede social com o objetivo de bater esses critérios
+montamos uma listinha pra você seguir por aí:  um
+use os novos recursos do instagram anota pra não esquecer: o instagram recompensa perfis que usam os recursos novos do da rede social
+e como eles recompensam
+com mais alcance, ou seja, mostrando seu perfil com mais prioridade
+ganha você e ganha a plataforma, bingo
+ os últimos lançamentos da ferramenta tem sido focados principalmente nos stories
+então não tenha medo de criar um conteúdo verticalizado sempre que surgir algum recurso novo
+e eu te provo: nossa média de visualizações de stories é de treszerozero views
+com o lançamento da figurinha de quizz, atingimos o número de quatroseisoito organicamente
+ou seja, um crescimento de cincoseis 
+dois
+incentive os seguidores a comentarem “marque aquele seu amigo que…” essas legendas parecem inofensivas, certo
+bom, de ingênuas, não têm nada
+já que o algoritmo observa quem a gente mais se relaciona e interage, a partir do momento que alguém comenta no seu post, o instagram vai entender que seu perfil é importante para aquele usuário e vai entregar seu conteúdo com prioridade no feed dele
+ por isso, sempre incentive os seguidores a engajarem com você, responder uma pergunta, marcar um amigo, ou até reagir com um emoji rapidamente, já que hoje em dia já existe esse recurso
+tres
+poste quando seus seguidores estiverem online os primeiros minutos do seu post são preciosos
+quanto mais pessoas interagirem com a publicação, mais o instagram vai entender que ela é boa e mais o post vai ser mostrado pra outras pessoas, criando um looping
+ por isso, é muito importante que você saiba qual o melhor horário pra postar no seu perfil
+ há várias formas de descobrir isso, mas se você já tem uma conta comercial no instagram, basta acessar o instagram insights
+ no menu que aparece no canto superior direito, selecione informações
+depois, clique na aba público e desça a tela até embaixo
+um gráfico com os horários de cada dia mais acessados pelos seus seguidores vai aparecer
+invista sempre nos melhores horários.tres quatro
+invista em mídias de alta qualidade de acordo com o próprio instagram, pegar um bom lugar no feed dos seus seguidores está diretamente relacionado com a criação de um conteúdo excelente
+isso significa que não só a sua legenda deve ser perfeita e chamativa, mas suas imagens também
+ o fato do instagram ser uma rede que apela pro visual pesa ainda mais
+então, sempre que possível, produza fotos e vídeos de altíssima qualidade
+cores vibrantes, ideias diferentes e fotos de tirar o fôlego são tipos de conteúdo que costumam render bons números em interação
+ dá uma olhada na foto que produzimos para a campanha do lançamento da marcação de produtos no postgrain
+a ideia é super simples, mas já é super diferente do que estamos acostumados a ver no feed
+cinco
+faça stories com frequência não é a toa que os stories influenciam bastante em como seu conteúdo vai ranquear para os usuários: a ferramenta também tem o seu algoritmo próprio
+por isso, você deve trabalhar para conseguir sempre os primeiros lugares entre as bolinhas que ficam lá em cima
+ o ideal é que você trabalhe sempre pensando em como verticalizar o seu conteúdo
+além disso, não esqueça de incentivar o engajamento deles nos seus stories também: peça para que compartilhem, para que enviem para um amigo ou até mesmo para que respondam na dm
+a própria ferramenta já nos fornece vários recursos para que interajam com a gente, então não esqueça de usar e abusar das enquetes e adesivos dinâmicos do instagram
+seis
+responda comentários enquanto eles ainda estão recentes sempre que possível, responda os comentários nas suas publicações enquanto eles ainda estão novos
+isso também cria o looping que falei acima: quanto mais comentários no seu post em pouco tempo, mais o instagram vai achá-lo interessante
+ isso também incentiva outras pessoas a comentarem, já que elas sabem que a sua resposta é certa, além de dar uma boa impressão de marca, que é a que interage com os seguidores e está sempre disponível
+é só ponto positivo
+sete
+use conteúdo gerado pelo usuário reutilizar o conteúdo que os usuários produzem espontaneamente sobre sua marca pode te ajudar com o algoritmo
+primeiro porque vai provocar uma reação positiva no usuário que produziu aquele conteúdo, que vai sentir que você prestou atenção nele e que os elogios dele não foram em vão
+ segundo porque outros usuários podem ser influenciados pelo comportamento e, sabendo que vão ser reconhecidos, podem acabar contribuindo com você também
+sabe quem adora que você seja marcado nos posts dos outros
+ele mesmo, o algoritmo
+  oito
+abrace de vez as mensagens diretas
+o algoritmo do instagram está muito interessado em quem você mais se relaciona e isso está diretamente relacionado às dms que você recebe e envia no instagram
+quanto mais seus seguidores interagirem com você por lá, com maior prioridade você vai aparecer no feed deles
+ então, esteja sempre à disposição pra conversar por mensagens, deixe isso bem claro nos stories e nos posts do feed
+esse tipo de relacionamento vai ser, inclusive, muito positivo pro seu negócio, já que as mensagens diretas envolvem conversas mais longas e que dão a oportunidade de cultivar um relacionamento individual e duradouro com cada seguidor
+nove
+faça um sorteio não tem jeito
+até hoje, a melhor forma de você ganhar diversas curtidas, seguidores e comentários ao mesmo tempo é fazendo um sorteio
+mas aqui estamos falando de algoritmo, então o que o sorteio pode ter a ver com ele
+ tudo
+as regras dos sorteios no instagram estão diretamente ligadas com o que o algoritmo mais preza, que são as interações  curtidas, comentários  e o relacionamento  seguidores, comentários, marcação de amigos 
+ então, sempre que possível, faça um sorteio
+além de aumentar a movimentação no seu perfil, vai fazer bem pro algoritmo
+mitos sobre o algoritmo apesar do instagram ter vindo a público explicar as atualizações do algoritmo e ter elucidado várias questões que antes eram sombrias pra quem trabalha com o instagram, o algoritmo da plataforma ainda é encoberto de muitos mitos
+ separamos as mentiras mais faladas sobre o algoritmo do instagram pra te explicar como realmente funciona
+dá uma olhada:  “o instagram esconde seus posts” de uma vez por todas: o instagram não está escondendo publicações de ninguém – a não ser aquelas atingidas pelo shadowban
+como falei anteriormente, você receber ou não um post no feed vai depender de muitos fatores: quantos perfis você segue, há quanto tempo você entrou no app pela última vez, com quem você se relaciona mais
+ a verdade é que muitos usuários do instagram seguem muitos perfis e, portanto, têm muita dificuldade de ver tudo
+mas o instagram garante que, se você continuar rolando o feed, vai ver absolutamente tudo o que foi postado pelos usuários que você segue
+“vídeos recebem mais alcance que imagens” o instagram já deixou claro que não oferece mais alcance pra nenhum tipo de mídia específico
+então, se estiverem na mesma qualidade, um vídeo e uma imagem tem iguais chances de performarem bem
+ “contas comerciais recebem menos alcance” outro mito
+o instagram também já fez questão de explicar que não oferece uma “presença extra” a nenhum tipo de conta, nem pessoal nem business
+por isso, em termos de alcance, não há nenhuma prioridade em ter uma conta pessoal
+ na verdade a conta comercial possui muito mais benefícios, como acesso a dados detalhados, informações sobre seu público e botões call-to-action, por exemplo
+ conclusão o algoritmo do instagram não precisa ser essa fumaça turva envolvida de mistérios
+uma vez que você conhece a forma como ele funciona, seu trabalho pra conseguir usá-lo a seu favor fica muito mais fácil e natural
+ conta pra gente nos comentários que queremos muito saber: você já colocou em prática algumas dessas ações
+o algoritmo baixou seu alcance ou engajamento
+ um algoritmo é uma sequência finita de instruções bem definidas e não ambíguas, cada uma das quais pode ser executada mecanicamente num período de tempo finito e com uma quantidade de esforço finita.um dois  o conceito de algoritmo é frequentemente ilustrado pelo exemplo de uma receita culinária, embora muitos algoritmos sejam mais complexos
+eles podem repetir passos  fazer iterações  ou necessitar de decisões  tais como comparações ou lógica  até que a tarefa seja completada
+um algoritmo corretamente executado não irá resolver um problema se estiver implementado incorretamente ou se não for apropriado ao problema
+ um algoritmo não representa, necessariamente, um programa de computadortres , e sim os passos necessários para realizar uma tarefa
+sua implementação pode ser feita por um computador, por outro tipo de autômato ou mesmo por um ser humano
+diferentes algoritmos podem realizar a mesma tarefa usando um conjunto diferenciado de instruções em mais ou menos tempo, espaço ou esforço do que outros
+tal diferença pode ser reflexo da complexidade computacional aplicada, que depende de estruturas de dados adequadas ao algoritmo
+por exemplo, um algoritmo para se vestir pode especificar que você vista primeiro as meias e os sapatos antes de vestir a calça enquanto outro algoritmo especifica que você deve primeiro vestir a calça e depois as meias e os sapatos
+fica claro que o primeiro algoritmo é mais difícil de executar que o segundo apesar de ambos levarem ao mesmo resultado
+ o conceito de um algoritmo foi formalizado em umnovetresseis pela máquina de turing de alan turing e pelo cálculo lambda de alonzo church, que formaram as primeiras fundações da ciência da computação
+  etimologia  os historiadores da palavra algoritmo encontraram a origem no sobrenome, al-khwarizmi, do matemático persa do século ix mohamed ben musa, cujas obras foram traduzidas no ocidente cristão no século xii, tendo uma delas recebido o nome algorithmi de numero indorum, sobre os algoritmos usando o sistema de numeração decimal  indiano 
+outros autores, entretanto, defendem a origem da palavra em al-goreten  raiz - conceito que se pode aplicar aos cálculos 
+álgebra e algorismo também formam formas corrompidas da palavra, pois as pessoas esqueciam as derivações originais
+o dicionário vollständiges mathematisches lexicon  leipzig, umsetequatrosete  refere a palavra "algorithmus"; nesta designação está combinado as noções de quatro cálculos aritméticos, nomeadamente a adição, multiplicação, subtração e divisão
+a frase "algorithmus infinitesimalis" foi na altura utilizado para significar; "maneiras de calcular com quantidades infinitésimas"  pequenas , uma invenção de leibnitz
+também é conhecido no meio financeiro, como "algos"
+  uma animação do algoritmo de ordenação quicksort de uma matriz de valores ao acaso
+as barras vermelhas marcam o elemento pivô
+no início da animação, estando o elemento para o lado direito, é escolhido como o pivô
+ um programa de computador é essencialmente um algoritmo que diz ao computador os passos específicos e em que ordem eles devem ser executados, como por exemplo, os passos a serem tomados para calcular as notas que serão impressas nos boletins dos alunos de uma escola
+logo, o algoritmo pode ser considerado uma sequência de operações que podem ser simuladas por uma máquina de turing completa
+ quando os procedimentos de um algoritmo envolvem oprocessamento de dados, a informação é lida de uma fonte de entrada, processada e retornada sob novo valor após processamento, o que geralmente é realizado com o auxílio de uma ou mais estrutura de dados
+ para qualquer processo computacional, o algoritmo precisa estar rigorosamente definido, especificando a maneira que ele se comportará em todas as circunstâncias
+a corretividade do algoritmo pode ser provada matematicamente, bem como a quantidade assintótica de tempo e espaço  complexidade  necessários para a sua execução
+estes aspectos dos algoritmos são alvo da análise de algoritmos
+ a maneira mais simples de se pensar um algoritmo é por umalista de procedimentos bem definida, na qual as instruções são executadas passo a passo a partir do começo da lista, uma ideia que pode ser facilmente visualizada através de um fluxograma
+tal formalização adota as premissas da programação imperativa, que é uma forma mecânica para visualizar e desenvolver um algoritmo
+concepções alternativas para algoritmos variam em programação funcional e programação lógica
+ término do algoritmo  alguns autores restringem a definição de algoritmo para procedimentos que eventualmente terminam
+marvin minsky constatou que se o tamanho de um procedimento não é conhecido de antemão, tentar descobri-lo é um problema indecidível, já que o procedimento pode ser executado infinitamente, de forma que nunca se terá a resposta
+alan turing provou em umnovetresseis que não existe máquina de turing para realizar tal análise para todos os casos, logo não há algoritmo para realizar tal tarefa para todos os casos
+tal condição é conhecida atualmente como problema da parada
+ ou critério de parada
+  para algoritmos intermináveis o sucesso não pode ser determinado pela interpretação da resposta e sim por condições impostas pelo próprio desenvolvedor do algoritmo durante sua execução
+    implementação  a maioria dos algoritmos é desenvolvida para ser implementada em um programa de computador
+apesar disso eles também podem ser implementados por outros modos tais como uma rede neural biológica  tal como no cérebro quando efetuamos operações aritméticas  em circuitos elétricos ou até mesmo em dispositivos mecânicos
+ para programas de computador existe uma grande variedade de linguagens de programação, cada uma com características específicas que podem facilitar a implementação de determinados algoritmos ou atender a propósitos mais gerais
+    análise de algoritmos  ver artigo principal: análise de algoritmos  a análise de algoritmos é um ramo da ciência da computação que estuda as técnicas de projeto de algoritmos e os algoritmos de forma abstrata, sem estarem implementados em uma linguagem de programação em particular ou implementadas de algum outro modo
+ela preocupa-se com os recursos necessários para a execução do algoritmo tais como o tempo de execução e o espaço de armazenamento de dados
+deve-se perceber que para um dado algoritmo pode-se ter diferentes quantidades de recursos alocados de acordo com os parâmetros passados na entrada
+por exemplo, se definirmos que o fatorial de um número natural é igual ao fatorial de seu antecessor multiplicado pelo próprio número, fica claro que a execução de fatorial umzero  consome mais tempo que a execução de fatorial cinco 
+ um meio de exibir um algoritmo a fim de analisá-lo é através da implementação por pseudocódigo em português estruturado
+o exemplo a seguir é um algoritmo em português estruturado que retorna  valor de saída  a soma de dois valores  também conhecidos como parâmetros ou argumentos, valores de entrada  que são introduzidos na chamada da função:     algoritmo "somadedoisvalores";  variável:  soma,a,b: inteiro;  inicio  escreva "digite um numero: " ;  leia a ;  escreva "digite outro numero: " ;  leia b ;  soma ← a + b;  escreva soma ;  fim
+       classificação  classificação por implementação:  pode-se classificar algoritmos pela maneira pelo qual foram implementados
+ recursivo ou iterativo - um algoritmo recursivo possui a característica de invocar a si mesmo repetidamente até que certa condição seja satisfeita e ele é terminado, que é um método comum em programação funcional
+algoritmos iterativos usam estruturas de repetição tais como laços, ou ainda estruturas de dados adicionais tais como pilhas, para resolver problemas
+cada algoritmo recursivo possui um algoritmo iterativo equivalente e vice-versa, mas que pode ter mais ou menos complexidade em sua construção
+ lógico - um algoritmo pode ser visto como uma dedução lógica controlada
+o componente lógico expressa os axiomas usados na computação e o componente de controle determina a maneira como a dedução é aplicada aos axiomas
+tal conceito é base para a programação lógica
+ serial ou paralelo - algoritmos são geralmente assumidos por serem executados instrução a instrução individualmente, como uma lista de execução, o que constitui um algoritmo serial
+tal conceito é base para a programação imperativa
+por outro lado existem algoritmos executados paralelamente, que levam em conta as arquiteturas de computadores com mais de umprocessador para executar mais de uma instrução ao mesmo tempo
+tais algoritmos dividem os problemas em subproblemas e o delegam a quantos processadores estiverem disponíveis, agrupando no final o resultado dos subproblemas em um resultado final ao algoritmo
+tal conceito é base para a programação paralela
+de forma geral, algoritmos iterativos são paralelizáveis; por outro lado existem algoritmos que não são paralelizáveis, chamados então problemas inerentemente seriais
+ determinístico ou não-determinístico - algoritmos determinísticos resolvem o problema com uma decisão exata a cada passo enquanto algoritmos não-determinísticos resolvem o problema ao deduzir os melhores passos através de estimativas sob forma deheurísticas
+ exato ou aproximado - enquanto alguns algoritmos encontram uma resposta exata, algoritmos de aproximação procuram uma resposta próxima a verdadeira solução, seja através de estratégia determinística ou aleatória
+possuem aplicações práticas sobretudo para problemas muito complexos, do qual uma resposta correta é inviável devido à sua complexidade computacional
+       classificação por paradigma:  pode-se classificar algoritmos pela metodologia ou paradigma de seu desenvolvimento, tais como:  divisão e conquista - algoritmos de divisão e conquista reduzem repetidamente o problema em sub-problemas, geralmente de forma recursiva, até que o sub-problema é pequeno o suficiente para ser resolvido
+um exemplo prático é o algoritmo de ordenação merge sort
+uma variante dessa metodologia é o decremento e conquista, que resolve um sub-problema e utiliza a solução para resolver um problema maior
+um exemplo prático é o algoritmo para pesquisa binária
+ programação dinâmica - pode-se utilizar a programação dinâmica para evitar o re-cálculo de solução já resolvidas anteriormente
+ algoritmo ganancioso - um algoritmo ganancioso é similar à programação dinâmica, mas difere na medida em que as soluções dos sub-problemas não precisam ser conhecidas a cada passo, uma escolha gananciosa pode ser feita a cada momento com o que até então parece ser mais adequado
+ programação linear  redução - a redução resolve o problema ao transformá-lo em outro problema
+é chamado também transformação e conquista
+ busca e enumeração - vários problemas podem ser modelados através de grafos
+um algoritmo de exploração de grafo pode ser usado para caminhar pela estrutura e retornam informações úteis para a resolução do problema
+esta categoria inclui algoritmos de busca e backtracking
+ paradigma heurístico e probabilístico - algoritmos probabilísticos realizam escolhas aleatoriamente
+algoritmos genéticos tentam encontrar a solução através de ciclos de mutações evolucionárias entre gerações de passos, tendendo para a solução exata do problema
+algoritmos heurísticos encontram uma solução aproximada para o problema
+introdução  a automatização de tarefas é um aspecto marcante da sociedade moderna
+o aperfeiçoamento tecnológico alcançado, com respeito a isto, teve como elementos fundamentais a análise e a obtenção de descrições da execução de tarefas em termos de ações simples o suficiente, tal que pudessem ser automatizadas por uma máquina especialmente desenvolvida para este fim, o computador
+ em ciência da computação houve um processo de desenvolvimento simultâneo e interativo de máquinas  hardware  e dos elementos que gerenciam a execução automática  software  de uma dada tarefa
+e essa descrição da execução de uma tarefa, como considerada acima, é chamada algoritmo
+ o objetivo desse curso é a lógica de programação dando uma base teórica e prática, suficientemente boa, para que, o aluno domine os algoritmos e esteja habilitado a aprender uma linguagem de programação
+será mostrado também um grupo de algoritmos clássicos para tarefas cotidianas, tais como : ordenação e pesquisa
+ definição de algoritmo         "o conceito central da programação e da ciência da computação é o conceito de algoritmos, isto é, programar é basicamente construir algoritmos."          é a descrição, de forma lógica, dos passos a serem executados no cumprimento de determinada tarefa
+        "o algoritmo pode ser usado como uma ferramenta genérica para representar a solução de tarefas independente do desejo de automatizá-las, mas em geral está associado ao processamento eletrônico de dados, onde representa o rascunho para programas  software ."        "serve como modelo para programas, pois sua linguagem é intermediária à linguagem humana e às linguagens de programação, sendo então, uma boa ferramenta na validação da lógica de tarefas a serem automatizadas."         "um algoritmo é uma receita para um processo computacional e consiste de uma série de operações primitivas, interconectadas devidamente, sobre um conjunto de objetos
+os objetos manipulados por essas receitas são as variáveis."          o algoritmo pode ter vários níveis de abstrações de acordo com a necessidade de representar ou encapsular detalhes inerentes às linguagens de programação
+ex: certamente um algoritmo feito com o objetivo de servir como modelo para uma linguagem de iii geração é diferente daquele para uma linguagem de iv geração
+mas isso não impede que a ferramenta em si possa ser usada em ambos o caso
+        como qualquer modelo, um algoritmo é uma abstração da realidade
+a abstração é o processo de identificar as propriedades relevantes do fenômeno que esta sendo modelado
+usando o modelo abstrato, podemos nos centrar unicamente nas propriedades relevantes para nós, dependendo da finalidade da abstração, e ignorar as irrelevantes
+        é a forma pela qual descrevemos soluções de problemas do nosso mundo, afim de, serem implementadas utilizando os recursos do mundo computacional
+como este possuí severas limitações em relação ao nosso mundo, exige que, sejam impostas algumas regras básicas na forma de solucionar os problemas, para que, possamos utilizar os recursos de hardware e software disponíveis
+pois, os algoritmos, apesar de servirem para representar a solução de qualquer problema, no caso do processamento de dados, eles devem seguir as regras básicas de programação para que sejam compatíveis com as linguagens de programação
+  linguagem de descrição de algoritmo  lda   para escrevermos algoritmos é preciso uma linguagem clara e que não deixe margem a ambiguidades, para isto, devemos definir uma sintaxe e uma semântica, de forma a permitir uma única interpretação das instruções num algoritmo
+ estrutura um algoritmo  algoritmo nome_do_algoritmo  variáveis  declaração das variáveis  procedimentos  declaração dos procedimentos  funções  declaração das funções  início  corpo do algoritmo  fim  identificadores  representam os nomes escolhidos para rotular as variáveis, procedimentos e funções, normalmente, obedecem as seguintes regras :  um
+     o primeiro caracter deve ser uma letra  dois
+     os nomes devem ser formados por caracteres pertencentes ao seguinte conjunto : {a,b,c,..z,a,b,c,...z,zero,um,dois,...,nove,_}  tres
+     os nomes escolhidos devem explicitar seu conteúdo
+ variáveis:  unidades básicas de armazenamento das informações a nível de linguagens de programação
+os tipos de dados e variáveis utilizados dependem da finalidade dos algoritmos, mas, podemos definir alguns, pelo fato de serem largamente utilizados e implementados na maioria das linguagens, sendo estes:  inteiro : qualquer número inteiro, negativo, nulo ou positivo
+ real : qualquer número real, negativo, nulo ou positivo
+ caracter : qualquer conjunto de caracteres alfanuméricos
+ lógico : tipo especial de variável que armazena apenas os valores v e f, onde v representa verdade e f falso  declaração de variáveis  para que os programas manipulem valores, estes devem ser armazenados em variáveis e para isso, devemos declará-las de acordo com a sintaxe:  nomevariável,..
+: tipo  operações básicas:  na solução da grande maioria dos problemas é necessário que as variáveis tenham seus valores consultados ou alterados e, para isto, devemos definir um conjunto de operadores, sendo eles:  ·        operador de atribuição:  nomedavariavel ¬ valor ou expressão atribuída
+ ·        operadores aritméticos:   + = adição  quociente = quociente da divisão de inteiros    = multiplicação  resto = resto da divisão de inteiros  - = subtração ou inversor do sinal
+ exp a,b  = exponenciação ab    = divisão     ·        funções primitivas: sen x ; cos x ; tg x ; abs x ; int x ; raiz x ; pi   ;  ·        operadores relacionais:  são utilizados para relacionar variáveis ou expressões, resultando num valor lógico  verdadeiro ou falso , sendo eles:   =- igual  ¹ - diferente  < - menor  > - maior  £ - menor ou igual  ³ - maior ou igual  ·        operadores lógicos:  são utilizados para avaliar expressões lógicas, sendo eles:  e - e lógico ou conjunção
+ ou - ou lógico ou disjunção
+ não - negação
+ prioridade de operadores:  durante a execução de uma expressão que envolve vários operadores, é necessário a existência de prioridades, caso contrário poderemos obter valores que não representam o resultado esperado
+ a maioria das linguagens de programação utiliza as seguintes prioridades de operadores :  umº - efetuar operações embutidas em parênteses "mais internos"  doisº - efetuar funções  tresº - efetuar multiplicação e ou divisão  quatroº - efetuar adição e ou subtração  cincoº - operadores relacionais  seisº - operadores lógicos  obs: o programador tem plena liberdade para incluir novas variáveis, operadores ou funções para adaptar o algoritmo as suas necessidades, lembrando sempre, de que, estes devem ser compatíveis com a linguagem de programação a ser utilizada
+ comandos de entrada e saída :   no algoritmo é preciso representar a troca de informações que ocorrerá entre o mundo da máquina e o nosso mundo, para isso, devemos utilizar comandos de entrada e saída, sendo que, a nível de algoritmo esses comandos representam apenas a entrada e a saída da informação, independe do dispositivo utilizado  teclado, discos, impressora, monitor,..
+, mas, sabemos que nas linguagens de programação essa independência não existe, ou seja, nas linguagens de programação temos comandos específicos para cada tipo de unidade de entrada saída
+ comando de entrada de dados  leia variável_um, variável_dois,..
+  comando de saída de dados  imprima expressão_um, expressão_dois,..
+  comandos de controle de fluxo:  para representar a solução de um problema devemos escrever o conjunto de passos a serem seguidos, sendo que, a maioria dos problemas exigem uma dinâmica na sua solução, impondo assim que os algoritmos executem conjunto de instruções de acordo com as possíveis situações encontradas no problema original
+e de acordo com a programação estruturada os mecanismos utilizados para esse controle são : sequência, seleção e repetição
+ ·        sequência : usada para executar comandos passo a passo, sabendo que todos eles serão executados na ordem de escrita, sem nenhum desvio
+uma sequência pode possuir um ou vários comandos, os quais devem ser delimitados pelos identificadores início e fim
+ inicio  comando_um  ..
+ comando_n  fim  ·        seleção : usada para tomar decisões, ou seja desviar a execução do algoritmo de acordo com uma condição, podendo ser simples ou composta
+  simples  composta  se  expressão lógica   então sequência_um  se  expressão lógica   então sequência_um  senão sequência_dois  ·        repetição : serve para efetuar um conjunto de ações repetidas vezes
+existem três tipos básicos de repetições, sendo elas
+  enquanto  expressão lógica  faça  sequência  o comando enquanto analisa a expressão lógica e enquanto o seu resultado for, o valor lógico, verdade a sequência é executada
+ para variável ¬ valor_inicial até valor_final faça  sequência  o comando para incrementa, a variável, a partir do valor_inicial de uma unidade, até que, esta atinja o valor_final
+e para cada incremento a sequência é executada.
+ repita  sequência  até  expressão lógica   o comando repita executa a sequência até que o valor retornado pela expressão lógica seja verdadeiro  tipos de dados  estruturas formadas por um conjunto de variáveis, permitindo modelar de forma mais natural os dados
+ vetor: estrutura formada por um conjunto unidimensional de dados de mesmo tipo  homogêneo  e possuindo número fixo de elementos  estático 
+na declaração dos vetores devemos informar o seu nome, seu tipo  inteiro, real, caracter, ..
+, e seu tamanho  número de elementos 
+cada elemento do vetor é identificado por um índice  unidimensional , o qual indica a sua posição no vetor
+ declaração :  nomedovetor : vetor[nº de elementos] de tipo do vetor  referência :  nomedovetor[índice]  matriz: estrutura semelhante ao vetor, sendo que, pode possuir n dimensões
+desta forma para fazer referência aos elementos de uma matriz, precisaremos de tantos índices quanto for suas dimensões
+ declaração : nomedamatriz : matriz[dimensões] de tipo da matriz  referência :  nomedamatriz[índices]  registro: estrutura formada por um conjunto de variáveis, que podem possuir tipos diferentes  heterogêneo , agrupadas em uma só unidade
+ declaração :  nomedoregistro : registro  declaração de variáveis  fimregistro  referênca :  nomedoregistro.nomedavariável  obs: podemos ainda definir um vetor formado por registros
+ modularização  a modularização consiste num método para facilitar a construção de grandes programas, através de sua divisão em pequenas etapas, que são : módulos, rotinas, sub-rotinas ou sub-programas
+permitindo o reaproveitamento de código, já que podemos utilizar um módulo quantas vezes for necessário, eliminando assim a necessidade de escrever o mesmo código em situações repetitivas
+ procedimentos - um procedimento é um bloco de código precedido de um cabeçalho que contém o nome do procedimento e seus parâmetros
+com isto, podemos fazer referência ao bloco de código de qualquer ponto do algoritmo através do seu nome e passando os seus parâmetros
+ declaração :  procedimento nomedoprocedimento [ parâmetros ]  variáveis  inicio  comandos;  fim;  onde, parâmetros representam as variáveis que devem ser passadas ao procedimento
+os parâmetros podem ser de : entrada  passado por valor  ou de entrada saída  passado por referência 
+os parâmetros de entrada não podem ser alterados pelo procedimento, para que isso seja possível o parâmetro deve ser de entrada saída para indicar que um parâmetro é de entrada saída devemos colocar a palavra var antes da sua declaração
+ referência :  nomedoprocedimento variáveis   obs: as variáveis passadas aos procedimentos são associadas aos parâmetros do procedimento de acordo com a ordem das variáveis e da lista de parâmetros
+ funções - uma função é semelhante a um procedimento, sendo que esta deve retornar, obrigatoriamente, um valor em seu nome, desta forma, é necessário declarar, no cabeçalho da função, qual o seu tipo
+ declaração :  função nomedafunção [ parâmetros ] : tipo_da_função  variáveis  inicio  comandos  nomedafunção ¬  expressão de retorno   fim;  referência :  nomedafunção parâmetro   algorítmos de pesquisa  a capacidade de armazenar informações foi um passo decisivo na evolução da ciência da computação e para o nível generalizado de utilização do computador
+com isso, a capacidade de cuperar informações, para posterior processamento, assume papel de suma importância na utilização cotidiana do computador, existindo para isto inúmeros exemplos, como: recuperação de dados de dados de transações bancárias de um cliente através de um número de conta, no cadastro de cliente operações de um banco
+portanto, algorítmos de pesquisa devem ser projetados de forma a garantir a confiabilidade e eficiência exigidas pela importância das aplicações existentes
+ a pesquisa de dados pode ser efetuada tanto em unidades de memória secundárias  disco rígido, disquetes, fita , quanto na memória principal do computador
+ pesquisa sequencial  o método mais simples de determinar a presença, ou não, de um elemento numa seqüência, é percorrê-la a partir do seu início, efetuando comparações, até que o elemento seja encontrado ou o fim da seqüência seja alcançado
+este método é chamado de pesquisa seqüencial
+ dados :  vetor de n elementos  n conhecido   elemento a ser pesquisado no vetor  resultado:  se o elemento existe, mostra-se a sua posição ou o total de ocorrências deste no vetor
+ se o elemento não existe, mostra-se uma mensagem de falha
+ as considerações que podem ser feitas sobre os dados de entrada  vetor , são do tipo: o vetor esta ou não ordenado; o elemento ocorre uma única vez  pesquisa única  ou repetidas vezes no vetor  pesquisa única 
+isso acarreta os seguintes tipos de pesquisa:  a
+desordenada única  b
+desordenação múltipla  c
+ordenada única  d
+ordenada múltipla  pesquisa binária  o método de pesquisa seqüencial é fácil de escrever e é razoavelmente eficientes para seqüências com poucos elementos
+entretanto, para seqüências de tamanho considerável, que ocorrem na maioria das aplicações existentes, a utilização do método torna-se inviável
+uma estratégia interessante e eficiente é utilizada no método de pesquisa binária
+ descrição geral do método:  ·        definir intervalo inicial  i, f  de busca  ·        determinar a posição média do intervalo m =  i+f  div dois   ·        comparar o elemento da posição média  v[m]  com o elemento e:  ·        caso sejam iguais então terminou as pesquisa  ·        caso contrário definir o novo intervalo de busca  ·        aplicar sucessivamente o passo anterior até encontrar e ou não existir mais o intervalo de busca  são aspectos fundamentais do método:  ·        vetor de entrada tem que estar ordenado  ·        intervalo de busca inicial é  i,f  =  um,n   ·        intervalo de busca, considerado a cada iteração, é definido do seguinte modo:   i,m-um , se  e < v[m]    m+um,f , se  e > v[m]   tendo a metade do tamanho do intervalo original  ·        o teste de repetição é  i <= f  e não achou  dados :  vetor de n elementos  n conhecido   elemento a ser pesquisado no vetor  resultado  se o elemento existe, mostra-se a sua posição ou o total de ocorrências deste no vetor
+ se o elemento não existe, mostra-se uma mensagem de falha  algorítmos de ordenação  os problemas de ordenação são comuns tanto em aplicações comerciais quanto científicas
+entretanto, raro são os problemas que se resumem à pura ordenação de seqüências de elementos
+normalmente, os problemas de ordenação são inseridos em problemas de pesquisa, intercalação e atualização
+isto torna ainda mais importante o projeto e a construção de algoritmos eficientes e confiáveis para tratar o problema
+ o nosso objetivo é analisar os seguintes tipos de ordenação :  a
+selection sort  b
+bubble sort  c
+insertion sort  a
+selection sort  este método é um dos mais simples e intuitivos dentre os métodos existentes
+sua estratégia básica é selecionar o menor elemento da seqüência considerada e colocá-lo no início da seqüência
+assim, dada uma seqüência de tamanho n, várias iterações são efetuadas, sendo que a cada vez que esta estratégia é aplicada, uma nova seqüência é gerada pela eliminação do menor elemento da seqüência original
+ procedure selectionsort   var vet : vetor; n : integer ;  {ordenado crescente}  var  i, j, pmin : integer;  begin  for i¬ um to  n-um  do  begin  pmin ¬ i;  for j¬  i+um  to n do  if vet[j] < vet[pmin]  then pmin ¬ j;  trocar  vet[i], vet[pmin]   ;  end;  end;  b
+bubble sort  a estratégia utilizada pelo bubblesort consiste de comparações e trocas entre elementos consecutivos da seqüência, a fim de "empurrar" o maior elemento para a última posição
+assim, várias iterações são efetuadas e, para cada seqüência considerada, a aplicação da estratégia gera uma nova seqüência pela eliminação do maior elemento da seqüência original
+ além disto, uma variável de controle  lógica  é utilizada para registrar a ocorrência ou não de troca entre elementos da seqüência
+quando nenhuma troca é efetuada, tem-se que a seqüência considerada já estava ordenada
+esta particularidade determina, em alguns casos, um número menor de comparações que o método selectionsort
+ procedure bubblesort   var vet : vetor ; n integer  ;  {ordem crescente}  var  i, limite : integer;  trocou : boolean;  begin  limite ¬ n;  repeat  trocou ¬ false;  for i¬ um to  limite - um  do  begin  if vet[i] > vet [i+um] then  begin  trocar vet[i], vet[i+um] ;  trocou ¬ true;  end;  end;  limite ¬ limite - um  until not trocou  end;  c
+insertion sort  este método baseia-se no seguinte processo de inserção controlada:  ·        com o primeiro elemento da seqüência forma-se uma seqüência de tamanho um, ordenada
+ ·        cada elemento restante da seqüência original é inserido na seqüência, de modo que esta permaneça ordenada
+isto é feito através de uma pesquisa na seqüência ordenada que determina a posição que o novo elemento deverá ser inserido
+ ·        quando um elemento é inserido a frente de outro, estes deverão ser deslocados de uma posição
+ recursividade  recursão é um método geral para resolver problemas reduzindo-os a problemas mais simples do mesmo tipo
+a estrutura geral de uma solução recursiva de um problema é assim :  resolva de forma recursiva um problema
+ ·        se o problema é trivial, faça o obvio  resolva-o   ·        simplifique o problema  ·        resolva de forma recursiva  um problema mais simples   ·        combine  na medida do possível  a solução do os  problemas mais simples em uma solução do problema original  um subprograma recursivo chama a si próprio constantemente, cada vez em uma situação mais simples, até chegar ao caso trivial, quando pára
+devemos lembrar que recursividade deve ser utilizada na solução de problemas que tenham a natureza recursiva
+ exemplos :  a
+      somatório de inteiros - se n =um; somatório = um
+caso contrário somatório = n + somatório n-um   b
+     fatorial - se n=zero ou n=um ; fatorial = um
+caso contrário fatorial = n fatorial n-um   c
+      mdc - se b divide a, então o mdc é b
+caso contrário, mdc a,b  = mdc b,a mod b   d
+     n-ésimo termo da série de finonacci 
+um° e dois° = um e n-ésimo =  n-um + n-dois   e
+      torre de hanoi algoritmo de prim este capítulo trata do célebre algoritmo de prim para o problema da mst
+ veja os conceitos básicos sobre esse problema no capítulo árvores geradoras de custo mínimo
+  o algoritmo foi publicado por robert c
+prim em umnovecincosete e por e
+w
+dijkstra pouco depois
+ problema:  encontrar uma mst  árvore geradora de custo mínimo  de um grafo não-dirigido com custos nas arestas
+ os custos das arestas são números inteiros arbitrários  positivos e negativos 
+ o problema tem solução se e somente se o grafo é conexo
+assim, trataremos apenas de grafos conexos
+ mas veja exercício abaixo
+  o algoritmo de prim é simples, mas sua implementação eficiente apresenta dificuldades inesperadas
+a solução dessas dificuldade ensina interessantes lições de programação
+o algoritmo dado um grafo não-dirigido conexo g com custos nas arestas, o algoritmo de prim cultiva uma subárvore de g até que ela se torne geradora
+no fim do processo, a árvore é uma mst
+ para discutir os detalhes, precisamos de um pouco de terminologia
+ suponha que t é uma subárvore  não necessariamente geradora  de g
+ a franja  = fringe  de t é o conjunto de todas as arestas de g que têm uma ponta em t e outra fora
+ portanto, a franja de t nada mais é que o leque do conjunto de vértices de t
+ podemos agora descrever o algoritmo de maneira precisa
+ cada iteração começa com uma subárvore t
+ no início da primeira iteração, t consiste em um único vértice
+ o processo iterativo consiste no seguinte: [.] enquanto a franja de t não estiver vazia,  escolha uma aresta da franja que tenha custo mínimo, seja x-y a aresta escolhida, com x em t, acrescente a aresta x-y e o vértice y a t
+como se vê, o algoritmo tem caráter guloso: em cada iteração, abocanha a aresta mais barata da franja sem se preocupar com o efeito global dessa escolha
+ a prova de que essa estratégia está correta segue do critério de minimalidade baseado em cortes
+a primeira iteração do algoritmo de prim pode começar com qualquer vértice
+neste exemplo, escolhemos o vértice zero
+ a tabela abaixo registra, no início de cada iteração, o conjunto de vértices da subárvore t, o custo de t, e as arestas da franja de t
+qualquer conjunto de instruções é um algoritmo, mas a palavra tem sido frequentemente usada na referência a situações que envolvem o aprendizado de máquina você certamente já ouviu ou leu a palavra "algoritmo"
+ela tem aparecido com cada vez mais frequência em diversas situações, seja na forma como o facebook exibe postagens de amigos, ou como as fotos aparecem no instagram
+raramente, porém, explica-se do que se trata: você, por exemplo, sabe o que é um algoritmo
+e por que eles estão tão em evidência
+de forma bastante genérica, pode-se dizer que algoritmos são conjuntos de instruções usados para a solução de problemas
+pode ser, por exemplo, uma receita culinária ou até mesmo a forma como uma criança é ensinada a lavar as mãos
+quem tem eletrodomésticos em casa já deve ter visto, no manual de instruções do aparelho, referências para solucionar pequenos contratempos
+é o caso, por exemplo, de quando a máquina de lavar não funciona ao ser ligada ou a tv recém-instalada não sintoniza os canais
+na documentação do aparelho, é possível saber quais passos devem ser seguidos para que ele funcione adequadamente
+ quando se usa a palavra "algoritmo", entretanto, geralmente se quer designar os conjuntos de instruções direcionados a computadores
+isso porque cada vez que um sistema computacional  em um computador pessoal, em um smartphone ou em qualquer outro dispositivo que tenha uma central desse tipo  executa uma função, ele o faz com base em um algoritmo
+ quem escreve essas instruções é um programador: esse profissional é especialista em dizer ao computador o que ele deve fazer
+a programação é, portanto, a base da criação de software e, por isso, o código escrito pelo programador faz o computador executar as mais variadas tarefas
+  em resumo, então, qualquer conjunto de instruções — os chamados códigos — que faça a máquina entrar em ação é um algoritmo
+quando o equipamento é ligado, ele executa a lista de comandos que permitem que essa ação seja feita
+ao ser desligado, ocorre o mesmo
+e assim por diante para qualquer outra atividade realizada por ele — das mais simples às absolutamente complexas
+ os algoritmos no dia a dia em anos recentes, os algoritmos ganharam notoriedade nas redes sociais
+isso porque são usados de formas diversas nessas plataformas: para sugerir amigos, para apresentar publicidade, para coletar dados pessoais e por aí vai
+é como se eles fossem uma ferramenta mágica com poderes maléficos que expõem o lado danoso das redes sociais
+ e isso acontece porque, na verdade, o que entra em ação nesse caso é o aprendizado de máquina
+o algoritmo está lá, mas é a inteligência artificial embutida nele que faz que ele se torne incômodo para muitos: afinal, como os programadores não podem testar todas as possibilidades em que um código vai atuar, eles criam instruções adaptáveis
+é por isso que, quando muitos e-mails de um determinado remetente são enviados para a lixeira, a própria ferramenta de correio passa a colocá-los nessa pasta automaticamente
+ela aprende que essas mensagens não são úteis para o destinatário
+ da mesma forma, sempre que se faz compras em lojas online, como a amazon, o algoritmo guarda as informações para, depois, usar esses dados para sugerir produtos similares — e que, de preferência, tenham chance de ser comprados pelo cliente
+o mesmo raciocínio vale para serviços de streaming, como a netflix, que indica produções ao cliente
+ aplicativos de navegação, como o waze e o google maps, também adotam o conceito: depois de alguns usos, a ferramenta passa a conferir as condições das rotas mais frequentes
+assim, no horário de saída de casa, ela informa quanto tempo leva o trajeto até o trabalho  ou a escola , por exemplo
+quando o usuário deixa a empresa, de forma similar, mostra como está a rota de volta
+recentemente, um algoritmo incorporado ao gmail passou a oferecer sugestões de respostas aos e-mails recebidos
+trata-se de uma opção que facilita bastante o dia a dia — especialmente para aquelas mensagens que requerem apenas um consentimento ou um agradecimento
+ se por um lado essas intervenções são úteis em muitas situações, há quem as considere invasivas demais
+enquanto o youtube e a amazon fazem sugestões, serviços como o google e o facebook acabam por determinar o que o usuário vê ou não ao decidir quais resultados de pesquisa ou quais posts devem ser apresentados a ele
+ isso tornou os algoritmos bastante polêmicos
+o aprendizado obtido pelas máquinas faz esses códigos produzirem respostas cada vez mais subjetivas, que incluem um componente forte de interpretação
+só que as preferências do usuário têm nuances que, muitas vezes, por maior que seja o aprendizado do algoritmo, são difíceis de detectar
+no conceito original de algoritmo, a ideia é que o conjunto de instruções leve a uma resposta certa
+então, quando se faz uma operação matemática em uma calculadora, por exemplo, não há meio termo
+quando a inteligência artificial é adicionada ao processo, a exatidão acaba comprometida
+ cada vez mais sofisticado em resumo, os algoritmos são a base de qualquer software
+sem eles, boa parte dos equipamentos nem sequer existiria: computadores, smartphones, tvs inteligentes, máquinas de lavar, panelas elétricas, fornos de micro-ondas e mais uma série de outros dispositivos aproveitam, de algum modo, esse conceito
+a forma como a palavra tem sido usada, entretanto, faz crer que se trata de algo distinto
+sua associação com a inteligência artificial fez que seu significado ficasse um pouco nebuloso — e até mais específico
+como o idioma está em constante transformação, "algoritmo" talvez esteja se tornando a palavra que vai descrever o universo às vezes um pouco dúbio do aprendizado de máquina
+isso é até saudável, mas é preciso lembrar que ele, em seu princípio fundamental, é o conjunto de instruções para resolver problemas
+só que está cada vez mais sofisticado
+ qual a primeira coisa que vem à sua cabeça quando você lê ou escuta a palavra “algoritmo”
+certamente, você imagina algo relacionado a computadores, códigos, números e o universo de programação, né
+de fato, os algoritmos estão intimamente ligados à linguagem de programação, já que eles são as sequências de passos que irá compor um determinado programa
+no entanto, o conceito de “algoritmo” é anterior à programação
+na realidade, até uma receita de bolo pode ser considerada um algoritmo
+é isso mesmo
+ficou curioso
+então acompanhe a gente nessa leitura e entenda melhor o que é e qual a importância dos algoritmos no nosso dia a dia
+ o algoritmo é uma receita primeiramente, vamos explicar essa coisa de “receita”
+um algoritmo não é nada mais que uma sequência lógica finita para instruir algo ou alguém a realizar uma tarefa
+é por isso que fizemos a comparação com uma receita
+imagine que, para fazer um bolo, você precisa seguir passo a passo uma série de instruções exatas em ordem e quantidade, senão tudo vai por água abaixo
+cada elemento tem uma finalidade dentro de um objetivo final: formar o bolo
+ com os computadores é a mesma coisa
+cada comando dentro de um algoritmo tem uma finalidade e direção que, ao final, irá gerar um resultado
+e, caso alguma coisa saia do planejado por algum erro de “medida”, o resultado pode ser totalmente diferente
+é por isso que, dentro de um algoritmo, tudo deve ser muito bem explicado para o computador, já que para o sistema não existe “óbvio”
+só que nós humanos não falamos a língua dos computadores
+é por isso que existe a linguagem de programação, que serve como uma ponte para os programadores “falarem a língua” dos computadores
+basicamente, o algoritmo é um tipo de fluxograma, no qual um losango irá sinalizar para a ação que se espera ser realizada
+como o google encontra o que você quer
+você já parou para se perguntar como o google realiza suas buscas com tanta precisão e eficiência
+na verdade, você alguma vez você já pensou que os conteúdos que o google leva até você são limitados
+é importante dizer isso porque muitas vezes vemos o buscador como se fosse a própria internet
+é nossa melhor e mais confiável fonte nesse meio, não é
+ o pagerank é a figura que está por trás de toda essa eficiência do google
+ele é um algoritmo com mais de doiszero anos que foi desenvolvido por larry page, um dos cofundadores do gigante das buscas
+esse algoritmo opera em conjunto com programas chamados de spiders  aranhas  ou crawlers  rastejadores  buscando páginas que se encaixem com os elementos digitados por você na busca
+ como dissemos: os conteúdos que o google encontra não são infinitos
+eles estão pré-dispostos em uma extensa rede de páginas “indexadas”, ou seja, armazenadas em um grande banco de dados
+esse banco de dados é organizado pelas spiders seguindo uma série de critérios como palavra-chave, país, data e idioma
+depois de separadas, o pagerank começa seu trabalho
+ele mede a importância de uma página analisando quesitos como a quantidade e qualidade de links que apontam para ela
+o pagerank não é o único algoritmo que o google utiliza, mas é o mais antigo e popular
+ talvez você se interesse por isso
+ seu fone de ouvido parou de funcionar um lado
+você tuíta sobre isso, pesquisa em alguns blogs como solucionar esse problema e volta às suas atividades na internet
+dentro de alguns minutos começa a aparecer uma série de anúncios de fones de todas as marcas no seu feed
+já aconteceu algo assim com você
+se a resposta for não, comece a ficar de olho nos conteúdos que você explora na internet e os anúncios que aparecem para você em seguida
+certamente você vai notar essa relação
+ mas, calma
+não é nenhuma mágica
+são simplesmente os algoritmos trabalhando para facilitar sua vida e levar a você o que você deseja com mais praticidade
+alguns dos principais métodos utilizados por esses algoritmos para entregar conteúdos mais relacionados com seu perfil na web são pesquisa, conteúdo, filtragem colaborativa e item a item
+ quem nunca matou um tempinho rolando a timeline do facebook
+ é impossível acompanhar umzerozero  dos conteúdos que seus amigos e páginas que você segue publicam no facebook
+afinal, um usuário está exposto a cerca de umcincozerozero publicações por dia na rede social
+é por isso que a plataforma trabalha filtrando o que chega a você
+e como ela faz isso
+é simples: algoritmos
+ o edgerank é o algoritmo do facebook que seleciona quais os posts mais relevantes para aparecer no seu feed
+assim como o pagerank, do google, ele considera vários fatores antes de entregar a você o que chega na sua timeline, como o número de comentários sobre o assunto nas postagens, quem fez a postagem, qual o tipo  foto, vídeo, atualização de perfil e etc
+
+por conta disso, conteúdos que possuem uma maior interação acabam roubando a cena em meio as outras publicações
+é por isso que, para uma empresa, é muito rentável quando há uma grande movimentação de comentários, curtidas e compartilhamentos de consumidores em seus posts
+ outro fator no qual o edgerank se baseia na hora de entregar os conteúdos mais a ver com você são as pessoas com quem você interage, curte, comenta e compartilha coisas
+tudo isso é utilizado por ele para mapear cada usuário
+não é à toa que você vê muito mais publicações das mesmas pessoas, enquanto outras simplesmente não aparecem em seu feed
+ mais família, menos fake news porém, tudo que é demais prejudica
+nos últimos três anos, a onda de notícias falsas, títulos “caça-cliques” e outras publicações sem sentido tomaram conta do cenário virtual, especialmente do facebook
+muitos desses elementos, principalmente as fake news, causaram consequências sérias no “mundo real”
+por conta disso, a rede de mark zuckemberg se viu obrigada a tomar uma medida que aperfeiçoasse seu sistema de verificação
+ no início do ano passado  doiszeroumoito , a rede social mais utilizada do mundo anunciou uma atualização que teria o objetivo de conectar as pessoas com um lado mais “humano”
+foi diminuído o alcance de notícias, anúncios e conteúdos mais supérfluos e passaram a ser difundidos para cada usuário mais publicações de seus amigos e familiares
+você não reparou que aquele seu colega de trabalho ou faculdade tem dado mais as caras no seu feed
+ o fato é que essa tecnologia cada vez mais inteligente é uma maneira que a internet busca de facilitar os processos de relação e consumo entre marcas e pessoas
+o mundo está pedindo mais em menos
+os algoritmos são a ponte para sanar essa necessidade
+eles funcionam como verdadeiras receitas para entregar ao usuário exatamente o que ele quer com cada vez menos esforço
+é um fator que pode, talvez, proporcionar mais tempo para cada um aproveitar mais seu dia a dia à sua maneira.
+um algoritmo é um esquema de resolução de um problema
+pode ser implementado com qualquer sequência de valores ou objetos que tenham uma lógica infinita  por exemplo, a língua portuguesa, a linguagem pascal, a linguagem c, uma sequência numérica, um conjunto de objetos tais como lápis e borracha , ou seja, qualquer coisa que possa fornecer uma sequência lógica
+ embora tenhamos que usar um algoritmo prévio na nossa língua para escrever um programa com lógica, o próprio programa que provém desse algoritmo já é um algoritmo
+até um esquema mental é um algoritmo
+ok, já percebi o que é um algoritmo
+mas porque isso interessa ao estudo da programação
+a verdade é que, antes de escrevermos um programa em qualquer outra linguagem é necessário escrever um esquema em papel para evitar erros, por exemplo, na nossa língua, segundo o programa que queremos fazer
+com isto não esquecemos a lógica que queremos dar ao programa e será menos comum o aparecimento de erros
+por exemplo: linguagem humana: "se for verdade isso, acontece isto, senão acontece aquilo" linguagem de máquina: if isso; then isto; else aquilo; o conteúdo escrito acima está formalizado numa linguagem de algoritmos chamada portugol que é a representação utilizada pela maior parte dos programadores e professores que trabalham em instituições de ensino de linguagens de programação
+como pode visualizar, um algoritmo pode ser escrito de várias maneiras, de cima para baixo, da esquerda para a direita, na diagonal, em árabe, em russo..
+o importante é que seja escrito
+uma máquina computacional é qualquer máquina  geralmente de origem eletro-eletrônica  com capacidade de receber dados, executar operações sobre estes dados e retornar os dados transformados por estas operações
+entrada de dados	processamento	saída de dados as máquinas computacionais eletro-eletrônicas possuem geralmente dois componentes básicos: software e hardware
+chamamos de hardware sua parte física, e software os programas que tratam os dados imputados
+quando inserimos algum dado em um computador, os dados inseridos são transformados em sinais elétricos  chamados de bits 
+o bit  do inglês binary digit  representa os dois estados  ligado ou desligado  que o sinal elétrico pode assumir
+para trabalhar com estes dados, podemos associar estes estados de ligado e desligado a zero e um
+quando utilizamos um computador, há um fluxo de sinais elétricos, que representam os dados inseridos, processados e retornados
+um conjunto de oito bits formam um byte, que é uma unidade completa de informação
+ dentro do byte, o estado de cada um dos oito bits, assim como sua posição relativa um ao outro, faz com que o byte assuma um valor específico  não necessariamente numérico , que serve para estruturá-lo em relação a outros bytes e criar um sistema de dados que sirva ao usuário externo
+ para organizar as possibilidades de variações destes bits dentro de um byte logicamente torna-se trabalhoso trabalhar com dados de computador bit-a-bit
+como forma de manipular este fluxo de estados elétricos e estruturá-lo de forma a permitir operações mais simplificadas e otimizadas sobre os bytes, surgiu o conceito de programação
+as linguagens de programação são geralmente em dois níveis:  linguagens de baixo nível: são linguagens de programação que tratam a informação na linguagem de máquina
+linguagens de alto nível: são linguagens de programação modeladas quase como a linguagem comum humana, que quando compiladas são convertidas para linguagem de máquina
+cada linguagem deste tipo possui uma sintaxe própria, que deve ser respeitada e aprendida para que possa ser corretamente processada por seu compilador
+compilador é um programa que permite que determinada programação em uma linguagem específica seja adaptada para linguagem de máquina
+no entanto, não é necessário que o programador aprenda todas as diversas linguagens disponíveis no mercado
+cada linguagem é recomendada para determinadas aplicações, assim como possuem suas sintaxes próprias, mas todas são estruturadas logicamente
+com o aprendizado da lógica de programação o aluno entenderá os conceitos básicos da programação e poderá com menor ou maior dificuldade, dependendo da linguagem escolhida, aprender a linguagem que quiser
+ as linguagens de programação tratam os dados de um computador através do uso de algoritmos
+um algoritmo é uma estruturação passo-a-passo de como um determinado problema deve ser resolvido de forma não-ambígua  ou como muitos comparam "uma receita de bolo"  
+desta forma, para realizar esta estruturação é necessário o uso de ferramentas e operações oriundas da lógica, principalmente da lógica matemática
+ antes de estruturar-se de forma lógica para programação, devemos saber qual o tipo de problema proposto, as informações que serão imputadas e os passos a serem efetuados para atingir-se um fim específico
+ a capacidade de pensar de maneira lógica é um dos principais diferenciais para saber como resolver problemas, principalmente na área da computação
+diretamente relacionado a isso, compreender o conceito de algoritmo também é algo fundamental
+com isso em mente, caso seu objetivo seja se tornar um bom programador, o próximo passo é aprender um pseudocódigo  portugol, por exemplo , no qual você entrará em contato com detalhes como entrada e saída de dados, assim como o processamento propriamente dito
+nesse artigo, veremos um pouco sobre esses conceitos, fundamentais para quem está começando a programar
+a lógica de programação é a capacidade que todo programador precisa ter para resolver os problemas que aparecem no dia-a-dia
+a capacidade de dividir o problema em partes menores é uma etapa essencial da lógica de programação e precisa ser levada em consideração quando nos deparamos com qualquer exercício desafio
+é nesse ponto que entra o conceito de algoritmo, descrito, geralmente, como uma sequência lógica de ações capaz de resolver um problema
+ é válido ressaltar, no entanto, que o conceito de algoritmo vai muito além da programação
+uma receita de bolo, por exemplo, é um exemplo simples de algoritmo
+  a maioria dos algoritmos, obviamente, será mais complexa do que simplesmente “mascar um chiclete” ou “fazer um bolo”
+no caso da computação, uma soma de dois números é o exemplo mais clássico de um algoritmo simples
+algo como o mostrado na listagem dois é bastante comum para observarmos que temos uma sequência lógica de ações que envolvem os três elementos que comentamos anteriormente: entrada de dados, processamento e saída de dados
+  a representação de algoritmos pode ser feita de várias formas; a que mostramos na listagem dois é uma delas
+entretanto, essa opção não possui nenhum tipo de regra mais formal, o que faz com que esteja um pouco distante da programação propriamente dita
+para aproximar um pouco mais os dois conceitos, o pseudocódigo foi criado  um dos exemplos de pseudocódigo mais conhecidos no brasil é o portugol 
+além dele, podemos encontrar várias opções
+o objetivo de todos, no entanto, é um só: criar um código que se aproxime do que será visto em linguagens de programação como c, c# ou java
+ utilizando o portugol como exemplo, nosso algoritmo da soma de dois números seria algo como o mostrado na listagem tres
+nessa “linguagem de programação”, é importante observar que temos um outro conceito, conhecido como regiões; nesse código, temos uma região de variáveis e outra de processamento
+esse conceito também é algo que será levado para as linguagens de programação e sempre deve ser considerado durante o desenvolvimento de software
+ com isso, podemos observar que o portugol possui regras simples e bastante flexíveis
+ao começar a programar com java ou c#, por exemplo, você irá notar que a proposta de se aproximar de linguagens como elas é obedecida
+se compararmos o código da listagem tres com um em c#, por exemplo, notaremos que não existe uma grande diferença
+é claro que as ações  ler e escrever  e os operadores  atribuição e operador aritmético “+”  serão substituídos por seus respectivos na linguagem, mas a estrutura será semelhante à apresentada no exemplo
+ embora as vezes não percebemos, utilizamos algoritmos no nosso dia-a-dia e não sabemos
+para a execução de alguma tarefa ou mesmo resolver algum problema, muitas vezes inconscientemente executamos algoritmos
+mas o que é algoritmo
+ algoritmo é simplesmente uma "receita" para executarmos uma tarefa ou resolver algum problema
+e como toda receita, um algoritmo também deve ser finito
+se seguirmos uma receita de bolo corretamente, conseguiremos fazer o bolo
+a computação utiliza muito esse recurso, então se você pretende aprender programação, obviamente deve saber o que é algoritmo
+ imagine o trabalho de um recepcionista de cinema, ele deve conferir os bilhetes e direcionar o cliente para a sala correta
+além disso, se o cliente estiver treszero minutos adiantado o recepcionista deve informar que a sala do filme ainda não está aberta
+e quando o cliente estiver treszero minutos atrasado o recepcionista deve informar que a entrada não é mais permitida  obs: essas regras não são umzerozero  verdade, eu as defini neste post apenas para fins didáticos  vamos escrever um algoritmo para descrever a atividade do recepcionista
+ qualquer pessoa que seguir esses passos executará a função do recepcionista do cinema
+concorda
+é importante notar que o algoritmo tem um fluxo que pode seguir diferentes caminhos dependendo da situação em que se encontra
+outro aspecto interessante é que o algoritmo é finito, uma hora ele tem que acabar
+ esta representação gráfica do algoritmo é chamada de fluxograma
+os losangos representam as decisões que são tomadas para executar um ou outro passo
+ao final, a lâmpada tem que estar funcionando
+ todas as tarefas executadas pelo computador, são baseadas em algoritmos
+logo, um algoritmo deve também ser bem definido, pois é uma máquina que o executará
+uma calculadora por exemplo, para executar a operação de multiplicação, executa um algoritmo que calcula somas até um determinado número de vezes
+abaixo, um exemplo do algoritmo de multiplicação
+para facilitar, consideremos que os fatores da multiplicação são positivos
+ este algoritmo pode ser considerado complexo por iniciantes, mas algoritmos deste tipo, utilizando variáveis e controle de fluxo, é muito comum em programação
+se você quer aprender programação, é necessário entendê-lo, se não conseguiu, leia-o novamente com mais atenção
+para ajudar, vamos definir algumas coisas importantes sobre o algoritmo
+ com o tempo, a leitura e criação de algoritmos passa a ser uma coisa muito simples para um programador
+mas para isso é preciso bastante prática
+então, você pode começar fazendo um exercício, crie algoritmos para as suas tarefas do dia-a-dia a partir do momento em que você acorda
+essa é a melhor forma de aprender a criar algoritmos
+ a automação é o processo em que uma tarefa deixa de ser desempenhada pelo homem e passa a ser realizada por máquinas, sejam estes dispositivos mecânicos, eletrônicos  como os computadores  ou de natureza mista
+para que a automação de uma tarefa seja bem-sucedida é necessário que a máquina que passará a realizá-la seja capaz de desempenhar cada uma das etapas constituintes do processo a ser automatizado com eficiência, de modo a garantir a repetibilidade do mesmo
+assim, é necessário que seja especificado com clareza e exatidão o que deve ser realizado em cada uma das fases do processo a ser automatizado, bem como a seqüência em que estas fases devem ser realizadas
+à especificação da seqüência ordenada de passos que deve ser seguida para a realização de uma tarefa, garantindo a sua repetibilidade, dá-se o nome de algoritmo
+ao contrário do que se pode pensar, o conceito de algoritmo não foi criado para satisfazer às necessidades da computação
+pelo contrário, a programação de computadores é apenas um dos campos de aplicação dos algoritmos
+na verdade, há inúmeros casos que podem exemplificar o uso  involuntário ou não  de algoritmos para a padronização do exercício de tarefas rotineiras  vide exemplos da seção dois.um 
+no entanto, daqui adiante a atenção desta apostila estará voltada à automação de tarefas utilizando computadores
+para que um computador possa desempenhar uma tarefa é necessário que esta seja detalhada passo-a-passo, numa forma compreensível pela máquina, utilizando aquilo que se chama de programa
+neste sentido, um programa de computador nada mais é que um algoritmo escrito numa forma compreensível pelo computador  linguagem de programação 
+  serve como modelo para programas, pois sua linguagem é intermediária à linguagem humana e às linguagens de programação, sendo então, uma boa ferramenta na validação da lógica de tarefas a serem automatizadas
+ os algoritmos, servem para representar a solução de qualquer problema, mas no caso do processamento de dados, eles devem seguir as regras básicas de programação para que sejam compatíveis com as linguagens de programação
+ existem diversas formas de representação de algoritmos, mas não há um consenso com relação à melhor delas
+o critério usado para classificar hierarquicamente estas formas está diretamente ligado ao nível de detalhe ou, inversamente, ao grau de abstração oferecido
+algumas formas de representação de algoritmos tratam os problemas apenas em nível lógico, abstraindo-se de detalhes de implementação muitas vezes relacionados com alguma linguagem de programação específica
+por outro lado existem formas de representação de algoritmos que possuem uma maior riqueza de detalhes e muitas vezes acabam por obscurecer as idéias principais do algoritmo, dificultando seu entendimento
+  fluxograma é uma representação gráfica de algoritmos onde formas geométricas diferentes implicam ações  instruções, comandos  distintos
+tal propriedade facilita o entendimento das idéias contidas nos algoritmos e justifica sua popularidade
+esta forma é aproximadamente intermediária à descrição narrativa e ao pseudocódigo  subitem seguinte , pois é menos imprecisa que a primeira e, no entanto, não se preocupa com detalhes de implementação do programa, como o tipo das variáveis usadas
+nota-se que os fluxogramas convencionais preocupam-se com detalhes de nível físico da implementação do algoritmo
+por exemplo, figuras geométricas diferentes são adotadas para representar operações de saída de dados realizadas em dispositivos distintos, como uma fita magnética ou um monitor de vídeo
+como esta apostila não está interessada em detalhes físicos da implementação, mas tão somente com o nível lógico das instruções do algoritmo, será adotada a notação simplificada da figura dois.um para os fluxogramas
+de qualquer modo, o apêndice a contém uma tabela com os símbolos mais comuns nos fluxogramas convencionais
+  de modo geral, um fluxograma se resume a um único símbolo inicial por onde a execução do algoritmo começa, e um ou mais símbolos finais, que são pontos onde a execução do algoritmo se encerra
+partindo do símbolo inicial, há sempre um único caminho orientado a ser seguido, representando a existência de uma única seqüência de execução das instruções
+isto pode ser melhor visualizado pelo fato de que, apesar de vários caminhos poderem convergir para uma mesma figura do diagrama, há sempre um único caminho saindo desta
+exceções a esta regra são os símbolos finais, dos quais não há nenhum fluxo saindo, e os símbolos de decisão, de onde pode haver mais de um caminho de saída  usualmente dois caminhos , representando uma bifurcação no fluxo
+  esta forma de representação de algoritmos é rica em detalhes, como a definição dos tipos das variáveis usadas no algoritmo
+por assemelhar-se bastante à forma em que os programas são escritos, encontra muita aceitação
+na verdade, esta representação é suficientemente geral para permitir a tradução de um algoritmo nela representado para uma linguagem de programação específica seja praticamente direta
+  há diversas formas de representação de algoritmos que diferem entre si pela quantidade de detalhes de implementação que fornecem ou, inversamente, pelo grau de abstração que possibilitam com relação à implementação do algoritmo em termos de uma linguagem de programação específica
+dentre as principais formas de representação de algoritmos destacam-se: a descrição narrativa, o fluxograma convencional e o pseudocódigo  ou linguagem estruturada 
+  todo o trabalho realizado por um computador é baseado na manipulação das informações contidas em sua memória
+grosso modo, estas informações podem ser classificadas em dois tipos  a maior parte das pessoas não ligadas à área de informática ignora o potencial dos computadores e imagina que eles são capazes de tratar apenas com dados numéricos
+na realidade, a capacidade dos mesmos se estende a outros tipos de dados
+o objetivo deste capítulo é justamente o de classificar os dados de acordo com o tipo de informação contida neles
+a classificação apresentada não se aplica a nenhuma linguagem de programação específica; pelo contrário, ela sintetiza os padrões utilizados na maioria das linguagens
+ os números inteiros são aqueles que não possuem componentes decimais ou fracionários, podendo ser positivos ou negativos
+os elementos pertencentes aos conjuntos n e z, apesar de serem representáveis na classe dos números reais, são classificados como dados do tipo inteiro, por não possuírem parte fracionária
+esta possibilidade é interessante por permitir uma economia do espaço de memória, como veremos adiante
+por sua vez, os elementos dos conjuntos q e r, por possuírem parte fracionária, não podem ser representados na classe inteira, pertencendo necessariamente aos tipos de dados ditos reais
+ os dados de tipo real são aqueles que podem possuir componentes decimais ou fracionários, e podem também ser positivos ou negativos
+como dito anteriormente, os elementos dos conjuntos de números fracionários e reais são necessariamente representados no computador por dados do tipo real
+o tipo de dados literal é constituído por uma seqüência de caracteres contendo letras, dígitos e ou símbolos especiais
+este tipo de dados é também muitas vezes chamado de alfanumérico, cadeia  ou cordão  de caracteres, ainda, do inglês, string
+ usualmente, os dados literais são representados nos algoritmos pela coleção de caracteres, delimitada em seu início e término com o caractere aspas  " 
+diz-se que o dado do tipo literal possui um comprimento dado pelo número de caracteres nele contido a existência deste tipo de dado é, de certo modo, um reflexo da maneira como os computadores funcionam
+muitas vezes, estes tipos de dados são chamados de booleanos, devido à significativa contribuição de boole à área da lógica matemática
+o tipo de dados lógico é usado para representar dois únicos valores lógicos possíveis: verdadeiro e falso
+é comum encontrar-se em outras referências outros tipos de pares de valores lógicos como sim não, um zero, true false
+nos algoritmos apresentados nesta apostila os valores lógicos serão delimitados pelo caractere ponto  
+
+ a todo momento durante a execução de qualquer tipo de programa os computadores estão manipulando informações representadas pelos diferentes tipos de dados descritos no capítulo anterior
+para que não se "esqueça" das informações, o computador precisa guardálas em sua memória
+este capítulo é destinado ao estudo da forma como os computadores armazenam e acessam informações contidas em sua memória cada um dos diversos tipos de dados apresentados no capítulo anterior necessita de uma certa quantidade de memória para armazenar a informação representada por eles
+esta quantidade é função do tipo de dado considerado, do tipo da máquina  computador  e do tipo de linguagem de programação
+por isso, o que será exposto nos subitens seguintes não deve ser tomado como padrão, apenas como exemplo
+ devemos sempre ter em mente que um byte consegue representar dois56  doisoito   possibilidades diferentes
+uma informação do tipo literal nada mais é do que um conjunto de caracteres que podem ser letras, dígitos ou símbolos especiais
+a união de todos os caracteres existentes nos computadores resulta num conjunto com um número de elementos menor que dois56
+deste resultado surgiu a idéia de associar a cada caractere um número  código  variando de zero a dois55  dois56 possibilidades 
+no princípio, cada fabricante de computador adotava uma convenção diferente para este código
+mais recentemente, esta convenção foi padronizada a fim de facilitar a portabilidade  migração  de programas entre máquinas diferentes
+esta convenção é representada na forma de uma tabela de mapeamento de caracteres em números
+o padrão mais universalmente aceito é o ascii, cuja tabela é mostrada no apêndice b
+assim, cada célula de memória  byte  pode conter um caractere, representado pelo seu código ascii
+retornando à questão do armazenamento de informações do tipo literal na memória, deve-se lembrar que um dado deste tipo possui um certo comprimento dado pelo número de caracteres nele contido
+portanto, para guardar um dado do tipo literal devemos alocar  reservar  um espaço contíguo de memória igual ao comprimento do mesmo, destinando um byte para cada caractere da informação
+exemplificando, a informação do tipo literal "banana" possui seis caracteres e, portanto, seis bytes são necessários para reter a referida informação na memória
+a princípio, estes bytes podem estar em qualquer lugar da memória, mas é conveniente que estejam juntos  posições contíguas 
+a primeira posição deste conjunto de bytes é absolutamente arbitrária e sua escolha geralmente é feita automaticamente pelo compilador  isto é, pelo programa que traduz um outro escrito em alguma linguagem de programação para outra geral, a linguagem de máquina do computador com que se trabalha 
+ uma informação do tipo lógico só possui dois valores possíveis
+assim, a princípio, um único bit seria suficiente para armazenar uma informação deste tipo
+contudo, deve-se lembrar que a menor porção de memória que se pode acessar é o byte
+portanto, uma informação do tipo lógico é armazenada em um byte de memória
+de certa forma, se por um lado isto pode ser como um "desperdício" de memória, por outro simplifica bastante a arquitetura de memória dos computadores  por motivos que fogem ao contexto desta apostila 
+além do mais, isto não é tão relevante, uma vez que na prática o número de ocorrências de dados do tipo lógico é bastante inferior ao de ocorrências de dados do tipo literal ou numérico
+ o conjunto dos números reais  r  contém um número infinito de elementos e, pelas mesmas razões que o conjunto dos números inteiros, precisa ser limitado
+para dados deste tipo julgou-se apropriado adotar quatro bytes para sua representação interna nos computadores
+são muito comuns situações como as aplicações científicas em que é necessária uma maior precisão de cálculo, intimamente ligada ao número de casas decimais dos dados
+para este caso, em analogia com o que acontece com os dados do tipo inteiro, algumas linguagens de programação decidiram criar dados do tipo real estendido  com oito bytes 
+como visto anteriormente, informações correspondentes a diversos tipos de dados são armazenadas na memória dos computadores
+para acessar individualmente cada uma destas informações, a princípio, seria necessário saber o tipo de dado desta informação  ou seja, o número de bytes de memória por ela ocupados  e a posição inicial deste conjunto de bytes na memória
+percebe-se que esta sistemática de acesso a informações na memória é bastante ilegível e difícil de se trabalhar
+para contornar esta situação criou-se o conceito de variável, que é uma entidade destinada a guardar uma informação
+basicamente, uma variável possui três atributos: um nome, um tipo de dado associado à mesma e a informação por ela guardada
+ toda variável possui um nome que tem a função de diferenciá-la das demais
+cada linguagem de programação estabelece suas próprias regras de formação de nomes de variáveis
+todas as variáveis utilizadas em algoritmos devem ser definidas antes de serem utilizadas
+isto se faz necessário para permitir que o compilador reserve um espaço na memória para as mesmas
+a palavra-chave var deverá estar presente sempre e será utilizada uma única vez na definição de um conjunto de uma ou mais variáveis; numa mesma linha poderão ser definidas uma ou mais variáveis do mesmo tipo
+para tal, deve-se separar os nomes das mesmas por vírgulas
+ variáveis de tipos diferentes devem ser declaradas em linhas diferentes
+ a forma de utilização deste comando ficará mais clara quando da utilização da representação de algoritmos em linguagem estruturada  pseudocódigo 
+esta convenção é válida para a representação de algoritmos na forma de pseudocódigo
+em termos de fluxograma, não é usual adotar-se qualquer forma de definição de variáveis
+ a memória dos computadores é composta por células numeradas ordenadamente denominadas bytes
+cada byte é constituído por oito bits
+cada tipo de dado requer um número diferente de bytes para armazenar a informação representada por ele na memória
+esta quantidade também pode variar em função do tipo de computador considerado
+uma variável é uma entidade dotada de um nome para diferenciá-la das demais e um tipo de dado que define o tipo de informação que ela é capaz de guardar
+uma vez definidos, o nome e o tipo de uma variável não podem ser alterados no decorrer de um programa
+por outro lado, a informação útil da variável é objeto de constante modificação durante o decorrer do programa, de acordo com o fluxo de execução do mesmo
+ o conceito de expressão em termos computacionais está intimamente ligado ao conceito de expressão  ou fórmula  matemática, onde um conjunto de variáveis e constantes numéricas relacionam-se por meio de operadores aritméticos compondo uma fórmula que, uma vez avaliada, resulta num valor.

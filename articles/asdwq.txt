@@ -1,0 +1,81 @@
+variável é um objeto normalmente localizado na memória utilizado para representar valores, quando declaramos uma variável estamos associando seu nome (identificador) ao local da memória onde está armazenado sua informação, as variáveis em java podem ser do tipo primitivo ou objeto
+variáveis primitivas: podem ser do tipo byte, short, int, long, float, double, char ou boolean.
+variáveis de referência: usada para referenciar um objeto. 
+quando usamos uma variável de referência definimos qual o tipo do objeto ou um subtipo do tipo do objeto (veremos isso mais para frente).
+quando declaramos uma variável primitiva, estamos associando está a um espaço na memória que vai guardar o seu valor. 
+no caso da variável de referência, podemos tê-la apontando para algum lugar vazio (null) ou para algum espaço da memória que guarda os dados de um objeto.
+as variáveis primitivas e de referência são guardadas em locais diferentes da memória. 
+variáveis primitivas ficam em um local chamado stack e as variáveis de referência ficam em um local chamado heap.
+a linguagem java possui diversos tipos primitivos.
+a linguagem java não é totalmente orientada a objetos, e isto se deve principalmente aos atributos do tipo primitivo, pois são tipos de dados que não representam classes, mas sim valores básicos.
+os tipos primitivos, assim como em várias outras linguagens tais como o c, existem para representar os tipos mais simples de dados, sendo eles dados numérico, booleano e caractere. 
+os tipos primitivos da linguagem java são: byte, short, int, long, float, double, char, boolean.
+como tipos primitivos entendemos aqueles tipos de informação mais usuais e básicos. 
+são os habituais de outras linguagens de programação. 
+descreveremos algum dado para ter em conta em cada tipo.
+boolean: não é um valor numérico, só admite os valores true ou false.
+char: usa o código unicode e ocupa cada caractere dezesseis bits.
+inteiros: diferem nas precisões e podem ser positivos ou negativos.
+byte: oito byte.
+short: dois bytes.
+int: quatro bytes.
+long: oito bytes.
+reais em ponto flutuante: igual que os inteiros também diferem nas precisões e podem ser positivos ou negativos.
+float: quatro bytes.
+double: oito bytes.
+agora que temos as peças necessárias ( identificadores e tipos ) podemos definir variáveis em java. 
+uma variável referenciará sempre a um tipo primitivo de java ou a qualquer outro objeto criado em nosso programa. 
+uma vez tenhamos um pouco de idéia de como declarar variáveis em java, temos que ter em conta desde que sites de nosso programa podemos acessa-las, é o que chamamos de âmbito das variáveis.
+basicamente a norma é que a variável tenha validade dentro do bloco fechado entre chaves onde foi declarada, já seja dentro de uma função ou de, por exemplo, uma sentença 'if'. 
+vejamos um exemplo com um pequeno programa em java.
+se tentarmos executar este código o compilador nos dará um erro dizendo que a variável não está definida visto que a declaramos em um bloco diferente de onde pretendíamos utiliza-la.
+existem mais normas de âmbito com respeito às variáveis membros de uma classe. 
+para acessa-las depende se na classe está declarada como 'public' ou como 'private'. 
+as variáveis declaradas em uma classe como 'public' se acessam diretamente através de 'nomeclase.nomevariavel'. 
+no caso de uma variável 'private' só podemos utiliza-la mediante os métodos dessa classe.
+por outro lado através da declaração de qualquer função própria de uma classe podemos acessar às variáveis internas dessa classe diretamente.
+já incluiremos mais normas de âmbito quando vejamos o conceito de herança nos seguintes capítulos da programação em java. 
+este tutorial acaba com o seguinte ponto no qual vemos os operadores.
+explicando os tipos de métodos existentes na programação oo.
+quando definimos um objeto num programa orientado a objetos, implementamos todo o comportamento desse objeto em um ou mais métodos.
+um método em java é equivalente a uma função, subrotina ou procedimento em outras linguagens de programação.
+não existe em java o conceito de métodos globais. 
+todos os métodos devem sempre ser definidos dentro de uma classe.
+a sintaxe para construção de um método é pouco complexa.
+java controla o acesso a atributos e métodos através do uso dos modificadores de acesso. 
+public : é o menos restritivo de todos, 
+atributos e métodos declarados como public
+em uma classe podem ser acessados pelos métodos da própria classe, por classes
+derivadas desta e por qualquer outra classe em qualquer outro pacote (veremos mais sobre pacotes e classes derivadas posteriormente).
+protected : atributos e métodos definidos como protected são acessíveis pelos
+métodos da própria classe e pelas classes derivadas.
+private : é o mais restritivo, atributos e métodos declarados como private só podem ser acessados pelos métodos da própria classe.
+quando nenhum modificador é definido (acesso do tipo “package”), os atributos e
+métodos podem ser acessados pelos métodos da própria classe, pelas classes derivadas e por qualquer outra classe dentro do mesmo pacote.
+é importante destacar que esse controle não se aplica às variáveis locais aos métodos.
+o nome de um método deve começar com uma letra (a-z/a-z), um underscore (_), ou um sinal de dólar ( $ ).
+os caracteres subsequentes podem incluir os dígitos de zero a nove.
+convenção : use verbos para nome de métodos, faça a primeira letra do nome
+minúscula com cada letra inicial interna maiúscula; por exemplo : getusername(),
+getmaxprice().
+um método pode ter zero ou mais argumentos (ou parâmetros).
+caso não tenha argumentos, é necessário informar os parênteses vazios tanto na definição como na chamada do método.
+O nome do método acrescido de seus parâmetros é denominado assinatura do método.
+cada argumento deve ser declarado como define-se uma variável, especificando seu tipo e nome.
+Caso seja mais de um argumento, cada declaração deve estar separada por vírgula.
+Retornando Valor a Partir de um Método
+É possível associar um valor de retorno a um método. 
+Para isso, é preciso definir, na frente do nome do método, o tipo do valor a ser retornado. 
+O tipo pode ser um primitivo ou então uma classe ou interface. 
+Caso o método não retorne valor algum, é obrigatória a utilização do tipo void na assinatura do método.
+O comando return é utilizado para passar o valor requerido de volta para quem chamou o método e é obrigatório quando o tipo de retorno não é void.
+ Ele deve receber um único valor ou uma expressão que deve ser compatível com o tipo de retorno especificado para o método.
+ Quando o comando é encontrado, o método termina sua execução imediatamente, ignorando todas as instruções subsequentes.
+Um comando return sem valor de retorno retorna o tipo void, mas não é obrigatória sua utilização nestes casos.
+você pode passar parâmetros para um método.
+Passando um Primitivo : Quando um valor primitivo é passado na chamada de um método, uma cópia deste valor é criada e atribuída para o argumento do método responsável por recebê-la. 
+Se o método mudar este valor, apenas o valor do argumento local ao método é afetado. 
+Quando o método terminar sua execução, o valor original da variável utilizada para passar o valor primitivo na chamada do método permanecerá inalterado.
+Passando a Referência de um Objeto : Quando o tipo passado para o método não for um primitivo mas sim um objeto, esse comportamento muda.
+Quando passamos um objeto, uma referência ao objeto original é passada ao invés de uma cópia do objeto.
+A referência contém o endereço de memória onde está contido o objeto original e qualquer modificação feita pelo método no argumento que recebeu esta referência afetará também o objeto original.
