@@ -265,4 +265,53 @@ do programa, de acordo com o fluxo de execução do mesmo.
 O conceito de expressão em termos computacionais está intimamente ligado ao
 conceito de expressão (ou fórmula) matemática, onde um conjunto de variáveis e constantes
 numéricas relacionam-se por meio de operadores aritméticos compondo uma fórmula que, uma
-vez avaliada, resulta num valor.
+vez avaliada, resulta num valor. 
+A lógica da programação é um assunto muito grande e complexo. Assim sendo, vamos dar
+apenas uma introdução a história da lógica da programação.A lógica de programação é quando
+se pretende realizar alguma função ou um esquema lógico por meio de parâmetros e metas.
+Existe uma associação direta da Lógica de Programação com o Raciocínio Matemático, onde o
+importante é a interpretação de um problema e a utilização correta de uma fórmula. De
+fato, não existe “fórmulas” em informática, o que existe é nosso modo de pensar 
+em como resolver e extrair o máximo de informações de um problema, de maneira eficaz
+e eficiente sobre um ângulo de visão. Essa solução precisa ser exteriorizada e expressa numa
+linguagem conhecida. A lógica da programação entra nesse ponto, para desenvolvermos soluções e algorítimos para
+apresentar essa solução ao mundo. A primeira pessoa a pensar em usar lógica matemática para
+a programação foi John McCarthy, ele propôs usar programas para manipular com sentenças instrumentais comuns
+apropriadas à linguagem formal, ou seja, o programa básico formará conclusões imediatas a partir de
+uma lista de premissas. Essas conclusões serão tanto sentenças declarativas quanto imperativas. Quando uma sentença 
+imperativa é deduzida, o programa toma uma ação correspondente. 
+
+
+
+
+
+
+A lógica da programação é um assunto muito grande e complexo. Assim sendo, vamos dar
+apenas uma introdução a história da lógica da programação.A lógica de programação é quando
+se pretende realizar alguma função ou um esquema lógico por meio de parâmetros e metas.
+Existe uma associação direta da Lógica de Programação com o Raciocínio Matemático, onde o
+importante é a interpretação de um problema e a utilização correta de uma fórmula. De
+fato, não existe “fórmulas” em informática, o que existe é nosso modo de pensar 
+em como resolver e extrair o máximo de informações de um problema, de maneira eficaz
+e eficiente sobre um ângulo de visão. Essa solução precisa ser exteriorizada e expressa numa
+linguagem conhecida. A lógica da programação entra nesse ponto, para desenvolvermos soluções e algorítimos para
+apresentar essa solução ao mundo. A primeira pessoa a pensar em usar lógica matemática para
+a programação foi John McCarthy, ele propôs usar programas para manipular com sentenças instrumentais comuns
+apropriadas à linguagem formal, ou seja, o programa básico formará conclusões imediatas a partir de
+uma lista de premissas. Essas conclusões serão tanto sentenças declarativas quanto imperativas. Quando uma sentença 
+imperativa é deduzida, o programa toma uma ação correspondente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exemplos: tres igual tres resulta em VERDADEIRO ; "A" maior "B" ("A" está depois de "B"
