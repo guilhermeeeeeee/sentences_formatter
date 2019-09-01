@@ -1,0 +1,1 @@
+Exemplos: tres igual tres resulta em VERDADEIRO ; "A" maior "B" ("A" está depois de "B"
